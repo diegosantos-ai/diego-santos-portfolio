@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
@@ -19,6 +20,7 @@ import {
   MapPin,
   Globe,
   CheckCircle,
+  ArrowLeft,
 } from "lucide-react";
 
 /**
@@ -94,6 +96,8 @@ function useScrollAnimation() {
 }
 
 export default function Home() {
+  const [, setLocation] = useLocation();
+
   // Dados dos projetos
   const projects = [
     {
@@ -604,16 +608,16 @@ export default function Home() {
 
           </div>
 
-          {/* CTA para GitHub */}
+          {/* CTA para Artigo Técnico */}
           <div className="text-center">
             <Button
               size="lg"
               className="bg-primary hover:bg-primary/90 text-white gap-2 card-hover"
-              onClick={() => window.open("https://github.com/diegosantos-ai/terezia-chatbot", "_blank")}
+              onClick={() => setLocation("/artigos/terezia-architecture")}
             >
-              <Github size={18} />
-              Ver Código no GitHub
-              <ExternalLink size={14} />
+              <Brain size={18} />
+              Conheça mais detalhes (Deep Dive)
+              <ArrowLeft size={14} className="rotate-180" />
             </Button>
           </div>
         </div>
