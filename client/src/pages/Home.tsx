@@ -469,32 +469,85 @@ export default function Home() {
               </p>
             </Card>
 
-            {/* Bloco B: Arquitetura RAG */}
-            <Card className="bg-card/50 glass border-border p-8 card-hover card-glow-accent group">
+            {/* Bloco B: Arquitetura RAG - Diagrama Visual */}
+            <Card className="bg-card/50 glass border-border p-8 card-hover card-glow-accent group md:col-span-1">
               <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Brain size={24} className="text-accent" />
               </div>
-              <h3 className="text-xl font-bold text-accent mb-4">Arquitetura RAG</h3>
-              <div className="space-y-3 text-sm">
-                <div className="flex items-center gap-3 text-muted-foreground">
-                  <span className="w-2 h-2 bg-primary rounded-full"></span>
-                  <span>Meta Webhook → FastAPI</span>
-                </div>
-                <div className="flex items-center gap-3 text-muted-foreground">
-                  <span className="w-2 h-2 bg-accent rounded-full"></span>
-                  <span>RAG (ChromaDB + Embeddings)</span>
-                </div>
-                <div className="flex items-center gap-3 text-muted-foreground">
-                  <span className="w-2 h-2 bg-primary rounded-full"></span>
-                  <span>Gemini Generation</span>
-                </div>
-                <div className="flex items-center gap-3 text-muted-foreground">
-                  <span className="w-2 h-2 bg-accent rounded-full"></span>
-                  <span>Policy Guard (Ética)</span>
-                </div>
-                <div className="flex items-center gap-3 text-muted-foreground">
-                  <span className="w-2 h-2 bg-primary rounded-full"></span>
-                  <span>Auditoria PostgreSQL</span>
+              <h3 className="text-xl font-bold text-accent mb-6">Arquitetura RAG</h3>
+
+              {/* Diagrama de Fluxo Visual */}
+              <div className="relative">
+                {/* Linha conectora vertical */}
+                <div className="absolute left-4 top-4 bottom-4 w-0.5 bg-gradient-to-b from-primary via-accent to-primary opacity-50"></div>
+
+                {/* Nós do fluxo */}
+                <div className="space-y-4 relative">
+                  {/* Entrada */}
+                  <div className="flex items-center gap-4 group/item">
+                    <div className="w-8 h-8 rounded-full bg-primary/30 border-2 border-primary flex items-center justify-center z-10 group-hover/item:scale-110 transition-transform">
+                      <MessageSquare size={14} className="text-primary" />
+                    </div>
+                    <div className="flex-1 bg-primary/10 rounded-lg px-3 py-2 border border-primary/20">
+                      <span className="text-xs font-semibold text-primary">Meta Webhook</span>
+                      <p className="text-[10px] text-muted-foreground">Facebook / Instagram</p>
+                    </div>
+                  </div>
+
+                  {/* FastAPI */}
+                  <div className="flex items-center gap-4 group/item">
+                    <div className="w-8 h-8 rounded-full bg-accent/30 border-2 border-accent flex items-center justify-center z-10 group-hover/item:scale-110 transition-transform">
+                      <Code size={14} className="text-accent" />
+                    </div>
+                    <div className="flex-1 bg-accent/10 rounded-lg px-3 py-2 border border-accent/20">
+                      <span className="text-xs font-semibold text-accent">FastAPI</span>
+                      <p className="text-[10px] text-muted-foreground">HMAC Validation</p>
+                    </div>
+                  </div>
+
+                  {/* RAG */}
+                  <div className="flex items-center gap-4 group/item">
+                    <div className="w-8 h-8 rounded-full bg-primary/30 border-2 border-primary flex items-center justify-center z-10 group-hover/item:scale-110 transition-transform">
+                      <Database size={14} className="text-primary" />
+                    </div>
+                    <div className="flex-1 bg-primary/10 rounded-lg px-3 py-2 border border-primary/20">
+                      <span className="text-xs font-semibold text-primary">RAG Pipeline</span>
+                      <p className="text-[10px] text-muted-foreground">ChromaDB + Embeddings</p>
+                    </div>
+                  </div>
+
+                  {/* Gemini */}
+                  <div className="flex items-center gap-4 group/item">
+                    <div className="w-8 h-8 rounded-full bg-accent/30 border-2 border-accent flex items-center justify-center z-10 group-hover/item:scale-110 transition-transform">
+                      <Brain size={14} className="text-accent" />
+                    </div>
+                    <div className="flex-1 bg-accent/10 rounded-lg px-3 py-2 border border-accent/20">
+                      <span className="text-xs font-semibold text-accent">Gemini</span>
+                      <p className="text-[10px] text-muted-foreground">LLM Generation</p>
+                    </div>
+                  </div>
+
+                  {/* Policy Guard */}
+                  <div className="flex items-center gap-4 group/item">
+                    <div className="w-8 h-8 rounded-full bg-yellow-500/30 border-2 border-yellow-500 flex items-center justify-center z-10 group-hover/item:scale-110 transition-transform">
+                      <Bot size={14} className="text-yellow-500" />
+                    </div>
+                    <div className="flex-1 bg-yellow-500/10 rounded-lg px-3 py-2 border border-yellow-500/20">
+                      <span className="text-xs font-semibold text-yellow-500">Policy Guard</span>
+                      <p className="text-[10px] text-muted-foreground">Filtro Ético</p>
+                    </div>
+                  </div>
+
+                  {/* PostgreSQL */}
+                  <div className="flex items-center gap-4 group/item">
+                    <div className="w-8 h-8 rounded-full bg-primary/30 border-2 border-primary flex items-center justify-center z-10 group-hover/item:scale-110 transition-transform">
+                      <Database size={14} className="text-primary" />
+                    </div>
+                    <div className="flex-1 bg-primary/10 rounded-lg px-3 py-2 border border-primary/20">
+                      <span className="text-xs font-semibold text-primary">PostgreSQL</span>
+                      <p className="text-[10px] text-muted-foreground">Auditoria Completa</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </Card>
