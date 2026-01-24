@@ -97,6 +97,16 @@ export default function Home() {
   // Dados dos projetos
   const projects = [
     {
+      title: "TerezIA - Chatbot RAG Institucional",
+      description: "Assistente virtual completo para atendimento ao cidadão via Facebook/Instagram. Pipeline RAG + Policy Guard + Auditoria PostgreSQL. Integração Meta API com webhooks HMAC.",
+      technologies: ["Python", "FastAPI", "ChromaDB", "PostgreSQL", "Meta API", "Gemini"],
+      impact: "Case Real em Produção",
+      impactIcon: "🏆",
+      link: "https://github.com/diegosantos-ai/terezia-chatbot",
+      highlight: true,
+      featured: true,
+    },
+    {
       title: "Chatbot RAG Corporativo",
       description: "Chatbot com Retrieval-Augmented Generation, CI/CD (GitHub Actions) e monitoramento via MLflow.",
       technologies: ["Python", "LangChain", "OpenAI", "Docker", "MLflow"],
@@ -232,25 +242,25 @@ export default function Home() {
 
   // Skills por categoria
   const skills = [
-    { 
-      category: "Engenharia de Dados", 
+    {
+      category: "Engenharia de Dados",
       icon: Database,
-      items: ["ETL/ELT", "Pipeline Orchestration", "Data Modeling", "PostgreSQL", "MySQL"] 
+      items: ["ETL/ELT", "Pipeline Orchestration", "Data Modeling", "PostgreSQL", "MySQL"]
     },
-    { 
-      category: "Linguagens", 
+    {
+      category: "Linguagens",
       icon: Code,
-      items: ["Python", "SQL", "Git/GitHub", "TypeScript"] 
+      items: ["Python", "SQL", "Git/GitHub", "TypeScript"]
     },
-    { 
-      category: "Automação", 
+    {
+      category: "Automação",
       icon: Bot,
-      items: ["n8n", "Zapier", "Make", "GitHub Actions"] 
+      items: ["n8n", "Zapier", "Make", "GitHub Actions"]
     },
-    { 
-      category: "IA & LLMs", 
+    {
+      category: "IA & LLMs",
       icon: Brain,
-      items: ["OpenAI API", "LangChain", "Prompt Engineering", "NLP"] 
+      items: ["OpenAI API", "LangChain", "Prompt Engineering", "NLP"]
     },
   ];
 
@@ -296,7 +306,7 @@ export default function Home() {
             <a href="#education" className="text-sm link-underline text-muted-foreground hover:text-foreground transition-colors">Educação</a>
             <a href="#contact" className="text-sm link-underline text-muted-foreground hover:text-foreground transition-colors">Contato</a>
           </div>
-          <Button 
+          <Button
             size="sm"
             className="bg-primary hover:bg-primary/90 text-white gap-2"
             onClick={() => window.open("https://github.com/diegosantos-ai", "_blank")}
@@ -312,7 +322,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/5"></div>
         <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse-subtle"></div>
         <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-accent/20 rounded-full blur-3xl animate-pulse-subtle"></div>
-        
+
         <div className="container relative py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left: Text */}
@@ -322,16 +332,16 @@ export default function Home() {
                   <span className="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
                   Disponível para contratação
                 </div>
-                
+
                 <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
                   Diego Santos
                 </h1>
-                
+
                 <p className="text-2xl lg:text-3xl font-semibold gradient-text-animated">
                   Engenheiro de Dados
                 </p>
               </div>
-              
+
               <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
                 Combinando <span className="text-primary font-semibold">15+ anos de liderança</span> com expertise em <span className="text-accent font-semibold">pipelines de dados</span>, <span className="text-primary font-semibold">automação</span> e <span className="text-accent font-semibold">inteligência artificial</span>.
               </p>
@@ -344,14 +354,14 @@ export default function Home() {
               </p>
 
               <div className="flex flex-wrap gap-4 pt-4">
-                <Button 
+                <Button
                   size="lg"
                   className="bg-primary hover:bg-primary/90 text-white gap-2 card-hover"
                   onClick={() => window.open("https://github.com/diegosantos-ai", "_blank")}
                 >
                   <Github size={18} /> Ver GitHub
                 </Button>
-                <Button 
+                <Button
                   size="lg"
                   variant="outline"
                   className="border-primary text-primary hover:bg-primary/10 gap-2 card-hover"
@@ -359,7 +369,7 @@ export default function Home() {
                 >
                   <Linkedin size={18} /> LinkedIn
                 </Button>
-                <Button 
+                <Button
                   size="lg"
                   variant="outline"
                   className="border-accent text-accent hover:bg-accent/10 gap-2 card-hover"
@@ -378,21 +388,21 @@ export default function Home() {
                 </p>
                 <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">Anos de Liderança</p>
               </Card>
-              
+
               <Card className="bg-card/50 glass border-border p-6 card-hover card-glow-accent group">
                 <p className="text-5xl font-bold text-accent mb-2">
                   <AnimatedCounter end={146} />
                 </p>
                 <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">Contribuições/Ano</p>
               </Card>
-              
+
               <Card className="bg-card/50 glass border-border p-6 card-hover card-glow group">
                 <p className="text-5xl font-bold text-primary mb-2">
                   <AnimatedCounter end={15} suffix="+" />
                 </p>
                 <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">Certificações</p>
               </Card>
-              
+
               <Card className="bg-card/50 glass border-border p-6 card-hover card-glow-accent group">
                 <p className="text-5xl font-bold text-accent mb-2">
                   <AnimatedCounter end={7} />
@@ -418,10 +428,10 @@ export default function Home() {
               Diferenciais que me tornam um candidato único para posições de Engenharia de Dados
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {differentials.map((item, idx) => (
-              <Card 
+              <Card
                 key={idx}
                 className={`bg-card/50 glass border-border p-6 card-hover ${idx % 2 === 0 ? 'card-glow' : 'card-glow-accent'} text-center`}
               >
@@ -469,16 +479,16 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Projetos</h2>
             <p className="text-muted-foreground">
-              Soluções reais com impacto mensurável • 
+              Soluções reais com impacto mensurável •
               <a href="https://github.com/diegosantos-ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline ml-1">
                 Ver todos no GitHub →
               </a>
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, idx) => (
-              <Card 
+              <Card
                 key={idx}
                 className={`bg-card/50 glass border-border p-6 card-hover ${project.highlight ? 'card-glow-accent ring-1 ring-accent/30' : 'card-glow'} group cursor-pointer relative overflow-hidden`}
                 onClick={() => window.open(project.link, "_blank")}
@@ -488,14 +498,14 @@ export default function Home() {
                     ⭐ Fork recebido
                   </div>
                 )}
-                
+
                 <div className="flex items-start justify-between mb-4">
                   <h3 className="text-lg font-bold leading-tight pr-8">{project.title}</h3>
                   <ExternalLink size={16} className="text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
                 </div>
-                
+
                 <p className="text-sm text-muted-foreground mb-4">{project.description}</p>
-                
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech) => (
                     <span key={tech} className="text-xs badge-primary px-2 py-1 rounded">
@@ -503,7 +513,7 @@ export default function Home() {
                     </span>
                   ))}
                 </div>
-                
+
                 <div className="pt-4 border-t border-border flex items-center gap-2">
                   <span className="text-lg">{project.impactIcon}</span>
                   <p className="text-sm font-semibold text-accent">{project.impact}</p>
@@ -518,16 +528,16 @@ export default function Home() {
       <section id="experience" className="py-24 border-t border-border bg-card/30">
         <div className="container">
           <h2 className="text-4xl font-bold mb-12 text-center">Experiência Profissional</h2>
-          
+
           <div className="max-w-4xl mx-auto space-y-0">
             {experiences.map((exp, idx) => (
               <div key={idx} className="relative pl-8 pb-12 last:pb-0">
                 {/* Timeline line */}
                 <div className="absolute left-0 top-0 bottom-0 w-0.5 timeline-line"></div>
-                
+
                 {/* Timeline dot */}
                 <div className="absolute left-0 top-1 w-2.5 h-2.5 -translate-x-1 rounded-full bg-primary ring-4 ring-background"></div>
-                
+
                 <Card className="bg-card/50 glass border-border p-6 card-hover card-glow ml-4">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
                     <div>
@@ -542,7 +552,7 @@ export default function Home() {
                       <p className="text-xs text-accent">{exp.duration}</p>
                     </div>
                   </div>
-                  
+
                   <ul className="space-y-2">
                     {exp.highlights.map((highlight, hIdx) => (
                       <li key={hIdx} className="text-sm text-muted-foreground flex items-start gap-2">
@@ -565,7 +575,7 @@ export default function Home() {
             <h2 className="text-4xl font-bold mb-4">Educação & Certificações</h2>
             <p className="text-muted-foreground">7 formações acadêmicas • 15+ certificações técnicas</p>
           </div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Education */}
             <div>
@@ -601,7 +611,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            
+
             {/* Certifications */}
             <div>
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
@@ -624,7 +634,7 @@ export default function Home() {
                     )}
                   </Card>
                 ))}
-                
+
                 <p className="text-sm text-muted-foreground text-center pt-4">
                   + mais certificações IBM, Coursera e PUC-PR
                 </p>
@@ -645,20 +655,20 @@ export default function Home() {
               </span>
               <h2 className="text-4xl font-bold mb-4">Vamos Conversar?</h2>
               <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-                Estou em busca de oportunidades como <span className="text-primary font-semibold">Engenheiro de Dados</span>. 
+                Estou em busca de oportunidades como <span className="text-primary font-semibold">Engenheiro de Dados</span>.
                 Conecte-se comigo para discutir projetos, ideias ou oportunidades.
               </p>
             </div>
 
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button 
+              <Button
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-white gap-2 card-hover animate-glow"
                 onClick={() => window.location.href = "mailto:santos.diegoj86@gmail.com"}
               >
                 <Mail size={18} /> santos.diegoj86@gmail.com
               </Button>
-              <Button 
+              <Button
                 size="lg"
                 variant="outline"
                 className="border-primary text-primary hover:bg-primary/10 gap-2 card-hover"
@@ -666,7 +676,7 @@ export default function Home() {
               >
                 <Linkedin size={18} /> LinkedIn
               </Button>
-              <Button 
+              <Button
                 size="lg"
                 variant="outline"
                 className="border-accent text-accent hover:bg-accent/10 gap-2 card-hover"
@@ -695,7 +705,7 @@ export default function Home() {
       <footer className="py-8 border-t border-border text-center">
         <div className="container">
           <p className="text-sm text-muted-foreground">
-            © 2026 Diego Santos • Engenheiro de Dados • 
+            © 2026 Diego Santos • Engenheiro de Dados •
             <span className="gradient-text ml-2">Pipelines, Automação e IA</span>
           </p>
         </div>
