@@ -316,7 +316,7 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* Hero Section - Foco em "O que entrego" */}
       <section className="relative overflow-hidden min-h-[90vh] flex items-center">
         {/* Background gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/5"></div>
@@ -327,39 +327,50 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left: Text */}
             <div className="space-y-8 animate-fade-in-up">
-              <div className="space-y-4">
+              <div className="space-y-6">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full badge-accent text-sm">
                   <span className="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
                   Disponível para contratação
                 </div>
 
-                <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-                  Diego Santos
+                {/* H1 - Proposta de Valor (não nome) */}
+                <h1 className="text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight tracking-tight">
+                  <span className="text-foreground">Engenharia de Dados</span>
+                  <br />
+                  <span className="gradient-text">com Foco em Negócio</span>
                 </h1>
 
-                <p className="text-2xl lg:text-3xl font-semibold gradient-text-animated">
-                  Engenheiro de Dados
+                {/* H2 - O que entrego */}
+                <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-xl">
+                  Construo pipelines <span className="text-primary font-semibold">robustos</span>, <span className="text-accent font-semibold">automatizados</span> e focados em <span className="text-primary font-semibold">confiabilidade</span> para transformar dados brutos em decisões reais.
                 </p>
               </div>
 
-              <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
-                Combinando <span className="text-primary font-semibold">15+ anos de liderança</span> com expertise em <span className="text-accent font-semibold">pipelines de dados</span>, <span className="text-primary font-semibold">automação</span> e <span className="text-accent font-semibold">inteligência artificial</span>.
-              </p>
+              {/* Credenciais rápidas */}
+              <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+                <span className="flex items-center gap-2">
+                  <CheckCircle size={16} className="text-accent" />
+                  15+ anos de experiência
+                </span>
+                <span className="flex items-center gap-2">
+                  <MapPin size={16} className="text-primary" />
+                  100% Remoto
+                </span>
+                <span className="flex items-center gap-2">
+                  <Globe size={16} className="text-accent" />
+                  Inglês C1
+                </span>
+              </div>
 
-              <p className="text-base text-muted-foreground leading-relaxed max-w-lg flex items-center gap-2">
-                <MapPin size={16} className="text-primary" />
-                Francisco Beltrão, PR • 100% Remoto
-                <Globe size={16} className="text-accent ml-2" />
-                Inglês C1
-              </p>
-
-              <div className="flex flex-wrap gap-4 pt-4">
+              {/* CTAs - Diretos e Acionáveis */}
+              <div className="flex flex-wrap gap-4 pt-2">
                 <Button
                   size="lg"
-                  className="bg-primary hover:bg-primary/90 text-white gap-2 card-hover"
-                  onClick={() => window.open("https://github.com/diegosantos-ai", "_blank")}
+                  className="bg-primary hover:bg-primary/90 text-white gap-2 card-hover text-base px-8"
+                  onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  <Github size={18} /> Ver GitHub
+                  <Code size={18} />
+                  Ver Projetos
                 </Button>
                 <Button
                   size="lg"
@@ -367,15 +378,17 @@ export default function Home() {
                   className="border-primary text-primary hover:bg-primary/10 gap-2 card-hover"
                   onClick={() => window.open("https://linkedin.com/in/diego-santos-ia", "_blank")}
                 >
-                  <Linkedin size={18} /> LinkedIn
+                  <Linkedin size={18} />
+                  LinkedIn
                 </Button>
                 <Button
                   size="lg"
-                  variant="outline"
-                  className="border-accent text-accent hover:bg-accent/10 gap-2 card-hover"
+                  variant="ghost"
+                  className="text-muted-foreground hover:text-foreground gap-2"
                   onClick={() => window.location.href = "mailto:santos.diegoj86@gmail.com"}
                 >
-                  <Mail size={18} /> Contato
+                  <Mail size={18} />
+                  Email
                 </Button>
               </div>
             </div>
