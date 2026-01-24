@@ -40,7 +40,7 @@ jobs:
              export VITE_BASE_PATH="/${{ github.event.repository.name }}/"
            fi
            echo "Base Path set to: $VITE_BASE_PATH"
-           pnpm run build
+           npx vite build
            echo "Listing build output:"
            ls -R dist
 
