@@ -324,6 +324,7 @@ export default function Home() {
           <div className="font-bold text-xl tracking-tight gradient-text">DS</div>
           <div className="hidden md:flex gap-8">
             <a href="#about" className="text-sm link-underline text-muted-foreground hover:text-foreground transition-colors">Sobre</a>
+            <a href="/artigos" className="text-sm link-underline text-muted-foreground hover:text-foreground transition-colors">Blog</a>
             <a href="#projects" className="text-sm link-underline text-muted-foreground hover:text-foreground transition-colors">Projetos</a>
             <a href="#experience" className="text-sm link-underline text-muted-foreground hover:text-foreground transition-colors">Experiência</a>
             <a href="#education" className="text-sm link-underline text-muted-foreground hover:text-foreground transition-colors">Educação</a>

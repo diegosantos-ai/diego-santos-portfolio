@@ -5,6 +5,8 @@ import { Route, Switch, Router as WouterRouter } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import Articles from "./pages/Articles";
+import ArticlePost from "./pages/ArticlePost";
 
 // Base path para GitHub Pages (preenchido pelo Vite durante o build)
 const basePath = import.meta.env.BASE_URL || "/";
@@ -13,6 +15,8 @@ function Routes() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/artigos"} component={Articles} />
+      <Route path={"/artigos/:slug"} component={ArticlePost} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
