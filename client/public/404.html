@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diego Santos - Portfolio</title>
+    <script>
+        // Redirect to index with the path as a query parameter
+        // This enables client-side routing on GitHub Pages
+        const path = window.location.pathname;
+        const search = window.location.search;
+        const hash = window.location.hash;
+
+        // Redirect to root, the SPA will handle routing
+        window.location.replace(
+            window.location.origin +
+            window.location.pathname.split('/').slice(0, 2).join('/') +
+            '/' +
+            (path || '') +
+            (search || '') +
+            (hash || '')
+        );
+    </script>
+</head>
+
+<body>
+    <p>Redirecionando...</p>
+</body>
+
+</html>
