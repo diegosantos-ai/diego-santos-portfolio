@@ -35,14 +35,16 @@ jobs:
       - name: Build
         run: |
            if [[ "${{ github.event.repository.name }}" == *.github.io ]]; then
-             export VITE_BASE_PATH="/"
+             BASE_PATH="/"
            else
-             export VITE_BASE_PATH="/${{ github.event.repository.name }}/"
+             BASE_PATH="/${{ github.event.repository.name }}/"
            fi
-           echo "Base Path set to: $VITE_BASE_PATH"
-           npx vite build
+           echo "Base Path set to: $BASE_PATH"
+           npx vite build --base="$BASE_PATH"
            echo "Listing build output:"
            ls -R dist
+           echo "Checking index.html paths:"
+           head -50 dist/index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
