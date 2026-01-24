@@ -42,12 +42,12 @@ jobs:
            echo "Base Path set to: $VITE_BASE_PATH"
            pnpm run build
            echo "Listing build output:"
-           ls -R dist/public
+           ls -R dist
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist/public
+          path: ./dist
 
   deploy:
     environment:
