@@ -41,6 +41,8 @@ jobs:
            fi
            echo "Base Path set to: $VITE_BASE_PATH"
            pnpm run build
+           echo "Listing build output:"
+           ls -R dist/public
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
