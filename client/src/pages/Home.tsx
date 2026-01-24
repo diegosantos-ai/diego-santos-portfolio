@@ -231,13 +231,36 @@ export default function Home() {
     },
   ];
 
-  // Certificações principais
+  // Certificações principais (4 em destaque)
   const certifications = [
-    { name: "IBM Data Engineering", issuer: "IBM", count: 7, icon: "🔵" },
-    { name: "Prompt Engineering", issuer: "Vanderbilt", icon: "🎓" },
-    { name: "Inglês C1 Avançado", issuer: "EF SET", score: "70/100", icon: "🌐" },
-    { name: "Imersão IA", issuer: "Alura/Google", icon: "🤖" },
-    { name: "Jornada Python", issuer: "Hashtag", icon: "🐍" },
+    {
+      name: "Engenharia de Dados",
+      issuer: "IBM / Coursera",
+      icon: "🔵",
+      description: "Certificado Profissional",
+      link: "https://www.coursera.org/professional-certificates/ibm-data-engineer"
+    },
+    {
+      name: "Engenharia de Prompt",
+      issuer: "Vanderbilt / Coursera",
+      icon: "🎓",
+      description: "Especialização",
+      link: "https://www.coursera.org/specializations/prompt-engineering"
+    },
+    {
+      name: "Python para IA",
+      issuer: "IBM / Coursera",
+      icon: "🐍",
+      description: "Ciência de Dados e Desenvolvimento",
+      link: "https://www.coursera.org/learn/python-for-applied-data-science-ai"
+    },
+    {
+      name: "Inglês C1 Avançado",
+      issuer: "EF SET",
+      icon: "🌐",
+      score: "70/100",
+      link: "https://cert.efset.org/en/oCVGnT"
+    },
   ];
 
   // Skills por categoria
@@ -796,24 +819,38 @@ export default function Home() {
               </h3>
               <div className="space-y-4">
                 {certifications.map((cert, idx) => (
-                  <Card key={idx} className="bg-card/50 glass border-border p-5 card-hover card-glow-accent flex items-center gap-4">
+                  <Card
+                    key={idx}
+                    className="bg-card/50 glass border-border p-5 card-hover card-glow-accent flex items-center gap-4 cursor-pointer group"
+                    onClick={() => window.open(cert.link, "_blank")}
+                  >
                     <div className="text-3xl">{cert.icon}</div>
                     <div className="flex-1">
-                      <h4 className="font-bold">{cert.name}</h4>
+                      <h4 className="font-bold group-hover:text-accent transition-colors">{cert.name}</h4>
                       <p className="text-sm text-muted-foreground">{cert.issuer}</p>
+                      {cert.description && (
+                        <p className="text-xs text-muted-foreground/70 mt-1">{cert.description}</p>
+                      )}
                     </div>
-                    {cert.count && (
-                      <span className="text-xs badge-primary px-2 py-1 rounded-full">{cert.count} cursos</span>
-                    )}
                     {cert.score && (
                       <span className="text-xs badge-accent px-2 py-1 rounded-full">{cert.score}</span>
                     )}
+                    <ExternalLink size={14} className="text-muted-foreground group-hover:text-accent transition-colors" />
                   </Card>
                 ))}
 
-                <p className="text-sm text-muted-foreground text-center pt-4">
-                  + mais certificações IBM, Coursera e PUC-PR
-                </p>
+                {/* Link para todos os certificados */}
+                <div className="pt-4 text-center">
+                  <Button
+                    variant="outline"
+                    className="border-accent text-accent hover:bg-accent/10 gap-2"
+                    onClick={() => window.open("https://drive.google.com/drive/folders/1CYRrS1b2TtFZ35KXU-5stbVr0XgKhCDQ?usp=sharing", "_blank")}
+                  >
+                    <Download size={16} />
+                    Ver todos os certificados
+                    <ExternalLink size={14} />
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
