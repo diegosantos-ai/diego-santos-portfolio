@@ -820,6 +820,55 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Fase 3: Como Posso Contribuir - Design Minimalista */}
+      <section className="py-20 border-t border-border">
+        <div className="container">
+          <div className="max-w-3xl mx-auto">
+            {/* Layout minimalista com tipografia limpa */}
+            <div className="grid grid-cols-1 md:grid-cols-[1fr,auto] gap-12 items-center">
+
+              {/* Texto */}
+              <div className="space-y-6">
+                <h2 className="text-3xl font-bold text-foreground">
+                  Como posso contribuir
+                </h2>
+                <p className="text-muted-foreground leading-relaxed text-lg">
+                  Atuação focada em <span className="text-foreground font-medium">engenharia de dados</span>:
+                  ingestão, automação, qualidade e modelagem para analytics.
+                  Trago bagagem de gestão para garantir que a solução técnica resolva
+                  o <span className="text-foreground font-medium">problema de negócio real</span>,
+                  com comunicação direta e sem over-engineering.
+                </p>
+
+                {/* Competências em linha - minimalista */}
+                <div className="flex flex-wrap gap-3 pt-2">
+                  <span className="text-sm text-muted-foreground bg-secondary/50 px-3 py-1 rounded-full">Pipelines ETL</span>
+                  <span className="text-sm text-muted-foreground bg-secondary/50 px-3 py-1 rounded-full">Automação</span>
+                  <span className="text-sm text-muted-foreground bg-secondary/50 px-3 py-1 rounded-full">Data Quality</span>
+                  <span className="text-sm text-muted-foreground bg-secondary/50 px-3 py-1 rounded-full">IA & LLMs</span>
+                </div>
+              </div>
+
+              {/* CTA WhatsApp - Sério e Profissional */}
+              <div className="flex flex-col items-center gap-4">
+                <Button
+                  size="lg"
+                  className="bg-[#25D366] hover:bg-[#20BD5A] text-white gap-3 px-8 py-6 text-base font-medium shadow-lg hover:shadow-xl transition-all"
+                  onClick={() => window.open("https://wa.me/5545999298275?text=Olá Diego, vi seu portfólio e gostaria de conversar.", "_blank")}
+                >
+                  <MessageSquare size={20} />
+                  Iniciar Conversa
+                </Button>
+                <span className="text-xs text-muted-foreground">
+                  (45) 99929-8275
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="py-24 border-t border-border bg-gradient-to-b from-card/30 to-background">
         <div className="container">
