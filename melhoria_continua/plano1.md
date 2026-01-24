@@ -31,35 +31,36 @@ Remover passividade.
   - **Botão Secundário:** LinkedIn / Email
   - **Regra de Ouro:** Remover qualquer botão "Saiba mais".
 
-## ✅ Fase 2: O Projeto Âncora (CNPJ)
+## ✅ Fase 2: O Projeto Âncora (TerezIA)
 
-**Meta:** Provar senioridade técnica através da narrativa, não apenas do código. Tratar o projeto como um case de engenharia.
+**Meta:** Provar senioridade técnica através de um case real em produção. Tratar o projeto como case de engenharia de IA conversacional.
 
-### 2.1 Estrutura Visual da Página do Projeto
+### 2.1 Estrutura Visual da Seção Case
 
-O agente deve inserir estes blocos **antes** de mostrar qualquer linha de código.
+O agente deve inserir uma seção de destaque **após o Hero** e **antes da seção de diferenciais**.
 
 #### Bloco A: Contexto de Negócio
 
-**Título:** O Desafio dos Dados Públicos
+**Título:** O Desafio do Atendimento Público
 
 **Texto:**
 
-Dados públicos de CNPJ são volumosos, inconsistentes e nativamente inviáveis para análise direta. O desafio deste projeto não foi apenas a ingestão, mas garantir a confiabilidade dos dados e uma evolução segura da base (schema evolution) sem quebrar o consumo na ponta.
+Instituições públicas recebem centenas de perguntas repetitivas diariamente. O desafio não foi apenas criar um chatbot, mas garantir respostas precisas e auditáveis, com proteção ética (Policy Guard) e integração real com Facebook/Instagram via Meta API.
 
-#### Bloco B: Decisões de Arquitetura (O "Pulo do Gato")
+#### Bloco B: Arquitetura RAG
 
-*Solicitar ao agente que gere um gráfico Mermaid.js com este fluxo:*
+*Diagrama visual com fluxo:*
 
-`Fonte Bruta (Receita) -> Ingestão (Python) -> Bronze (Raw) -> Tratamento/Qualidade -> Silver (Trusted) -> Postgres/Analytics`
+`Mensagem → Meta Webhook → FastAPI → RAG (ChromaDB) → Gemini → Policy Guard → Resposta Auditada → PostgreSQL`
 
-#### Bloco C: Decisões de Engenharia (Bullet Points)
+#### Bloco C: Destaques Técnicos
 
-**Destaques Técnicos:**
+**Impacto e Diferenciais:**
 
-  - **Pipeline Faseado:** Redução de risco e facilidade de debug.
-  - **Carga Incremental:** Lógica baseada no estado atual do banco para evitar reprocessamento total.
-  - **Tratamento de Falhas:** Dados parciais são tratados explicitamente como exceção controlada, não como erro silencioso.
+  - **Pipeline RAG completo:** Embeddings + busca semântica + geração contextualizada.
+  - **Policy Guard:** Filtro ético que bloqueia respostas fora do escopo institucional.
+  - **Auditoria total:** 100% das interações logadas no PostgreSQL para compliance.
+  - **Integração real:** Webhooks HMAC com Meta API validados em produção.
 
 ## ✅ Fase 3: Conversão Silenciosa
 

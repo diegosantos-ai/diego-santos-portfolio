@@ -432,6 +432,116 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Case de Sucesso - TerezIA (Chamariz para Recrutador) */}
+      <section className="py-24 border-t border-border bg-gradient-to-b from-primary/5 via-background to-accent/5 relative overflow-hidden">
+        {/* Background decorativo */}
+        <div className="absolute top-0 right-0 w-72 h-72 bg-accent/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+
+        <div className="container relative">
+          {/* Header da seção */}
+          <div className="text-center mb-12 animate-fade-in-up">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 text-accent text-sm font-medium mb-4">
+              🏆 Case Real em Produção
+            </span>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+              <span className="gradient-text">TerezIA</span> — Chatbot RAG Institucional
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Assistente virtual para atendimento ao cidadão via Facebook/Instagram com IA generativa, proteção ética e auditoria completa.
+            </p>
+          </div>
+
+          {/* Grid de 3 Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+
+            {/* Bloco A: O Desafio */}
+            <Card className="bg-card/50 glass border-border p-8 card-hover card-glow group">
+              <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Briefcase size={24} className="text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-primary mb-4">O Desafio</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Instituições públicas recebem centenas de perguntas repetitivas diariamente.
+                Era preciso um assistente que respondesse com <span className="text-foreground font-medium">precisão</span>,
+                <span className="text-foreground font-medium"> ética</span> e
+                <span className="text-foreground font-medium"> auditabilidade</span>.
+              </p>
+            </Card>
+
+            {/* Bloco B: Arquitetura RAG */}
+            <Card className="bg-card/50 glass border-border p-8 card-hover card-glow-accent group">
+              <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Brain size={24} className="text-accent" />
+              </div>
+              <h3 className="text-xl font-bold text-accent mb-4">Arquitetura RAG</h3>
+              <div className="space-y-3 text-sm">
+                <div className="flex items-center gap-3 text-muted-foreground">
+                  <span className="w-2 h-2 bg-primary rounded-full"></span>
+                  <span>Meta Webhook → FastAPI</span>
+                </div>
+                <div className="flex items-center gap-3 text-muted-foreground">
+                  <span className="w-2 h-2 bg-accent rounded-full"></span>
+                  <span>RAG (ChromaDB + Embeddings)</span>
+                </div>
+                <div className="flex items-center gap-3 text-muted-foreground">
+                  <span className="w-2 h-2 bg-primary rounded-full"></span>
+                  <span>Gemini Generation</span>
+                </div>
+                <div className="flex items-center gap-3 text-muted-foreground">
+                  <span className="w-2 h-2 bg-accent rounded-full"></span>
+                  <span>Policy Guard (Ética)</span>
+                </div>
+                <div className="flex items-center gap-3 text-muted-foreground">
+                  <span className="w-2 h-2 bg-primary rounded-full"></span>
+                  <span>Auditoria PostgreSQL</span>
+                </div>
+              </div>
+            </Card>
+
+            {/* Bloco C: Impacto */}
+            <Card className="bg-card/50 glass border-border p-8 card-hover card-glow group">
+              <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <CheckCircle size={24} className="text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-primary mb-4">Impacto Técnico</h3>
+              <ul className="space-y-3 text-sm">
+                <li className="flex items-start gap-2 text-muted-foreground">
+                  <CheckCircle size={16} className="text-accent flex-shrink-0 mt-0.5" />
+                  <span>Pipeline RAG completo funcionando</span>
+                </li>
+                <li className="flex items-start gap-2 text-muted-foreground">
+                  <CheckCircle size={16} className="text-accent flex-shrink-0 mt-0.5" />
+                  <span>Policy Guard bloqueando off-topic</span>
+                </li>
+                <li className="flex items-start gap-2 text-muted-foreground">
+                  <CheckCircle size={16} className="text-accent flex-shrink-0 mt-0.5" />
+                  <span>100% das interações auditadas</span>
+                </li>
+                <li className="flex items-start gap-2 text-muted-foreground">
+                  <CheckCircle size={16} className="text-accent flex-shrink-0 mt-0.5" />
+                  <span>Integração Meta API validada</span>
+                </li>
+              </ul>
+            </Card>
+
+          </div>
+
+          {/* CTA para GitHub */}
+          <div className="text-center">
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-white gap-2 card-hover"
+              onClick={() => window.open("https://github.com/diegosantos-ai/terezia-chatbot", "_blank")}
+            >
+              <Github size={18} />
+              Ver Código no GitHub
+              <ExternalLink size={14} />
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* About / Differentials Section */}
       <section id="about" className="py-24 border-t border-border">
         <div className="container">
