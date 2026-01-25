@@ -33,7 +33,7 @@ jobs:
 
       # 3. Instalar dependências
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile --prefer-offline
 
       # 4. Build
       - name: Build
