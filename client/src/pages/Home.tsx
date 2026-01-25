@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import GitHubActivity from "@/components/GitHubActivity";
 import {
   Github,
   Linkedin,
@@ -908,6 +909,13 @@ export default function Home() {
 
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* GitHub Activity Section */}
+      <section className="py-20 border-t border-border">
+        <div className="container max-w-4xl">
+          <GitHubActivity />
         </div>
       </section>
 
