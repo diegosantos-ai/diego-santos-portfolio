@@ -21,30 +21,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # PNPM deve ser instalado ANTES do setup-node para que o cache funcione
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: "10.4.1"
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "pnpm"
+
+      - name: Enable Corepack and install pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@10.4.1 --activate
 
       - name: Install dependencies
         run: pnpm install
 
       - name: Build
         run: |
-           if [[ "${{ github.event.repository.name }}" == *.github.io ]]; then
-             BASE_PATH="/"
-           else
-             BASE_PATH="/${{ github.event.repository.name }}/"
-           fi
-           echo "Base Path set to: $BASE_PATH"
-           npx vite build --base="$BASE_PATH"
+          if [[ "${{ github.event.repository.name }}" == *.github.io ]]; then
+            BASE_PATH="/"
+          else
+            BASE_PATH="/${{ github.event.repository.name }}/"
+          fi
+          npx vite build --base="$BASE_PATH"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
