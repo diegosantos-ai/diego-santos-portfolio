@@ -5,9 +5,6 @@ trigger: always_on
 # GEMINI.md - Antigravity Kit
 
 > This file defines how the AI behaves in this workspace.
-> Access architecture rules at `docs/ARCHITECTURE.md`. THIS IS MANDATORY.
-> Access project context at `docs/CONTEXT.md`.
-> Access project progress at `docs/progresso.md` (single source of truth).
 
 ---
 
@@ -125,11 +122,11 @@ When user's prompt is NOT in English:
 
 ### 🗺️ System Map Read
 
-> 🔴 **MANDATORY:** Read `docs/ARCHITECTURE.md` at session start to understand project structure.
+> 🔴 **MANDATORY:** Read `ARCHITECTURE.md` at session start to understand Agents, Skills, and Scripts.
 
 **Path Awareness:**
 
-- Agents: `.agent/agents/` (Project)
+- Agents: `.agent/` (Project)
 - Skills: `.agent/skills/` (Project)
 - Runtime Scripts: `.agent/skills/<skill>/scripts/`
 
@@ -179,13 +176,13 @@ When user's prompt is NOT in English:
 **Protocol:**
 
 1. **Never Assume:** If even 1% is unclear, ASK.
-2. **Handle Spec-heavy Requests:** When user gives a list (Answers 1, 2, 3...), do NOT skip the gate. Instead, ask about **Trade-offs** or **Edge Cases** before starting.
+2. **Handle Spec-heavy Requests:** When user gives a list (Answers 1, 2, 3...), do NOT skip the gate. Instead, ask about **Trade-offs** or **Edge Cases** (e.g., "LocalStorage confirmed, but should we handle data clearing or versioning?") before starting.
 3. **Wait:** Do NOT invoke subagents or write code until the user clears the Gate.
 4. **Reference:** Full protocol in `@[skills/brainstorming]`.
 
 ### 🏁 Final Checklist Protocol
 
-**Trigger:** When the user says "son kontrolleri yap", "final checks", "checar tudo", or similar phrases.
+**Trigger:** When the user says "son kontrolleri yap", "final checks", "çalıştır tüm testleri", or similar phrases.
 
 | Task Stage       | Command                                            | Purpose                        |
 | ---------------- | -------------------------------------------------- | ------------------------------ |
@@ -243,10 +240,10 @@ When user's prompt is NOT in English:
 
 > **Design rules are in the specialist agents, NOT here.**
 
-| Task         | Read                                    |
-| ------------ | --------------------------------------- |
-| Web UI/UX    | `.agent/agents/frontend-specialist.md`  |
-| Mobile UI/UX | `.agent/agents/mobile-developer.md`     |
+| Task         | Read                            |
+| ------------ | ------------------------------- |
+| Web UI/UX    | `.agent/frontend-specialist.md` |
+| Mobile UI/UX | `.agent/mobile-developer.md`    |
 
 **These agents contain:**
 

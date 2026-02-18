@@ -5,7 +5,7 @@
 
 ---
 
-## Fase Atual: Padronização e Organização (Fase 2)
+## Fase Atual: Portfólio Vivo (Fase 5)
 
 ---
 
@@ -50,10 +50,10 @@
 - [x] Criar `vercel.json` — build estático, SPA routing, pnpm (2026-02-18)
 - [x] Adicionar script `build:client` no package.json (2026-02-18)
 - [x] Domínio definido — `diegosantos.me` (GitHub Student Pack, 1 ano free) (2026-02-18)
-- [ ] Push para GitHub e importar projeto no Vercel
-- [ ] Adicionar domínio `diegosantos.me` no painel Vercel
-- [ ] Configurar DNS no registrador (Namecheap) com os registros do Vercel
-- [ ] Validar deploy em `https://diegosantos.me`
+- [x] Push para GitHub e importar projeto no Vercel (2026-02-18)
+- [x] Adicionar domínio `diegosantos.me` no painel Vercel (2026-02-18)
+- [x] Configurar DNS no registrador (Namecheap) com os registros do Vercel (2026-02-18)
+- [x] Validar deploy em `https://diegosantos.me` (2026-02-18) ✅ LIVE
 
 ---
 
@@ -103,3 +103,4 @@
 |------|---------|-----------|
 | 2026-02-18 | Setup técnico inicial | `pnpm dev` funcional |
 | 2026-02-18 | Padronização conforme playbook — docs criados, GEMINI.md e agents sincronizados | Estrutura de pastas validada |
+| 2026-02-18 | Deploy Vercel + domínio diegosantos.me configurado | https://diegosantos.me acessível |

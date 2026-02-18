@@ -406,6 +406,16 @@
   background: linear-gradient(180deg, #0066FF, #00FF88);
 }
 
+/* Cursor blink — hero */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink 1.2s step-end infinite;
+}
+
 /* Scroll smooth */
 html {
   scroll-behavior: smooth;

@@ -1,7 +1,5 @@
-import { useState, useEffect, useRef } from "react";
-import { useLocation } from "wouter";
+import type { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 
 import {
   Github,
@@ -11,162 +9,93 @@ import {
   Download,
   GraduationCap,
   Award,
-  Briefcase,
-  Code,
-  Database,
-  Bot,
-  Brain,
+  ArrowRight,
   MessageSquare,
-  ChevronDown,
   MapPin,
   Globe,
-  CheckCircle,
-  ArrowLeft,
-  Cloud,
-  GitBranch,
-  Layers,
-  Settings,
 } from "lucide-react";
 
 /**
- * Portfólio Diego Santos - Engenheiro de Dados
- * Design: Minimalismo Técnico com Acentos Dinâmicos
- * Cores: #0a0a0a (fundo), #0066FF (primário), #00FF88 (accent)
+ * Portfólio Diego Santos — Engenheiro de Dados
+ * Design: Editorial Técnico
+ * - Zero glassmorphism / floating blobs
+ * - Tipografia IBM Plex Mono (headings) + Inter (body)
+ * - Bordas sharp 1px, sem card-glow
+ * - Layout editorial com labels monospace
  */
 
-// Componente contador animado
-function AnimatedCounter({ end, duration = 2000, suffix = "" }: { end: number; duration?: number; suffix?: string }) {
-  const [count, setCount] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!isVisible) return;
-
-    let startTime: number;
-    const step = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / duration, 1);
-      setCount(Math.floor(progress * end));
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      }
-    };
-    requestAnimationFrame(step);
-  }, [isVisible, end, duration]);
-
-  return <span ref={ref}>{count}{suffix}</span>;
-}
-
-// Hook para animação ao scroll
-function useScrollAnimation() {
-  const ref = useRef<HTMLElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  return { ref, isVisible };
+function SectionDivider({ label, extra }: { label: string; extra?: ReactNode }) {
+  return (
+    <div className="flex items-center gap-4 mb-12">
+      <p className="font-mono text-xs text-muted-foreground tracking-[0.2em] uppercase whitespace-nowrap">
+        // {label}
+      </p>
+      <div className="flex-1 border-t border-border" />
+      {extra}
+    </div>
+  );
 }
 
 export default function Home() {
-  const [, setLocation] = useLocation();
-
-  // Dados dos projetos
   const projects = [
     {
-      title: "TerezIA - Chatbot RAG Institucional",
-      description: "Assistente virtual completo para atendimento ao cidadão via Facebook/Instagram. Pipeline RAG + Policy Guard + Auditoria PostgreSQL. Integração Meta API com webhooks HMAC.",
+      title: "TerezIA — Chatbot RAG Institucional",
+      description:
+        "Assistente virtual para atendimento ao cidadão via Facebook/Instagram. Pipeline RAG + Policy Guard + Auditoria PostgreSQL. Integração Meta API com webhooks HMAC.",
       technologies: ["Python", "FastAPI", "ChromaDB", "PostgreSQL", "Meta API", "Gemini"],
       impact: "Case Real em Produção",
-      impactIcon: "🏆",
       link: "https://github.com/diegosantos-ai/terezia-chatbot",
-      highlight: true,
-      featured: true,
     },
     {
       title: "Chatbot RAG Corporativo",
-      description: "Chatbot com Retrieval-Augmented Generation, CI/CD (GitHub Actions) e monitoramento via MLflow.",
+      description:
+        "RAG com CI/CD via GitHub Actions e monitoramento MLflow. Respostas precisas sobre base interna de conhecimento.",
       technologies: ["Python", "LangChain", "OpenAI", "Docker", "MLflow"],
-      impact: "80% redução tempo resposta",
-      impactIcon: "⚡",
+      impact: "80% ↓ tempo resposta",
       link: "https://github.com/diegosantos-ai/chatbot-rag-corporate",
     },
     {
       title: "Pipeline de Dados CNPJ",
-      description: "Pipeline ETL automatizado com validação de qualidade, tratamento de erros e logging estruturado.",
+      description:
+        "ETL automatizado com validação de qualidade, tratamento de erros e logging estruturado.",
       technologies: ["Python", "Pandas", "PostgreSQL", "Logging"],
       impact: "4h/dia automatizadas",
-      impactIcon: "🔄",
       link: "https://github.com/diegosantos-ai/cnpj-data-pipeline",
     },
     {
       title: "Analisador de Sentimento PT-BR",
-      description: "Aplicação Streamlit para análise de sentimento em português brasileiro usando NLP.",
+      description:
+        "Análise de sentimento em português brasileiro com NLP. Interface Streamlit para visualização em tempo real.",
       technologies: ["Python", "Streamlit", "NLP", "Scikit-learn"],
       impact: "1000 msgs/dia",
-      impactIcon: "📊",
       link: "https://github.com/diegosantos-ai/cx-sentiment-analyzer-ptbr",
-      highlight: true,
     },
     {
       title: "Sistema de Vagas com IA",
-      description: "Automação que coleta, estrutura e prioriza vagas com IA. Integração com Notion.",
+      description:
+        "Coleta, estrutura e prioriza vagas com IA. Integração com Notion para gestão pessoal.",
       technologies: ["Python", "n8n", "OpenAI", "Notion API"],
-      impact: "70% redução triagem",
-      impactIcon: "🎯",
+      impact: "70% ↓ triagem",
       link: "https://github.com/diegosantos-ai/pega-vagas",
     },
     {
       title: "CRM MVP com Consultor IA",
-      description: "CRM com interface Streamlit, PostgreSQL e consultor IA integrado para geração de propostas.",
+      description:
+        "CRM com Streamlit, PostgreSQL e consultor IA para geração de propostas comerciais.",
       technologies: ["Python", "Streamlit", "PostgreSQL", "OpenAI"],
-      impact: "2 semanas MVP",
-      impactIcon: "🚀",
+      impact: "MVP em 2 semanas",
       link: "https://github.com/diegosantos-ai/nexo-basis-crm",
     },
     {
       title: "Análise de Churn",
-      description: "Modelagem de churn com Scikit-learn. Identificação de padrões de comportamento.",
+      description:
+        "Modelagem com Scikit-learn para identificação de padrões de comportamento e predição de churn.",
       technologies: ["Python", "Pandas", "Scikit-learn", "Matplotlib"],
-      impact: "8% redução taxa",
-      impactIcon: "📉",
+      impact: "8% ↓ taxa churn",
       link: "https://github.com/diegosantos-ai/churn-analysis",
     },
   ];
 
-  // Dados das experiências
   const experiences = [
     {
       role: "Propagandista Consultor",
@@ -182,7 +111,6 @@ export default function Home() {
     {
       role: "Executivo de Vendas",
       company: "iFood",
-      companyLogo: "🟠",
       period: "Fev 2021 – Set 2022",
       duration: "1 ano 8 meses",
       highlights: [
@@ -194,7 +122,6 @@ export default function Home() {
     {
       role: "Gerente Comercial",
       company: "Fachini Machinery (EUA)",
-      companyLogo: "🇺🇸",
       period: "Fev 2015 – Jan 2017",
       duration: "2 anos",
       highlights: [
@@ -205,799 +132,631 @@ export default function Home() {
     },
   ];
 
-  // Dados de educação
   const education = [
     {
       degree: "Pós-grad. Ciência de Dados e IA",
       institution: "Anhanguera",
-      period: "Jun/2025 - Abr/2026",
-      status: "in-progress",
-      highlights: ["Python", "Machine Learning", "Deep Learning", "NLP", "Big Data"],
+      period: "Jun/2025 – Abr/2026",
+      status: "in-progress" as const,
     },
     {
       degree: "Pós-grad. Liderança Ágil",
       institution: "PUC-PR",
-      period: "Set/2024 - Dez/2025",
-      status: "completed",
+      period: "Set/2024 – Dez/2025",
       grade: "8,8",
-      highlights: ["Design Sprint", "Design Thinking", "Gestão Remota"],
     },
     {
       degree: "Tecnólogo Análise de Sistemas",
       institution: "FAG",
-      period: "Out/2022 - Dez/2024",
-      status: "completed",
+      period: "Out/2022 – Dez/2024",
       grade: "8,6",
-      highlights: ["Web", "Mobile", "Banco de Dados"],
     },
     {
       degree: "Bacharelado Administração",
       institution: "FAG",
-      period: "2019 - 2022",
-      status: "completed",
+      period: "2019 – 2022",
       grade: "9,0",
-      highlights: ["Gestão", "Finanças", "Marketing"],
     },
   ];
 
-  // Certificações principais (4 em destaque)
   const certifications = [
     {
       name: "Engenharia de Dados",
       issuer: "IBM / Coursera",
-      icon: "🔵",
-      description: "Certificado Profissional",
-      link: "https://www.coursera.org/professional-certificates/ibm-data-engineer"
+      link: "https://www.coursera.org/professional-certificates/ibm-data-engineer",
     },
     {
       name: "Engenharia de Prompt",
       issuer: "Vanderbilt / Coursera",
-      icon: "🎓",
-      description: "Especialização",
-      link: "https://www.coursera.org/specializations/prompt-engineering"
+      link: "https://www.coursera.org/specializations/prompt-engineering",
     },
     {
       name: "Python para IA",
       issuer: "IBM / Coursera",
-      icon: "🐍",
-      description: "Ciência de Dados e Desenvolvimento",
-      link: "https://www.coursera.org/learn/python-for-applied-data-science-ai"
+      link: "https://www.coursera.org/learn/python-for-applied-data-science-ai",
     },
     {
       name: "Inglês C1 Avançado",
-      issuer: "EF SET",
-      icon: "🌐",
-      score: "70/100",
-      link: "https://cert.efset.org/en/oCVGnT"
+      issuer: "EF SET · 70/100",
+      link: "https://cert.efset.org/en/oCVGnT",
     },
   ];
 
-  // Skills por categoria
   const skills = [
     {
-      category: "Engenharia de Dados",
-      icon: Database,
-      items: ["ETL/ELT", "dbt", "Airflow", "PostgreSQL", "pgvector", "Data Modeling"]
+      category: "Dados",
+      items: ["ETL/ELT", "dbt", "Airflow", "PostgreSQL", "pgvector", "Data Modeling"],
     },
     {
-      category: "Cloud & Infra",
-      icon: Cloud,
-      items: ["AWS (EC2, S3, Lambda, RDS)", "Docker", "Linux", "CI/CD", "CloudWatch"]
+      category: "Cloud",
+      items: ["AWS (EC2, S3, Lambda, RDS)", "Docker", "Linux", "CI/CD", "CloudWatch"],
     },
     {
-      category: "Automação & DevOps",
-      icon: GitBranch,
-      items: ["GitHub Actions", "n8n", "Make", "Zapier", "Jira", "Confluence"]
+      category: "Automação",
+      items: ["GitHub Actions", "n8n", "Make", "Zapier", "Jira", "Confluence"],
     },
     {
       category: "IA & LLMs",
-      icon: Brain,
-      items: ["RAG", "LangChain", "OpenAI", "Anthropic", "MLflow", "ChromaDB"]
+      items: ["RAG", "LangChain", "OpenAI", "Anthropic", "MLflow", "ChromaDB"],
     },
     {
       category: "Arquitetura",
-      icon: Layers,
-      items: ["Hexagonal Architecture", "DDD", "Event-driven", "FastAPI", "Microsserviços"]
+      items: ["Hexagonal", "DDD", "Event-driven", "FastAPI", "Microsserviços"],
     },
     {
       category: "Linguagens",
-      icon: Code,
-      items: ["Python", "SQL", "TypeScript", "Bash"]
+      items: ["Python", "SQL", "TypeScript", "Bash"],
     },
   ];
 
-  // Diferenciais competitivos
   const differentials = [
     {
-      icon: Briefcase,
       title: "Business Acumen",
-      description: "15 anos em liderança e operações. Entendo o \"porquê\" dos dados.",
+      description:
+        '15 anos em liderança e operações. Entendo o "porquê" dos dados antes de construir o pipeline.',
     },
     {
-      icon: Layers,
       title: "Arquitetura Sólida",
       description: "Hexagonal, DDD, Event-driven — sistemas que escalam sem virar caos.",
     },
     {
-      icon: Brain,
-      title: "IA & LLMs",
-      description: "RAG, agentes, MLflow — IA aplicada, não teórica.",
+      title: "IA Aplicada",
+      description: "RAG, agentes, MLflow — IA em produção, não em notebooks.",
     },
     {
-      icon: Cloud,
       title: "Cloud & Infra",
-      description: "AWS, Docker, GitHub Actions — pipeline do código ao deploy.",
+      description: "AWS, Docker, GitHub Actions — do código ao deploy sem surpresa.",
     },
     {
-      icon: MessageSquare,
       title: "Comunicação",
-      description: "Traduzo conceitos técnicos para stakeholders não-técnicos.",
+      description: "Traduzo técnico para não-técnico e vice-versa. Inglês C1.",
+    },
+  ];
+
+  const metrics = [
+    { value: "15+", label: "anos de liderança" },
+    { value: "146", label: "commits / ano" },
+    { value: "15+", label: "certificações" },
+    { value: "C1", label: "inglês" },
+  ];
+
+  const tereziaArch = [
+    { label: "Meta Webhook", sub: "Facebook / Instagram", dot: "bg-primary" },
+    { label: "FastAPI", sub: "HMAC Validation", dot: "bg-accent" },
+    { label: "RAG Pipeline", sub: "ChromaDB + Embeddings", dot: "bg-primary" },
+    { label: "Gemini", sub: "LLM Generation", dot: "bg-accent" },
+    { label: "Policy Guard", sub: "Filtro Ético", dot: "bg-yellow-400" },
+    { label: "PostgreSQL", sub: "Auditoria Completa", dot: "bg-primary" },
+  ];
+
+  const contactLinks = [
+    {
+      label: "Email",
+      value: "santos.diegoj86@gmail.com",
+      href: "mailto:santos.diegoj86@gmail.com",
+      icon: Mail,
+    },
+    {
+      label: "LinkedIn",
+      value: "diego-santos-ia",
+      href: "https://linkedin.com/in/diego-santos-ia",
+      icon: Linkedin,
+    },
+    {
+      label: "GitHub",
+      value: "diegosantos-ai",
+      href: "https://github.com/diegosantos-ai",
+      icon: Github,
+    },
+    {
+      label: "WhatsApp",
+      value: "(45) 99929-8275",
+      href: "https://wa.me/5545999298275?text=Olá Diego, vi seu portfólio e gostaria de conversar.",
+      icon: MessageSquare,
     },
   ];
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 glass border-b border-border/50">
-        <div className="container flex items-center justify-between h-16">
-          <div className="font-bold text-xl tracking-tight gradient-text">DS</div>
+
+      {/* ── Navigation ─────────────────────────────────────────── */}
+      <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+        <div className="container flex items-center justify-between h-14">
+          <span className="font-mono font-bold text-sm tracking-widest">DS</span>
+
           <div className="hidden md:flex gap-8">
-            <a href="#about" className="text-sm link-underline text-muted-foreground hover:text-foreground transition-colors">Sobre</a>
-            <a href="/artigos" className="text-sm link-underline text-muted-foreground hover:text-foreground transition-colors">Blog</a>
-            <a href="#projects" className="text-sm link-underline text-muted-foreground hover:text-foreground transition-colors">Projetos</a>
-            <a href="#experience" className="text-sm link-underline text-muted-foreground hover:text-foreground transition-colors">Experiência</a>
-            <a href="#education" className="text-sm link-underline text-muted-foreground hover:text-foreground transition-colors">Educação</a>
-            <a href="#contact" className="text-sm link-underline text-muted-foreground hover:text-foreground transition-colors">Contato</a>
+            {[
+              { label: "Sobre", href: "#about" },
+              { label: "Stack", href: "#stack" },
+              { label: "Projetos", href: "#projects" },
+              { label: "Experiência", href: "#experience" },
+              { label: "Blog", href: "/artigos" },
+              { label: "Contato", href: "#contact" },
+            ].map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="font-mono text-xs tracking-widest text-muted-foreground hover:text-foreground transition-colors uppercase"
+              >
+                {item.label}
+              </a>
+            ))}
           </div>
-          <Button
-            size="sm"
-            className="bg-primary hover:bg-primary/90 text-white gap-2"
-            onClick={() => window.open("https://github.com/diegosantos-ai", "_blank")}
+
+          <a
+            href="https://github.com/diegosantos-ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-xs text-muted-foreground hover:text-foreground flex items-center gap-2 transition-colors"
           >
-            <Github size={16} /> GitHub
-          </Button>
+            <Github size={14} />
+            GitHub
+          </a>
         </div>
       </nav>
 
-      {/* Hero Section - Foco em "O que entrego" */}
-      <section className="relative overflow-hidden min-h-[90vh] flex items-center">
-        {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/5"></div>
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse-subtle"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-accent/20 rounded-full blur-3xl animate-pulse-subtle"></div>
-
-        <div className="container relative py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Left: Text */}
-            <div className="space-y-8 animate-fade-in-up">
-              <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full badge-accent text-sm">
-                  <span className="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
-                  Disponível para contratação
-                </div>
-
-                {/* H1 - Proposta de Valor (não nome) */}
-                <h1 className="text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight tracking-tight">
-                  <span className="text-foreground">Engenharia de Dados</span>
-                  <br />
-                  <span className="gradient-text">com Foco em Negócio</span>
-                </h1>
-
-                {/* H2 - O que entrego */}
-                <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-xl">
-                  Construo pipelines <span className="text-primary font-semibold">robustos</span>, <span className="text-accent font-semibold">automatizados</span> e focados em <span className="text-primary font-semibold">confiabilidade</span> para transformar dados brutos em decisões reais.
-                </p>
-              </div>
-
-              {/* Credenciais rápidas */}
-              <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-                <span className="flex items-center gap-2">
-                  <CheckCircle size={16} className="text-accent" />
-                  15+ anos de experiência
-                </span>
-                <span className="flex items-center gap-2">
-                  <MapPin size={16} className="text-primary" />
-                  100% Remoto
-                </span>
-                <span className="flex items-center gap-2">
-                  <Globe size={16} className="text-accent" />
-                  Inglês C1
-                </span>
-              </div>
-
-              {/* CTAs - Diretos e Acionáveis */}
-              <div className="flex flex-wrap gap-4 pt-2">
-                <Button
-                  size="lg"
-                  className="bg-primary hover:bg-primary/90 text-white gap-2 card-hover text-base px-8"
-                  onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                >
-                  <Code size={18} />
-                  Ver Projetos
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-primary text-primary hover:bg-primary/10 gap-2 card-hover"
-                  onClick={() => window.open("https://linkedin.com/in/diego-santos-ia", "_blank")}
-                >
-                  <Linkedin size={18} />
-                  LinkedIn
-                </Button>
-                <Button
-                  size="lg"
-                  variant="ghost"
-                  className="text-muted-foreground hover:text-foreground gap-2"
-                  onClick={() => window.location.href = "mailto:santos.diegoj86@gmail.com"}
-                >
-                  <Mail size={18} />
-                  Email
-                </Button>
-              </div>
-            </div>
-
-            {/* Right: Metrics Grid */}
-            <div className="grid grid-cols-2 gap-6 animate-slide-right">
-              <Card className="bg-card/50 glass border-border p-6 card-hover card-glow group">
-                <p className="text-5xl font-bold text-primary mb-2">
-                  <AnimatedCounter end={15} suffix="+" />
-                </p>
-                <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">Anos de Liderança</p>
-              </Card>
-
-              <Card className="bg-card/50 glass border-border p-6 card-hover card-glow-accent group">
-                <p className="text-5xl font-bold text-accent mb-2">
-                  <AnimatedCounter end={146} />
-                </p>
-                <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">Contribuições/Ano</p>
-              </Card>
-
-              <Card className="bg-card/50 glass border-border p-6 card-hover card-glow group">
-                <p className="text-5xl font-bold text-primary mb-2">
-                  <AnimatedCounter end={15} suffix="+" />
-                </p>
-                <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">Certificações</p>
-              </Card>
-
-              <Card className="bg-card/50 glass border-border p-6 card-hover card-glow-accent group">
-                <p className="text-5xl font-bold text-accent mb-2">
-                  <AnimatedCounter end={7} />
-                </p>
-                <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">Formações</p>
-              </Card>
-            </div>
-          </div>
-
-          {/* Scroll indicator */}
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
-            <ChevronDown size={32} className="text-muted-foreground" />
-          </div>
-        </div>
-      </section>
-
-      {/* Case de Sucesso - TerezIA (Chamariz para Recrutador) */}
-      <section className="py-24 border-t border-border bg-gradient-to-b from-primary/5 via-background to-accent/5 relative overflow-hidden">
-        {/* Background decorativo */}
-        <div className="absolute top-0 right-0 w-72 h-72 bg-accent/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
-
-        <div className="container relative">
-          {/* Header da seção */}
-          <div className="text-center mb-12 animate-fade-in-up">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 text-accent text-sm font-medium mb-4">
-              🏆 Case Real em Produção
-            </span>
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-              <span className="gradient-text">TerezIA</span> — Chatbot RAG Institucional
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Assistente virtual para atendimento ao cidadão via Facebook/Instagram com IA generativa, proteção ética e auditoria completa.
-            </p>
-          </div>
-
-          {/* Grid de 3 Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-
-            {/* Bloco A: O Desafio */}
-            <Card className="bg-card/50 glass border-border p-8 card-hover card-glow group">
-              <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Briefcase size={24} className="text-primary" />
-              </div>
-              <h3 className="text-xl font-bold text-primary mb-4">O Desafio</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                Instituições públicas recebem centenas de perguntas repetitivas diariamente.
-                Era preciso um assistente que respondesse com <span className="text-foreground font-medium">precisão</span>,
-                <span className="text-foreground font-medium"> ética</span> e
-                <span className="text-foreground font-medium"> auditabilidade</span>.
-              </p>
-            </Card>
-
-            {/* Bloco B: Arquitetura RAG - Diagrama Visual */}
-            <Card className="bg-card/50 glass border-border p-8 card-hover card-glow-accent group md:col-span-1">
-              <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Brain size={24} className="text-accent" />
-              </div>
-              <h3 className="text-xl font-bold text-accent mb-6">Arquitetura RAG</h3>
-
-              {/* Diagrama de Fluxo Visual */}
-              <div className="relative">
-                {/* Linha conectora vertical */}
-                <div className="absolute left-4 top-4 bottom-4 w-0.5 bg-gradient-to-b from-primary via-accent to-primary opacity-50"></div>
-
-                {/* Nós do fluxo */}
-                <div className="space-y-4 relative">
-                  {/* Entrada */}
-                  <div className="flex items-center gap-4 group/item">
-                    <div className="w-8 h-8 rounded-full bg-primary/30 border-2 border-primary flex items-center justify-center z-10 group-hover/item:scale-110 transition-transform">
-                      <MessageSquare size={14} className="text-primary" />
-                    </div>
-                    <div className="flex-1 bg-primary/10 rounded-lg px-3 py-2 border border-primary/20">
-                      <span className="text-xs font-semibold text-primary">Meta Webhook</span>
-                      <p className="text-[10px] text-muted-foreground">Facebook / Instagram</p>
-                    </div>
-                  </div>
-
-                  {/* FastAPI */}
-                  <div className="flex items-center gap-4 group/item">
-                    <div className="w-8 h-8 rounded-full bg-accent/30 border-2 border-accent flex items-center justify-center z-10 group-hover/item:scale-110 transition-transform">
-                      <Code size={14} className="text-accent" />
-                    </div>
-                    <div className="flex-1 bg-accent/10 rounded-lg px-3 py-2 border border-accent/20">
-                      <span className="text-xs font-semibold text-accent">FastAPI</span>
-                      <p className="text-[10px] text-muted-foreground">HMAC Validation</p>
-                    </div>
-                  </div>
-
-                  {/* RAG */}
-                  <div className="flex items-center gap-4 group/item">
-                    <div className="w-8 h-8 rounded-full bg-primary/30 border-2 border-primary flex items-center justify-center z-10 group-hover/item:scale-110 transition-transform">
-                      <Database size={14} className="text-primary" />
-                    </div>
-                    <div className="flex-1 bg-primary/10 rounded-lg px-3 py-2 border border-primary/20">
-                      <span className="text-xs font-semibold text-primary">RAG Pipeline</span>
-                      <p className="text-[10px] text-muted-foreground">ChromaDB + Embeddings</p>
-                    </div>
-                  </div>
-
-                  {/* Gemini */}
-                  <div className="flex items-center gap-4 group/item">
-                    <div className="w-8 h-8 rounded-full bg-accent/30 border-2 border-accent flex items-center justify-center z-10 group-hover/item:scale-110 transition-transform">
-                      <Brain size={14} className="text-accent" />
-                    </div>
-                    <div className="flex-1 bg-accent/10 rounded-lg px-3 py-2 border border-accent/20">
-                      <span className="text-xs font-semibold text-accent">Gemini</span>
-                      <p className="text-[10px] text-muted-foreground">LLM Generation</p>
-                    </div>
-                  </div>
-
-                  {/* Policy Guard */}
-                  <div className="flex items-center gap-4 group/item">
-                    <div className="w-8 h-8 rounded-full bg-yellow-500/30 border-2 border-yellow-500 flex items-center justify-center z-10 group-hover/item:scale-110 transition-transform">
-                      <Bot size={14} className="text-yellow-500" />
-                    </div>
-                    <div className="flex-1 bg-yellow-500/10 rounded-lg px-3 py-2 border border-yellow-500/20">
-                      <span className="text-xs font-semibold text-yellow-500">Policy Guard</span>
-                      <p className="text-[10px] text-muted-foreground">Filtro Ético</p>
-                    </div>
-                  </div>
-
-                  {/* PostgreSQL */}
-                  <div className="flex items-center gap-4 group/item">
-                    <div className="w-8 h-8 rounded-full bg-primary/30 border-2 border-primary flex items-center justify-center z-10 group-hover/item:scale-110 transition-transform">
-                      <Database size={14} className="text-primary" />
-                    </div>
-                    <div className="flex-1 bg-primary/10 rounded-lg px-3 py-2 border border-primary/20">
-                      <span className="text-xs font-semibold text-primary">PostgreSQL</span>
-                      <p className="text-[10px] text-muted-foreground">Auditoria Completa</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Card>
-
-            {/* Bloco C: Impacto */}
-            <Card className="bg-card/50 glass border-border p-8 card-hover card-glow group">
-              <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <CheckCircle size={24} className="text-primary" />
-              </div>
-              <h3 className="text-xl font-bold text-primary mb-4">Impacto Técnico</h3>
-              <ul className="space-y-3 text-sm">
-                <li className="flex items-start gap-2 text-muted-foreground">
-                  <CheckCircle size={16} className="text-accent flex-shrink-0 mt-0.5" />
-                  <span>Pipeline RAG completo funcionando</span>
-                </li>
-                <li className="flex items-start gap-2 text-muted-foreground">
-                  <CheckCircle size={16} className="text-accent flex-shrink-0 mt-0.5" />
-                  <span>Policy Guard bloqueando off-topic</span>
-                </li>
-                <li className="flex items-start gap-2 text-muted-foreground">
-                  <CheckCircle size={16} className="text-accent flex-shrink-0 mt-0.5" />
-                  <span>100% das interações auditadas</span>
-                </li>
-                <li className="flex items-start gap-2 text-muted-foreground">
-                  <CheckCircle size={16} className="text-accent flex-shrink-0 mt-0.5" />
-                  <span>Integração Meta API validada</span>
-                </li>
-              </ul>
-            </Card>
-
-          </div>
-
-          {/* CTA para Artigo Técnico */}
-          <div className="text-center">
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-white gap-2 card-hover"
-              onClick={() => setLocation("/artigos/terezia-architecture")}
-            >
-              <Brain size={18} />
-              Conheça mais detalhes (Deep Dive)
-              <ArrowLeft size={14} className="rotate-180" />
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* About / Differentials Section */}
-      <section id="about" className="py-24 border-t border-border">
+      {/* ── Hero ───────────────────────────────────────────────── */}
+      <section className="min-h-[90vh] flex flex-col justify-end pb-16 pt-32 border-b border-border">
         <div className="container">
-          <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-4xl font-bold mb-4">Por que me contratar?</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Diferenciais que me tornam um candidato único para posições de Engenharia de Dados
+          <p className="font-mono text-xs text-accent tracking-[0.3em] uppercase mb-6">
+            // Engenheiro de Dados · Disponível · Francisco Beltrão, PR · Remoto
+          </p>
+
+          <h1 className="text-[clamp(4rem,12vw,9rem)] font-bold leading-[0.88] tracking-tight mb-10">
+            DIEGO<br />
+            <span className="text-primary">SANTOS</span>
+            <span className="text-primary cursor-blink">_</span>
+          </h1>
+
+          <div className="border-t border-border pt-8 grid grid-cols-1 lg:grid-cols-[1fr,auto] gap-8 items-end">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
+              15 anos em liderança e operações{" "}
+              <span className="text-foreground font-medium">→ Engenharia de Dados</span>.
+              Construo pipelines robustos, automação real e IA aplicada a problemas de negócio.
             </p>
+            <div className="flex flex-wrap gap-3">
+              <Button
+                size="sm"
+                className="bg-primary hover:bg-primary/90 text-white font-mono text-xs tracking-wider gap-2"
+                onClick={() =>
+                  document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                Ver Projetos <ArrowRight size={14} />
+              </Button>
+              <Button
+                size="sm"
+                variant="outline"
+                className="border-border text-muted-foreground hover:text-foreground font-mono text-xs tracking-wider gap-2"
+                onClick={() =>
+                  window.open("https://linkedin.com/in/diego-santos-ia", "_blank")
+                }
+              >
+                <Linkedin size={14} /> LinkedIn
+              </Button>
+              <Button
+                size="sm"
+                variant="outline"
+                className="border-border text-muted-foreground hover:text-foreground font-mono text-xs tracking-wider gap-2"
+                onClick={() => (window.location.href = "mailto:santos.diegoj86@gmail.com")}
+              >
+                <Mail size={14} /> Email
+              </Button>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {differentials.map((item, idx) => (
-              <Card
-                key={idx}
-                className={`bg-card/50 glass border-border p-6 card-hover ${idx % 2 === 0 ? 'card-glow' : 'card-glow-accent'} text-center`}
-              >
-                <div className={`w-12 h-12 rounded-xl ${idx % 2 === 0 ? 'bg-primary/20' : 'bg-accent/20'} flex items-center justify-center mx-auto mb-4`}>
-                  <item.icon size={24} className={idx % 2 === 0 ? 'text-primary' : 'text-accent'} />
-                </div>
-                <h3 className="font-bold text-lg mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
-              </Card>
+          {/* Metrics Bar */}
+          <div className="grid grid-cols-2 md:grid-cols-4 border-l border-t border-border mt-12">
+            {metrics.map((m, i) => (
+              <div key={i} className="p-6 text-center border-r border-b border-border">
+                <p className="font-mono text-3xl md:text-4xl font-bold text-primary">{m.value}</p>
+                <p className="font-mono text-xs text-muted-foreground mt-2 tracking-wide">
+                  {m.label}
+                </p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section className="py-24 border-t border-border bg-card/30">
+      {/* ── Case: TerezIA ──────────────────────────────────────── */}
+      <section className="py-20 border-b border-border">
         <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Competências Técnicas</h2>
-            <p className="text-muted-foreground">Stack atual — o que uso efetivamente nos projetos</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {skills.map((skill, idx) => (
-              <Card
-                key={skill.category}
-                className={`bg-card/50 glass border-border p-6 card-hover ${idx % 2 === 0 ? 'card-glow' : 'card-glow-accent'}`}
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className={`w-10 h-10 rounded-lg ${idx % 2 === 0 ? 'bg-primary/20' : 'bg-accent/20'} flex items-center justify-center`}>
-                    <skill.icon size={20} className={idx % 2 === 0 ? 'text-primary' : 'text-accent'} />
+          <SectionDivider label="Case em produção" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            {/* Story */}
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-1">TerezIA</h2>
+              <p className="font-mono text-xs text-accent mb-6 tracking-wider">
+                Chatbot RAG Institucional
+              </p>
+
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Instituições públicas recebem centenas de perguntas repetitivas por dia. Construí um
+                assistente que responde via Facebook/Instagram com{" "}
+                <span className="text-foreground">precisão</span>,{" "}
+                <span className="text-foreground">ética</span> e{" "}
+                <span className="text-foreground">auditoria completa</span>.
+              </p>
+
+              <div className="space-y-3 mb-8">
+                {[
+                  "Pipeline RAG completo em produção",
+                  "Policy Guard bloqueando respostas fora do escopo",
+                  "100% das interações auditadas no PostgreSQL",
+                  "Integração Meta API com validação HMAC",
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-3">
+                    <div className="w-1 h-1 rounded-full bg-accent flex-shrink-0" />
+                    <span className="text-sm text-muted-foreground">{item}</span>
                   </div>
-                  <h3 className={`font-bold ${idx % 2 === 0 ? 'text-primary' : 'text-accent'}`}>{skill.category}</h3>
+                ))}
+              </div>
+
+              <a
+                href="https://github.com/diegosantos-ai/terezia-chatbot"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-mono text-xs text-primary hover:text-primary/80 transition-colors border-b border-primary/30 pb-0.5"
+              >
+                Ver repositório <ArrowRight size={12} />
+              </a>
+            </div>
+
+            {/* Architecture */}
+            <div className="border border-border p-6">
+              <p className="font-mono text-xs text-muted-foreground mb-6 tracking-[0.2em] uppercase">
+                // Arquitetura RAG
+              </p>
+
+              <div className="relative">
+                <div className="absolute left-[7px] top-3 bottom-3 w-px bg-border" />
+                <div className="space-y-4 relative">
+                  {tereziaArch.map((node, i) => (
+                    <div key={i} className="flex items-center gap-4">
+                      <div
+                        className={`w-3.5 h-3.5 rounded-full ${node.dot} z-10 flex-shrink-0`}
+                        style={{ minWidth: "14px" }}
+                      />
+                      <div className="flex items-baseline gap-2">
+                        <span className="font-mono text-xs font-semibold text-foreground">
+                          {node.label}
+                        </span>
+                        <span className="text-xs text-muted-foreground">— {node.sub}</span>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <ul className="space-y-2">
-                  {skill.items.map((item) => (
-                    <li key={item} className="text-sm text-muted-foreground flex items-center gap-2">
-                      <span className={`w-1.5 h-1.5 rounded-full ${idx % 2 === 0 ? 'bg-primary' : 'bg-accent'}`}></span>
-                      {item}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Diferenciais ───────────────────────────────────────── */}
+      <section id="about" className="py-20 border-b border-border">
+        <div className="container">
+          <SectionDivider label="Diferenciais" />
+
+          <div className="max-w-3xl">
+            {differentials.map((d, i) => (
+              <div
+                key={i}
+                className={`flex gap-8 py-6 ${
+                  i < differentials.length - 1 ? "border-b border-border" : ""
+                }`}
+              >
+                <span className="font-mono text-xs text-muted-foreground w-6 flex-shrink-0 mt-1">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3 className="font-bold text-base mb-1">{d.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{d.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Stack ──────────────────────────────────────────────── */}
+      <section id="stack" className="py-20 border-b border-border">
+        <div className="container">
+          <SectionDivider label="Stack" />
+
+          <div className="border-l border-t border-border">
+            {skills.map((skill, idx) => (
+              <div
+                key={skill.category}
+                className="flex flex-col md:flex-row border-r border-b border-border"
+              >
+                <div className="md:w-36 p-4 md:border-r border-b md:border-b-0 border-border flex-shrink-0 flex items-center">
+                  <p className="font-mono text-xs text-muted-foreground uppercase tracking-widest">
+                    {skill.category}
+                  </p>
+                </div>
+                <div className="flex-1 p-4 flex items-center">
+                  <p className="text-sm text-foreground/80 leading-relaxed">
+                    {skill.items.join(" · ")}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Projetos ───────────────────────────────────────────── */}
+      <section id="projects" className="py-20 border-b border-border">
+        <div className="container">
+          <SectionDivider
+            label="Projetos"
+            extra={
+              <a
+                href="https://github.com/diegosantos-ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-xs text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 whitespace-nowrap"
+              >
+                Ver todos <ArrowRight size={10} />
+              </a>
+            }
+          />
+
+          <div>
+            {projects.map((project, idx) => (
+              <div
+                key={idx}
+                className="group flex items-start gap-6 py-6 px-4 -mx-4 border-b border-border hover:bg-secondary/40 transition-colors cursor-pointer"
+                onClick={() => window.open(project.link, "_blank")}
+              >
+                <span className="font-mono text-xs text-muted-foreground w-6 flex-shrink-0 mt-1.5 select-none">
+                  {String(idx + 1).padStart(2, "0")}
+                </span>
+
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-start justify-between gap-4 mb-2">
+                    <h3 className="font-bold text-base group-hover:text-primary transition-colors leading-tight">
+                      {project.title}
+                    </h3>
+                    <ArrowRight
+                      size={14}
+                      className="text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all flex-shrink-0 mt-0.5"
+                    />
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-3 leading-relaxed">
+                    {project.description}
+                  </p>
+                  <p className="font-mono text-xs text-muted-foreground/60">
+                    {project.technologies.join(" · ")}
+                  </p>
+                </div>
+
+                <div className="flex-shrink-0 hidden sm:block">
+                  <span className="font-mono text-xs text-accent whitespace-nowrap">
+                    {project.impact}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Experiência ────────────────────────────────────────── */}
+      <section id="experience" className="py-20 border-b border-border">
+        <div className="container">
+          <SectionDivider label="Experiência" />
+
+          <div className="max-w-3xl">
+            {experiences.map((exp, idx) => (
+              <div
+                key={idx}
+                className={`py-8 ${idx < experiences.length - 1 ? "border-b border-border" : ""}`}
+              >
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold">{exp.role}</h3>
+                    <p className="font-mono text-xs text-primary mt-1">{exp.company}</p>
+                  </div>
+                  <div className="md:text-right">
+                    <p className="font-mono text-xs text-muted-foreground">{exp.period}</p>
+                    <p className="font-mono text-xs text-accent mt-0.5">{exp.duration}</p>
+                  </div>
+                </div>
+                <ul className="space-y-2 mt-4">
+                  {exp.highlights.map((h, hIdx) => (
+                    <li key={hIdx} className="flex items-start gap-3 text-sm text-muted-foreground">
+                      <div className="w-1 h-1 rounded-full bg-border flex-shrink-0 mt-2" />
+                      {h}
                     </li>
                   ))}
                 </ul>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section id="projects" className="py-24 border-t border-border">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Projetos</h2>
-            <p className="text-muted-foreground">
-              Soluções reais com impacto mensurável •
-              <a href="https://github.com/diegosantos-ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline ml-1">
-                Ver todos no GitHub →
-              </a>
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project, idx) => (
-              <Card
-                key={idx}
-                className={`bg-card/50 glass border-border p-6 card-hover ${project.highlight ? 'card-glow-accent ring-1 ring-accent/30' : 'card-glow'} group cursor-pointer relative overflow-hidden`}
-                onClick={() => window.open(project.link, "_blank")}
-              >
-                {project.highlight && (
-                  <div className="absolute top-3 right-3 px-2 py-1 bg-accent/20 rounded text-xs text-accent font-medium">
-                    ⭐ Fork recebido
-                  </div>
-                )}
-
-                <div className="flex items-start justify-between mb-4">
-                  <h3 className="text-lg font-bold leading-tight pr-8">{project.title}</h3>
-                  <ExternalLink size={16} className="text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
-                </div>
-
-                <p className="text-sm text-muted-foreground mb-4">{project.description}</p>
-
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech) => (
-                    <span key={tech} className="text-xs badge-primary px-2 py-1 rounded">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="pt-4 border-t border-border flex items-center gap-2">
-                  <span className="text-lg">{project.impactIcon}</span>
-                  <p className="text-sm font-semibold text-accent">{project.impact}</p>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Experience Section */}
-      <section id="experience" className="py-24 border-t border-border bg-card/30">
-        <div className="container">
-          <h2 className="text-4xl font-bold mb-12 text-center">Experiência Profissional</h2>
-
-          <div className="max-w-4xl mx-auto space-y-0">
-            {experiences.map((exp, idx) => (
-              <div key={idx} className="relative pl-8 pb-12 last:pb-0">
-                {/* Timeline line */}
-                <div className="absolute left-0 top-0 bottom-0 w-0.5 timeline-line"></div>
-
-                {/* Timeline dot */}
-                <div className="absolute left-0 top-1 w-2.5 h-2.5 -translate-x-1 rounded-full bg-primary ring-4 ring-background"></div>
-
-                <Card className="bg-card/50 glass border-border p-6 card-hover card-glow ml-4">
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
-                    <div>
-                      <h3 className="text-xl font-bold">{exp.role}</h3>
-                      <p className="text-primary font-semibold flex items-center gap-2">
-                        {exp.companyLogo && <span>{exp.companyLogo}</span>}
-                        {exp.company}
-                      </p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-sm text-muted-foreground">{exp.period}</p>
-                      <p className="text-xs text-accent">{exp.duration}</p>
-                    </div>
-                  </div>
-
-                  <ul className="space-y-2">
-                    {exp.highlights.map((highlight, hIdx) => (
-                      <li key={hIdx} className="text-sm text-muted-foreground flex items-start gap-2">
-                        <CheckCircle size={14} className="text-accent flex-shrink-0 mt-0.5" />
-                        {highlight}
-                      </li>
-                    ))}
-                  </ul>
-                </Card>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Education Section */}
-      <section id="education" className="py-24 border-t border-border">
+      {/* ── Educação & Certificações ───────────────────────────── */}
+      <section id="education" className="py-20 border-b border-border">
         <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Educação & Certificações</h2>
-            <p className="text-muted-foreground">7 formações acadêmicas • 15+ certificações técnicas</p>
-          </div>
+          <SectionDivider label="Educação & Certificações" />
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-4xl">
             {/* Education */}
             <div>
-              <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <GraduationCap className="text-primary" />
-                Formação Acadêmica
-              </h3>
-              <div className="space-y-4">
+              <div className="flex items-center gap-3 mb-8">
+                <GraduationCap size={14} className="text-muted-foreground" />
+                <p className="font-mono text-xs text-muted-foreground tracking-[0.2em] uppercase">
+                  Formação Acadêmica
+                </p>
+              </div>
+              <div>
                 {education.map((edu, idx) => (
-                  <Card key={idx} className="bg-card/50 glass border-border p-5 card-hover card-glow">
-                    <div className="flex items-start justify-between">
-                      <div>
-                        <h4 className="font-bold">{edu.degree}</h4>
-                        <p className="text-sm text-primary">{edu.institution}</p>
-                        <p className="text-xs text-muted-foreground mt-1">{edu.period}</p>
-                      </div>
-                      <div className="text-right">
-                        {edu.status === "in-progress" ? (
-                          <span className="text-xs badge-accent px-2 py-1 rounded-full">Em andamento</span>
-                        ) : edu.grade && (
-                          <span className="text-lg font-bold text-accent">{edu.grade}</span>
-                        )}
-                      </div>
+                  <div
+                    key={idx}
+                    className={`flex items-start justify-between py-4 ${
+                      idx < education.length - 1 ? "border-b border-border" : ""
+                    }`}
+                  >
+                    <div>
+                      <h4 className="font-bold text-sm">{edu.degree}</h4>
+                      <p className="font-mono text-xs text-primary mt-1">{edu.institution}</p>
+                      <p className="font-mono text-xs text-muted-foreground mt-1">{edu.period}</p>
                     </div>
-                    <div className="flex flex-wrap gap-1 mt-3">
-                      {edu.highlights.map((h) => (
-                        <span key={h} className="text-xs text-muted-foreground bg-secondary px-2 py-0.5 rounded">
-                          {h}
+                    <div className="ml-4 flex-shrink-0">
+                      {edu.status === "in-progress" ? (
+                        <span className="font-mono text-xs text-accent border border-accent/30 px-2 py-0.5">
+                          cursando
                         </span>
-                      ))}
+                      ) : edu.grade ? (
+                        <span className="font-mono text-sm font-bold text-muted-foreground">
+                          {edu.grade}
+                        </span>
+                      ) : null}
                     </div>
-                  </Card>
+                  </div>
                 ))}
               </div>
             </div>
 
             {/* Certifications */}
             <div>
-              <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <Award className="text-accent" />
-                Certificações em Destaque
-              </h3>
-              <div className="space-y-4">
-                {certifications.map((cert, idx) => (
-                  <Card
-                    key={idx}
-                    className="bg-card/50 glass border-border p-5 card-hover card-glow-accent flex items-center gap-4 cursor-pointer group"
-                    onClick={() => window.open(cert.link, "_blank")}
-                  >
-                    <div className="text-3xl">{cert.icon}</div>
-                    <div className="flex-1">
-                      <h4 className="font-bold group-hover:text-accent transition-colors">{cert.name}</h4>
-                      <p className="text-sm text-muted-foreground">{cert.issuer}</p>
-                      {cert.description && (
-                        <p className="text-xs text-muted-foreground/70 mt-1">{cert.description}</p>
-                      )}
-                    </div>
-                    {cert.score && (
-                      <span className="text-xs badge-accent px-2 py-1 rounded-full">{cert.score}</span>
-                    )}
-                    <ExternalLink size={14} className="text-muted-foreground group-hover:text-accent transition-colors" />
-                  </Card>
-                ))}
-
-                {/* Link para todos os certificados */}
-                <div className="pt-4 text-center">
-                  <Button
-                    variant="outline"
-                    className="border-accent text-accent hover:bg-accent/10 gap-2"
-                    onClick={() => window.open("https://drive.google.com/drive/folders/1CYRrS1b2TtFZ35KXU-5stbVr0XgKhCDQ?usp=sharing", "_blank")}
-                  >
-                    <Download size={16} />
-                    Ver todos os certificados
-                    <ExternalLink size={14} />
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Fase 3: Como Posso Contribuir - Design Minimalista */}
-      <section className="py-20 border-t border-border">
-        <div className="container">
-          <div className="max-w-3xl mx-auto">
-            {/* Layout minimalista com tipografia limpa */}
-            <div className="grid grid-cols-1 md:grid-cols-[1fr,auto] gap-12 items-center">
-
-              {/* Texto */}
-              <div className="space-y-6">
-                <h2 className="text-3xl font-bold text-foreground">
-                  Como posso contribuir
-                </h2>
-                <p className="text-muted-foreground leading-relaxed text-lg">
-                  Atuação focada em <span className="text-foreground font-medium">engenharia de dados</span>:
-                  ingestão, automação, qualidade e modelagem para analytics.
-                  Trago bagagem de gestão para garantir que a solução técnica resolva
-                  o <span className="text-foreground font-medium">problema de negócio real</span>,
-                  com comunicação direta e sem over-engineering.
+              <div className="flex items-center gap-3 mb-8">
+                <Award size={14} className="text-muted-foreground" />
+                <p className="font-mono text-xs text-muted-foreground tracking-[0.2em] uppercase">
+                  Certificações em Destaque
                 </p>
-
-                {/* Competências em linha - minimalista */}
-                <div className="flex flex-wrap gap-3 pt-2">
-                  <span className="text-sm text-muted-foreground bg-secondary/50 px-3 py-1 rounded-full">Pipelines ETL</span>
-                  <span className="text-sm text-muted-foreground bg-secondary/50 px-3 py-1 rounded-full">Automação</span>
-                  <span className="text-sm text-muted-foreground bg-secondary/50 px-3 py-1 rounded-full">Data Quality</span>
-                  <span className="text-sm text-muted-foreground bg-secondary/50 px-3 py-1 rounded-full">IA & LLMs</span>
+              </div>
+              <div>
+                {certifications.map((cert, idx) => (
+                  <a
+                    key={idx}
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex items-center justify-between py-4 group hover:pl-2 transition-all ${
+                      idx < certifications.length - 1 ? "border-b border-border" : ""
+                    }`}
+                  >
+                    <div>
+                      <h4 className="font-bold text-sm group-hover:text-primary transition-colors">
+                        {cert.name}
+                      </h4>
+                      <p className="font-mono text-xs text-muted-foreground mt-1">{cert.issuer}</p>
+                    </div>
+                    <ExternalLink
+                      size={12}
+                      className="text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0 ml-4"
+                    />
+                  </a>
+                ))}
+                <div className="pt-5">
+                  <a
+                    href="https://drive.google.com/drive/folders/1CYRrS1b2TtFZ35KXU-5stbVr0XgKhCDQ?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono text-xs text-muted-foreground hover:text-foreground flex items-center gap-2 transition-colors"
+                  >
+                    <Download size={12} />
+                    Ver todos os certificados
+                  </a>
                 </div>
               </div>
-
-              {/* CTA WhatsApp - Sério e Profissional */}
-              <div className="flex flex-col items-center gap-4">
-                <Button
-                  size="lg"
-                  className="bg-[#25D366] hover:bg-[#20BD5A] text-white gap-3 px-8 py-6 text-base font-medium shadow-lg hover:shadow-xl transition-all"
-                  onClick={() => window.open("https://wa.me/5545999298275?text=Olá Diego, vi seu portfólio e gostaria de conversar.", "_blank")}
-                >
-                  <MessageSquare size={20} />
-                  Iniciar Conversa
-                </Button>
-                <span className="text-xs text-muted-foreground">
-                  (45) 99929-8275
-                </span>
-              </div>
-
             </div>
           </div>
         </div>
       </section>
 
-
-
-      {/* Contact Section */}
-      <section id="contact" className="py-24 border-t border-border bg-gradient-to-b from-card/30 to-background">
+      {/* ── Contato ────────────────────────────────────────────── */}
+      <section id="contact" className="py-20">
         <div className="container">
-          <div className="max-w-3xl mx-auto text-center space-y-8">
+          <SectionDivider label="Contato" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr,auto] gap-12 items-start max-w-4xl">
             <div>
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full badge-accent text-sm mb-4">
-                <span className="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
-                Disponível para contratação
-              </span>
-              <h2 className="text-4xl font-bold mb-4">Vamos Conversar?</h2>
-              <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-                Estou em busca de oportunidades como <span className="text-primary font-semibold">Engenheiro de Dados</span>.
-                Conecte-se comigo para discutir projetos, ideias ou oportunidades.
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Vamos<br />
+                <span className="text-primary">conversar?</span>
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-6 max-w-md">
+                Estou em busca de oportunidades como{" "}
+                <span className="text-foreground font-medium">Engenheiro de Dados</span>.
+                Posso contribuir com pipelines, automação e IA aplicada a resultados reais.
               </p>
+              <div className="flex flex-wrap gap-4">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <MapPin size={13} className="text-primary" />
+                  Francisco Beltrão, PR
+                </div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Globe size={13} className="text-accent" />
+                  100% Remoto
+                </div>
+              </div>
             </div>
 
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-white gap-2 card-hover animate-glow"
-                onClick={() => window.location.href = "mailto:santos.diegoj86@gmail.com"}
-              >
-                <Mail size={18} /> santos.diegoj86@gmail.com
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary text-primary hover:bg-primary/10 gap-2 card-hover"
-                onClick={() => window.open("https://linkedin.com/in/diego-santos-ia", "_blank")}
-              >
-                <Linkedin size={18} /> LinkedIn
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-accent text-accent hover:bg-accent/10 gap-2 card-hover"
-                onClick={() => window.open("https://github.com/diegosantos-ai", "_blank")}
-              >
-                <Github size={18} /> GitHub
-              </Button>
-            </div>
-
-            <div className="pt-8 border-t border-border/50 flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
-              <span className="flex items-center gap-2">
-                <MapPin size={16} className="text-primary" />
-                Francisco Beltrão, PR
-              </span>
-              <span className="flex items-center gap-2">
-                <Globe size={16} className="text-accent" />
-                100% Remoto
-              </span>
-              <span>+55 45 99929-8275</span>
+            <div className="flex flex-col min-w-[240px]">
+              {contactLinks.map((contact) => (
+                <a
+                  key={contact.label}
+                  href={contact.href}
+                  target={contact.href.startsWith("mailto") ? "_self" : "_blank"}
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-4 py-4 border-b border-border hover:border-primary transition-all"
+                >
+                  <contact.icon
+                    size={14}
+                    className="text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0"
+                  />
+                  <div className="flex-1 min-w-0">
+                    <p className="font-mono text-[10px] text-muted-foreground tracking-widest uppercase">
+                      {contact.label}
+                    </p>
+                    <p className="text-sm text-foreground/80 group-hover:text-foreground transition-colors truncate mt-0.5">
+                      {contact.value}
+                    </p>
+                  </div>
+                  <ArrowRight
+                    size={12}
+                    className="text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all flex-shrink-0"
+                  />
+                </a>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-8 border-t border-border text-center">
-        <div className="container">
-          <p className="text-sm text-muted-foreground">
-            © 2026 Diego Santos • Engenheiro de Dados •
-            <span className="gradient-text ml-2">Pipelines, Automação e IA</span>
+      {/* ── Footer ─────────────────────────────────────────────── */}
+      <footer className="py-6 border-t border-border">
+        <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="font-mono text-xs text-muted-foreground">
+            © 2026 Diego Santos · Engenheiro de Dados
           </p>
+          <p className="font-mono text-xs text-muted-foreground/40">diegosantos.me</p>
         </div>
       </footer>
     </div>
