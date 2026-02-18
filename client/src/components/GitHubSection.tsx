@@ -14,7 +14,24 @@ import {
     AlertCircle
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { formatRelativeDate } from '@/services/github';
+
+// Função utilitária para formatar data relativa
+function formatRelativeDate(dateString: string): string {
+  const date = new Date(dateString);
+  const now = new Date();
+  const diffMs = now.getTime() - date.getTime();
+  const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+  
+  if (diffDays === 0) return "Hoje";
+  if (diffDays === 1) return "Ontem";
+  if (diffDays < 7) return `${diffDays} dias atrás`;
+  if (diffDays < 30) return `${Math.floor(diffDays / 7)} semanas atrás`;
+  
+  return date.toLocaleDateString("pt-BR", {
+    month: "short",
+    year: "numeric",
+  });
+}
 
 // Cores das linguagens
 const languageColors: Record<string, string> = {
