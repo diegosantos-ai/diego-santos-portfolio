@@ -40,7 +40,7 @@
 - [x] Preencher seção Habilidades/Stack com stack atual — 6 categorias: dados, cloud, devops, IA, arquitetura, linguagens (2026-02-18)
 - [x] Preencher seção Sobre com trajetória profissional (2026-02-18)
 - [x] Configurar seção Contato — email, LinkedIn, GitHub, WhatsApp, telefone (2026-02-18)
-- [ ] Criar primeiros artigos técnicos em Markdown
+- [x] Criar primeiros artigos técnicos em Markdown — 3 artigos publicados (2026-02-18)
 
 ---
 
@@ -62,8 +62,9 @@
 > Objetivo: o portfólio reflete o que Diego está **efetivamente fazendo agora** — projetos reais, stack real, atividade real.
 
 **GitHub Integration (atividade e projetos reais)**
-- [ ] Integração com GitHub API — listar repos reais com linguagem, stars, descrição
-- [ ] Seção "Atividade Recente" — commits, PRs, contribuições dos últimos 30 dias
+- [x] Integração com GitHub API — listar repos reais com linguagem, stars, descrição (2026-02-18)
+- [x] Seção "Atividade Recente" — commits, PRs, contribuições em tempo real (2026-02-18)
+- [x] Stats cards com repositórios, seguidores e atividade (2026-02-18)
 - [ ] Filtrar repos por tópico/tag (ex: `data-engineering`, `automation`, `infra`, `hexagonal`)
 - [ ] Exibir projetos em destaque via GitHub Topics ou lista curada no código
 
@@ -104,3 +105,5 @@
 | 2026-02-18 | Setup técnico inicial | `pnpm dev` funcional |
 | 2026-02-18 | Padronização conforme playbook — docs criados, GEMINI.md e agents sincronizados | Estrutura de pastas validada |
 | 2026-02-18 | Deploy Vercel + domínio diegosantos.me configurado | https://diegosantos.me acessível |
+| 2026-02-18 | Artigos técnicos criados (3) | `/artigos` funcional com TerezIA, RAG e Hexagonal |
+| 2026-02-18 | Integração GitHub API + seção Atividade Recente | Stats e repos dinâmicos na Home |
