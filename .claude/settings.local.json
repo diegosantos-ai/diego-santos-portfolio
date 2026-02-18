@@ -14,7 +14,8 @@
       "Bash(cmd /c \"dir d:\\\\Projetos\\\\Backlog\\\\diego-santos-portfolio\\\\client\")",
       "Bash(cmd /c \"cd /d d:\\\\Projetos\\\\Backlog\\\\diego-santos-portfolio && npx tsc --noEmit 2>&1\")",
       "Bash(cmd /c \"cd /d d:\\\\Projetos\\\\Backlog\\\\diego-santos-portfolio\\\\client && npx tsc --noEmit 2>&1 && echo TS_OK\")",
-      "Bash(cmd /c \"cd /d d:\\\\Projetos\\\\Backlog\\\\diego-santos-portfolio && where pnpm\")"
+      "Bash(cmd /c \"cd /d d:\\\\Projetos\\\\Backlog\\\\diego-santos-portfolio && where pnpm\")",
+      "Bash(cmd /c:*)"
     ]
   }
 }
