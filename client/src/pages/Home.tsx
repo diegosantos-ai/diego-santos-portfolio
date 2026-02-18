@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
-import { GitHubActivity } from "@/components/GitHubActivity";
+import { GitHubSection } from "@/components/GitHubSection";
 
 import {
   Github,
@@ -565,7 +565,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── GitHub Activity ────────────────────────────────────── */}
+      {/* ── GitHub Section ────────────────────────────────────── */}
       <section id="github" className="py-20 border-b border-border">
         <div className="container">
           <SectionDivider
@@ -582,34 +582,7 @@ export default function Home() {
             }
           />
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl">
-            <div>
-              <p className="font-mono text-xs text-muted-foreground mb-6 tracking-[0.2em] uppercase">
-                // Atividade Recente
-              </p>
-              <GitHubActivity />
-            </div>
-            
-            <div className="hidden lg:block">
-              <p className="font-mono text-xs text-muted-foreground mb-6 tracking-[0.2em] uppercase">
-                // Stats
-              </p>
-              <div className="space-y-4">
-                <img
-                  src="https://github-readme-stats.vercel.app/api?username=diegosantos-ai&show_icons=true&theme=transparent&hide_border=true&title_color=0066FF&icon_color=00FF88&text_color=FFFFFF&bg_color=00000000"
-                  alt="GitHub Stats"
-                  className="w-full rounded border border-border"
-                  loading="lazy"
-                />
-                <img
-                  src="https://github-readme-streak-stats.herokuapp.com/?user=diegosantos-ai&theme=transparent&hide_border=true&ring=0066FF&fire=00FF88&currStreakLabel=FFFFFF&background=00000000"
-                  alt="GitHub Streak"
-                  className="w-full rounded border border-border"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
+          <GitHubSection />
         </div>
       </section>
 
