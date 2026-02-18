@@ -22,6 +22,10 @@ import {
   Globe,
   CheckCircle,
   ArrowLeft,
+  Cloud,
+  GitBranch,
+  Layers,
+  Settings,
 } from "lucide-react";
 
 /**
@@ -273,22 +277,32 @@ export default function Home() {
     {
       category: "Engenharia de Dados",
       icon: Database,
-      items: ["ETL/ELT", "Pipeline Orchestration", "Data Modeling", "PostgreSQL", "MySQL"]
+      items: ["ETL/ELT", "dbt", "Airflow", "PostgreSQL", "pgvector", "Data Modeling"]
     },
     {
-      category: "Linguagens",
-      icon: Code,
-      items: ["Python", "SQL", "Git/GitHub", "TypeScript"]
+      category: "Cloud & Infra",
+      icon: Cloud,
+      items: ["AWS (EC2, S3, Lambda, RDS)", "Docker", "Linux", "CI/CD", "CloudWatch"]
     },
     {
-      category: "Automação",
-      icon: Bot,
-      items: ["n8n", "Zapier", "Make", "GitHub Actions"]
+      category: "Automação & DevOps",
+      icon: GitBranch,
+      items: ["GitHub Actions", "n8n", "Make", "Zapier", "Jira", "Confluence"]
     },
     {
       category: "IA & LLMs",
       icon: Brain,
-      items: ["OpenAI API", "LangChain", "Prompt Engineering", "NLP"]
+      items: ["RAG", "LangChain", "OpenAI", "Anthropic", "MLflow", "ChromaDB"]
+    },
+    {
+      category: "Arquitetura",
+      icon: Layers,
+      items: ["Hexagonal Architecture", "DDD", "Event-driven", "FastAPI", "Microsserviços"]
+    },
+    {
+      category: "Linguagens",
+      icon: Code,
+      items: ["Python", "SQL", "TypeScript", "Bash"]
     },
   ];
 
@@ -300,19 +314,19 @@ export default function Home() {
       description: "15 anos em liderança e operações. Entendo o \"porquê\" dos dados.",
     },
     {
-      icon: Bot,
-      title: "Automação Expert",
-      description: "n8n, Zapier, Make — ferramentas low-code cada vez mais valorizadas.",
+      icon: Layers,
+      title: "Arquitetura Sólida",
+      description: "Hexagonal, DDD, Event-driven — sistemas que escalam sem virar caos.",
     },
     {
       icon: Brain,
       title: "IA & LLMs",
-      description: "Projetos práticos com OpenAI, RAG e Agentes Inteligentes.",
+      description: "RAG, agentes, MLflow — IA aplicada, não teórica.",
     },
     {
-      icon: Github,
-      title: "Portfólio Ativo",
-      description: "9 projetos no GitHub com documentação e impacto de negócio.",
+      icon: Cloud,
+      title: "Cloud & Infra",
+      description: "AWS, Docker, GitHub Actions — pipeline do código ao deploy.",
     },
     {
       icon: MessageSquare,
@@ -654,20 +668,26 @@ export default function Home() {
       {/* Skills Section */}
       <section className="py-24 border-t border-border bg-card/30">
         <div className="container">
-          <h2 className="text-4xl font-bold mb-12 text-center">Competências Técnicas</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">Competências Técnicas</h2>
+            <p className="text-muted-foreground">Stack atual — o que uso efetivamente nos projetos</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skills.map((skill, idx) => (
-              <Card key={skill.category} className="bg-card/50 glass border-border p-6 card-hover card-glow">
+              <Card
+                key={skill.category}
+                className={`bg-card/50 glass border-border p-6 card-hover ${idx % 2 === 0 ? 'card-glow' : 'card-glow-accent'}`}
+              >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
-                    <skill.icon size={20} className="text-primary" />
+                  <div className={`w-10 h-10 rounded-lg ${idx % 2 === 0 ? 'bg-primary/20' : 'bg-accent/20'} flex items-center justify-center`}>
+                    <skill.icon size={20} className={idx % 2 === 0 ? 'text-primary' : 'text-accent'} />
                   </div>
-                  <h3 className="font-bold text-primary">{skill.category}</h3>
+                  <h3 className={`font-bold ${idx % 2 === 0 ? 'text-primary' : 'text-accent'}`}>{skill.category}</h3>
                 </div>
                 <ul className="space-y-2">
                   {skill.items.map((item) => (
                     <li key={item} className="text-sm text-muted-foreground flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 bg-accent rounded-full"></span>
+                      <span className={`w-1.5 h-1.5 rounded-full ${idx % 2 === 0 ? 'bg-primary' : 'bg-accent'}`}></span>
                       {item}
                     </li>
                   ))}
