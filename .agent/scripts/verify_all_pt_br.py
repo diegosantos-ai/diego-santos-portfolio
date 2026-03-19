@@ -36,13 +36,13 @@ def run_cmd(nome: str, comando: list):
 
 def main():
     print_cabecalho("🚀 ESCUDO DE ESTABILIDADE NEXO - VERIFICAÇÃO GLOBAL")
-    
+
     root = Path(__file__).parent.parent.parent.resolve()
     frontend = root / "frontend"
     backend = root
-    
+
     sucesso_geral = True
-    
+
     # 1. Segurança
     print(f"\n{Cores.NEGRITO}🛡️ CAMADA DE SEGURANÇA{Cores.FIM}")
     ok, err = run_cmd("Scan de Vulnerabilidades", ["python", str(root / ".agent/skills/vulnerability-scanner/scripts/security_scan.py"), str(root)])
@@ -53,10 +53,10 @@ def main():
     if frontend.exists():
         # Tipagem
         ok, err = run_cmd("Verificação de Tipos (TSC)", ["powershell", "-Command", f"cd {frontend}; npx tsc --noEmit"])
-        if not ok: 
+        if not ok:
             sucesso_geral = False
             print(f"{Cores.AMARELO}Dica: Verifique se todos os imports estão corretos.{Cores.FIM}")
-        
+
         # Lint
         ok, err = run_cmd("Linting (ESLint)", ["powershell", "-Command", f"cd {frontend}; npm run lint"])
         if not ok: sucesso_geral = False
