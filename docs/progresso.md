@@ -5,7 +5,7 @@
 
 ---
 
-## Fase Atual: Pipeline CI/CD (Fase 8)
+## Fase Atual: Finalizado 🎉
 
 ---
 
@@ -18,12 +18,13 @@
 - [x] (Fase 5) Migração dos 3 cases prioritários (Chat Bot Pref, Dev Workspace, Integracoes AWS).
 - [x] (Fase 6) Refatoração da Home como hub técnico definitivo (Cards automáticos interligados aos markdowns, stack aparente e design repensado).
 - [x] (Fase 7) Limpeza de rotas e códigos zumbi (`Skills` e `Contato` deletados do repo e router).
+- [x] (Fase 8) Pipeline automatizada de qualidade criada (`ci.yml`).
 
 ---
 
-### 📋 Próximas (Plano de Refatoração Vigente)
+### 📋 Próximas (Manutenção Futura)
 
-- [ ] (Fase 8) Pipeline automatizada no GitHub Actions (Para garantir check de code-quality e impedir bugs regressivos nos markdowns)
+- N/A para o ciclo inicial de refatoração do MVP de Engenharia.
 
 ---
 
@@ -31,6 +32,7 @@
 
 | Data | Mudança | Validação |
 |------|---------|-----------|
+| 2026-03-20 | Fase 8: Definição de workflow do Github Actions (Build e TS Check) | local tests |
 | 2026-03-20 | Fase 7: Limpeza de rotas e componentes órfãos (`Contact`, `Skills`) | build validado |
 | 2026-03-20 | Fase 6: Reescrita da Home para padrão Hub de Engenharia e visualização dinâmica de Stacks | build validado |
 | 2026-03-20 | Fase 5: Criação dos 3 markdowns p/ Cases de projeto com profundidade técnica | `pnpm check && pnpm build` verde |
