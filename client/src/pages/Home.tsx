@@ -1,8 +1,15 @@
 import { Link } from "wouter";
 import { ArrowUpRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
+import { getCases, Case } from "@/lib/cases";
 
 export default function Home() {
+  const [recentCases, setRecentCases] = useState<Case[]>([]);
+
+  useEffect(() => {
+    getCases().then(cases => setRecentCases(cases.slice(0, 2)));
+  }, []);
+
   return (
     <div className="container mx-auto px-6 py-20 max-w-4xl">
       {/* Hero Section - Narrative Focus */}
@@ -11,7 +18,7 @@ export default function Home() {
           Sistemas escaláveis, automação corporativa e <span className="text-[#ff3300] italic">arquitetura backend</span>.
         </h1>
         <p className="text-xl md:text-2xl text-[#888] font-light leading-relaxed max-w-2xl text-justify">
-          Olá, sou <strong>Diego Santos</strong>. Engenheiro de Software especializado em construir plataformas resilientes e integrar ecossistemas complexos. Aplico Dados e Inteligência Artificial como extensão da engenharia para resolver problemas reais de negócio.
+          Olá, sou <strong>Diego Santos</strong>. Engenheiro de Software especializado em construir plataformas resilientes e integrar ecossistemas complexos. Aplico automação e Inteligência Artificial como extensão da engenharia para resolver problemas reais de negócio.
         </p>
 
         <div className="mt-12 flex gap-6">
@@ -40,27 +47,16 @@ export default function Home() {
         </div>
 
         <div className="grid gap-12">
-          {[
-            {
-              title: "Nexo Flux",
-              category: "Orquestração de Dados",
-              summary: "Redução de 40% no tempo de processamento de ETL para empresa de logística.",
-              link: "/cases" // Idealmente linkaria para detalhe
-            },
-            {
-              title: "Data Streamer",
-              category: "Analytics em Tempo Real",
-              summary: "Ingestão de 5TB/dia com detecção de fraude millisecond-latency.",
-              link: "/cases"
-            }
-          ].map((project) => (
-            <div key={project.title} className="group cursor-pointer">
-              <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4 mb-2">
-                <h3 className="text-2xl font-bold group-hover:text-[#ff3300] transition-colors">{project.title}</h3>
-                <span className="text-xs font-mono text-[#666] uppercase tracking-widest">{project.category}</span>
-              </div>
-              <p className="text-[#888] leading-relaxed max-w-2xl">{project.summary}</p>
-            </div>
+          {recentCases.map((c) => (
+            <Link key={c.slug} href={`/cases/${c.slug}`}>
+              <a className="block group cursor-pointer">
+                <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4 mb-2">
+                  <h3 className="text-2xl font-bold group-hover:text-[#ff3300] transition-colors">{c.title}</h3>
+                  <span className="text-xs font-mono text-[#666] uppercase tracking-widest">{c.category}</span>
+                </div>
+                <p className="text-[#888] leading-relaxed max-w-2xl">{c.summary}</p>
+              </a>
+            </Link>
           ))}
         </div>
       </section>
@@ -69,20 +65,17 @@ export default function Home() {
       <section className="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-[#222] pt-20">
         <div>
           <h3 className="text-xl font-serif mb-4 text-[#f2f2f2]">Escrita Técnica</h3>
-          <p className="text-[#666] mb-6">Compartilho aprendizados sobre Engenharia de Dados, Arquitetura e Carreira.</p>
+          <p className="text-[#666] mb-6">Compartilho aprendizados sobre Engenharia, Arquitetura e IA.</p>
           <Link href="/artigos">
-            <a className="text-[#ff3300] hover:underline">Ler Artigos &rarr;</a>
+            <a className="text-[#ff3300] hover:underline">Ler Publicações &rarr;</a>
           </Link>
         </div>
         <div>
           <h3 className="text-xl font-serif mb-4 text-[#f2f2f2]">Vamos Conversar?</h3>
-          <p className="text-[#666] mb-6">Estou sempre aberto a discutir novos desafios e oportunidades de consultoria.</p>
-          <Link href="/contato">
-            <a className="text-[#ff3300] hover:underline">Entrar em Contato &rarr;</a>
-          </Link>
+          <p className="text-[#666] mb-6">Aberto a discutir desafios complexos de arquitetura e infraestrutura.</p>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-[#ff3300] hover:underline">LinkedIn &rarr;</a>
         </div>
       </section>
-
     </div>
   );
 }
