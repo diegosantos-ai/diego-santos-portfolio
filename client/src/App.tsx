@@ -2,6 +2,7 @@ import { Switch, Route } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import Home from "@/pages/Home";
 import Projects from "@/pages/Projects";
+import CasePost from "@/pages/CasePost";
 import Articles from "@/pages/Articles";
 import ArticlePost from "@/pages/ArticlePost";
 import NotFound from "@/pages/NotFound";
@@ -17,6 +18,8 @@ function App() {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/cases" component={Projects} />
+          <Route path="/cases/:slug" component={CasePost} />
+          
           {/* Rotas de transição e legado - mantidas por enquanto, mas sem protagonismo no menu */}
           <Route path="/projetos" component={Projects} />
           <Route path="/sobre" component={About} />

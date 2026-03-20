@@ -1,42 +1,25 @@
-import { ArrowUpRight, Github, ExternalLink } from "lucide-react";
-
-const PROJECTS = [
-    {
-        title: "Nexo Flux - Orquestrador ETL Distribuído",
-        businessProblem: "A empresa enfrentava lentidão no processamento de logs diários, com atrasos de até 6 horas na disponibilidade dos dados para o time de analytics, impactando a tomada de decisão.",
-        solution: "Desenvolvi um orquestrador distribuído em Rust com gRPC para comunicação entre nós. Implementei particionamento dinâmico de dados e backpressure handling para maximizar throughput.",
-        result: "Redução de 95% no tempo de processamento (de 6h para 20min) e redução de 40% nos custos de infraestrutura AWS.",
-        stack: ["Rust", "Tokio", "gRPC", "AWS S3", "PostgreSQL"],
-        links: {
-            github: "https://github.com/diegosantos-ai/nexo-flux",
-            demo: "#"
-        }
-    },
-    {
-        title: "Data Streamer - Ingestão de Fraude Real-Time",
-        businessProblem: "O sistema legado de detecção de fraude operava em batch (D+1), permitindo que transações fraudulentas fossem aprovadas e descobertas apenas no dia seguinte.",
-        solution: "Arquitetei uma solução de streaming baseada em Apache Kafka e Flink. Criei janelas de tempo deslizantes para análise de comportamento de usuário em tempo real.",
-        result: "Detecção de anomalias em sub-segundo (<500ms). Bloqueio preventivo de R$ 2M em fraudes no primeiro mês de operação.",
-        stack: ["Python", "Apache Kafka", "Apache Flink", "Redis", "Docker"],
-        links: {
-            github: "https://github.com/diegosantos-ai/data-streamer",
-            demo: "#"
-        }
-    },
-    {
-        title: "AI Pipeline - RAG para Documentação Técnica",
-        businessProblem: "Engenheiros perdiam horas buscando informações em documentações técnicas dispersas e desatualizadas.",
-        solution: "Implementei um pipeline de RAG (Retrieval-Augmented Generation) que ingere automaticamente wikis internas, PDFs e repositórios de código. Usei Qdrant para busca vetorial e LangChain para orquestração.",
-        result: "Redução de 30% no tempo médio de onboarding de novos engenheiros e resposta instantânea para dúvidas de arquitetura.",
-        stack: ["Python", "LangChain", "Qdrant", "OpenAI API", "React"],
-        links: {
-            github: "https://github.com/diegosantos-ai/ai-pipeline",
-            demo: "#"
-        }
-    }
-];
+import { useState, useEffect } from "react";
+import { Link } from "wouter";
+import { ArrowUpRight } from "lucide-react";
+import { getCases, Case } from "@/lib/cases";
 
 export default function Projects() {
+    const [cases, setCases] = useState<Case[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        async function load() {
+            const data = await getCases();
+            setCases(data);
+            setLoading(false);
+        }
+        load();
+    }, []);
+
+    if (loading) {
+        return <div className="min-h-screen grid place-items-center font-mono bg-[#0a0a0a] text-[#ff3300] animate-pulse">CARREGANDO CASES...</div>;
+    }
+
     return (
         <div className="container mx-auto px-6 py-20 max-w-4xl">
             <h1 className="text-4xl md:text-5xl font-serif text-[#f2f2f2] mb-6">Cases Técnicos</h1>
@@ -45,48 +28,39 @@ export default function Projects() {
             </p>
 
             <div className="space-y-24">
-                {PROJECTS.map((project, index) => (
-                    <article key={index} className="border-l-2 border-[#222] pl-8 md:pl-12 py-2 relative">
+                {cases.map((projeto, index) => (
+                    <article key={projeto.slug} className="border-l-2 border-[#222] pl-8 md:pl-12 py-2 relative group hover:border-[#ff3300] transition-colors duration-500">
                         {/* Timeline dot */}
-                        <div className="absolute -left-[9px] top-0 w-4 h-4 bg-[#0a0a0a] border-2 border-[#ff3300] rounded-full"></div>
-
-                        <header className="mb-8">
-                            <h2 className="text-3xl font-bold text-[#f2f2f2] mb-4">{project.title}</h2>
-                            <div className="flex gap-4">
-                                <a href={project.links.github} target="_blank" className="text-xs font-bold uppercase tracking-widest flex items-center gap-2 text-[#888] hover:text-[#fff] transition-colors">
-                                    <Github size={14} /> Repository
+                        <div className="absolute -left-[9px] top-0 w-4 h-4 bg-[#0a0a0a] border-2 border-[#555] group-hover:border-[#ff3300] group-hover:bg-[#ff3300] transition-all duration-500 rounded-full shadow-[0_0_10px_rgba(255,51,0,0)] group-hover:shadow-[0_0_15px_rgba(255,51,0,0.5)]"></div>
+                        
+                        <header className="mb-4">
+                            <Link href={`/cases/${projeto.slug}`}>
+                                <a className="text-3xl font-bold text-[#f2f2f2] group-hover:text-[#ff3300] transition-colors mb-2 inline-flex items-center gap-3">
+                                    {projeto.title} <ArrowUpRight size={20} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                                 </a>
-                                {project.links.demo !== "#" && (
-                                    <a href={project.links.demo} target="_blank" className="text-xs font-bold uppercase tracking-widest flex items-center gap-2 text-[#888] hover:text-[#fff] transition-colors">
-                                        <ExternalLink size={14} /> Live Demo
-                                    </a>
-                                )}
+                            </Link>
+                            <div className="flex gap-4 items-center text-xs font-mono text-[#666] uppercase tracking-widest mt-2">
+                                <span>{projeto.category}</span>
+                                <span>•</span>
+                                <span>{projeto.date}</span>
                             </div>
                         </header>
 
-                        <div className="grid gap-8 text-[#aaa] leading-relaxed">
-                            <div>
-                                <h3 className="text-[#ff3300] font-bold uppercase tracking-widest text-xs mb-2">O Problema</h3>
-                                <p>{project.businessProblem}</p>
-                            </div>
+                        <p className="text-[#aaa] leading-relaxed max-w-2xl mb-8">
+                            {projeto.summary}
+                        </p>
 
-                            <div>
-                                <h3 className="text-[#ff3300] font-bold uppercase tracking-widest text-xs mb-2">A Solução</h3>
-                                <p>{project.solution}</p>
-                            </div>
-
-                            <div className="bg-[#111] p-6 border-l-4 border-[#ff3300]">
-                                <h3 className="text-[#fff] font-bold uppercase tracking-widest text-xs mb-2">Resultado</h3>
-                                <p className="text-[#f2f2f2] font-medium">{project.result}</p>
-                            </div>
-                        </div>
-
-                        <div className="mt-8 flex flex-wrap gap-2">
-                            {project.stack.map(tech => (
-                                <span key={tech} className="bg-[#1a1a1a] text-[#666] px-3 py-1 text-xs font-mono rounded-full">
+                        <div className="flex flex-wrap gap-2">
+                            {projeto.stack.slice(0, 5).map(tech => (
+                                <span key={tech} className="bg-[#111] text-[#888] border border-[#222] px-3 py-1 text-xs font-mono rounded">
                                     {tech}
                                 </span>
                             ))}
+                            {projeto.stack.length > 5 && (
+                                <span className="bg-transparent text-[#666] px-2 py-1 text-xs font-mono">
+                                    +{projeto.stack.length - 5}
+                                </span>
+                            )}
                         </div>
                     </article>
                 ))}
