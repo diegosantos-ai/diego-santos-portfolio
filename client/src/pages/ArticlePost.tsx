@@ -81,7 +81,7 @@ export default function ArticlePost() {
                 </header>
 
                 {/* Conteúdo */}
-                <div className="prose prose-invert prose-lg max-w-none 
+                <div className="prose prose-invert prose-lg max-w-none
                     prose-headings:font-bold prose-headings:tracking-tighter prose-headings:text-white
                     prose-p:leading-relaxed prose-p:text-[#aaa] prose-p:text-base
                     prose-a:text-[#00ff41] prose-a:no-underline hover:prose-a:underline

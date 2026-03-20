@@ -14,7 +14,7 @@ Neste artigo, detalho as decisões de engenharia por trás do **TerezIA**, o ass
 
 ## O Desafio: Confiança Zero
 
-O principal requisito não era "ser inteligente", mas **"ser confiável"**. 
+O principal requisito não era "ser inteligente", mas **"ser confiável"**.
 
 > "Um atendente humano pode dizer 'não sei'. Um LLM mal configurado inventa uma resposta convincente."
 

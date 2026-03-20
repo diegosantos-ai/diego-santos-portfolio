@@ -58,13 +58,13 @@ export async function getGitHubRepos(): Promise<GitHubRepo[]> {
     }
 
     const repos: GitHubRepo[] = await response.json();
-    
+
     // Filtra repositórios que não são forks
     const ownRepos = repos.filter((repo) => !repo.fork);
-    
+
     // Salva no cache
     setCachedRepos(ownRepos);
-    
+
     console.log(`[GitHub] ${ownRepos.length} repositórios carregados`);
     return ownRepos;
   } catch (error) {
@@ -124,9 +124,9 @@ export async function getGitHubActivity(): Promise<GitHubActivity[]> {
     }
 
     const events = await response.json();
-    
+
     return events
-      .filter((event: any) => 
+      .filter((event: any) =>
         ["PushEvent", "CreateEvent", "PullRequestEvent"].includes(event.type)
       )
       .slice(0, 5)
@@ -150,12 +150,12 @@ export function formatRelativeDate(dateString: string): string {
   const now = new Date();
   const diffMs = now.getTime() - date.getTime();
   const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-  
+
   if (diffDays === 0) return "Hoje";
   if (diffDays === 1) return "Ontem";
   if (diffDays < 7) return `${diffDays} dias atrás`;
   if (diffDays < 30) return `${Math.floor(diffDays / 7)} semanas atrás`;
-  
+
   return date.toLocaleDateString("pt-BR", {
     month: "short",
     year: "numeric",
@@ -178,7 +178,7 @@ export function getLanguageColor(language: string | null): string {
     Rust: "bg-orange-700/20 text-orange-800",
     Go: "bg-cyan-500/20 text-cyan-600",
   };
-  
+
   return colors[language || ""] || "bg-muted text-muted-foreground";
 }
 
@@ -187,15 +187,15 @@ function getCachedRepos(): GitHubRepo[] | null {
   try {
     const cached = localStorage.getItem(CACHE_KEY);
     if (!cached) return null;
-    
+
     const data = JSON.parse(cached) as CacheData;
     const now = Date.now();
-    
+
     if (now - data.timestamp > CACHE_DURATION) {
       localStorage.removeItem(CACHE_KEY);
       return null;
     }
-    
+
     return data.repos;
   } catch {
     return null;

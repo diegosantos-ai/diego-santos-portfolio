@@ -43,7 +43,7 @@ class RawData:
     id: int
     value: float
 
-@dataclass  
+@dataclass
 class CleanData:
     id: int
     value: float
@@ -62,12 +62,12 @@ class DataProcessor:
     def __init__(self, reader: DataRepository, writer: StorageRepository):
         self.reader = reader
         self.writer = writer
-    
+
     def process(self) -> None:
         raw = self.reader.read()
         clean = [self._transform(r) for r in raw if r.value > 0]
         self.writer.write(clean)
-    
+
     def _transform(self, data: RawData) -> CleanData:
         category = "alto" if data.value > 100 else "baixo"
         return CleanData(data.id, data.value, category)
@@ -85,7 +85,7 @@ class ExcelReader(DataRepository):
     """Adapter para ler Excel"""
     def __init__(self, filepath: str):
         self.filepath = filepath
-    
+
     def read(self) -> list[RawData]:
         df = pd.read_excel(self.filepath)
         return [RawData(row.id, row.value) for _, row in df.iterrows()]
@@ -100,7 +100,7 @@ class S3Writer(StorageRepository):
         self.bucket = bucket
         self.key = key
         self.s3 = boto3.client("s3")
-    
+
     def write(self, data: list[CleanData]) -> None:
         # Serializa e envia para S3
         ...
@@ -118,7 +118,7 @@ from adapters.s3_writer import S3Writer
 def main():
     reader = ExcelReader("/data/input.xlsx")
     writer = S3Writer("my-bucket", "output/clean.parquet")
-    
+
     processor = DataProcessor(reader, writer)
     processor.process()
 
@@ -148,7 +148,7 @@ class FakeReader:
 class FakeWriter:
     def __init__(self):
         self.written = []
-    
+
     def write(self, data):
         self.written = data
 
@@ -156,9 +156,9 @@ def test_processor_filters_negative():
     reader = FakeReader()
     writer = FakeWriter()
     processor = DataProcessor(reader, writer)
-    
+
     processor.process()
-    
+
     assert len(writer.written) == 2
     assert writer.written[0].category == "baixo"
     assert writer.written[1].category == "alto"

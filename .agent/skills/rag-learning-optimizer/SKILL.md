@@ -66,4 +66,3 @@ When using this skill, always deliver:
 ## Script
 
 Use `scripts/rag_eval_report.py` to generate quick offline metrics from JSONL traces.
-
