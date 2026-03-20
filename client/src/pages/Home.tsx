@@ -8,10 +8,10 @@ export default function Home() {
       {/* Hero Section - Narrative Focus */}
       <section className="mb-32">
         <h1 className="text-5xl md:text-7xl font-serif text-[#f2f2f2] leading-[1.1] mb-8 tracking-tight">
-          Transformando dados complexos em <span className="text-[#ff3300] italic">decisões estratégicas</span>.
+          Sistemas escaláveis, automação corporativa e <span className="text-[#ff3300] italic">arquitetura backend</span>.
         </h1>
         <p className="text-xl md:text-2xl text-[#888] font-light leading-relaxed max-w-2xl text-justify">
-          Olá, sou <strong>Diego Santos</strong>. Engenheiro de Dados Sênior especializado em construir pipelines resilientes e arquiteturas escaláveis. Acredito que tecnologia sem propósito de negócio é apenas custo.
+          Olá, sou <strong>Diego Santos</strong>. Engenheiro de Software especializado em construir plataformas resilientes e integrar ecossistemas complexos. Aplico Dados e Inteligência Artificial como extensão da engenharia para resolver problemas reais de negócio.
         </p>
 
         <div className="mt-12 flex gap-6">

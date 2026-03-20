@@ -1,5 +1,32 @@
 # Plano operacional de execução por fase
 
+
+# Branches sugeridas
+
+Para manter isolamento de entrega, no seu padrão de trabalho, eu sugiro:
+
+* `feature/portfolio-repositioning`
+* `feature/portfolio-navigation-cases`
+* `feature/portfolio-case-engine`
+* `feature/portfolio-case-content`
+* `feature/portfolio-home-refactor`
+* `feature/portfolio-cleanup`
+* `feature/portfolio-ci`
+
+Isso mantém a disciplina de “uma branch = uma entrega coerente”. 
+
+---
+
+# Critérios globais de validação
+
+Esses critérios precisam ser repetidos em quase toda fase, porque o readiness já os apontou como limitantes:
+
+* `pnpm check` sem erro
+* `pnpm build` saudável
+* navegação SPA intacta
+* rotas antigas tratadas
+* clique em case sem refresh indevido 
+
 ## Fase 0 — Preparação e congelamento de contexto
 
 ### Objetivo
