@@ -39,9 +39,9 @@ const PROJECTS = [
 export default function Projects() {
     return (
         <div className="container mx-auto px-6 py-20 max-w-4xl">
-            <h1 className="text-4xl md:text-5xl font-serif text-[#f2f2f2] mb-6">Projetos de Impacto</h1>
+            <h1 className="text-4xl md:text-5xl font-serif text-[#f2f2f2] mb-6">Cases Técnicos</h1>
             <p className="text-xl text-[#888] font-light mb-16 max-w-2xl">
-                Uma seleção de desafios técnicos que resolvi, com foco em valor de negócio e arquitetura robusta.
+                Uma seleção de desafios técnicos que resolvi, com foco em impacto no negócio e arquitetura de software robusta.
             </p>
 
             <div className="space-y-24">

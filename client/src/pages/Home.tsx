@@ -15,9 +15,9 @@ export default function Home() {
         </p>
 
         <div className="mt-12 flex gap-6">
-          <Link href="/projetos">
+          <Link href="/cases">
             <a className="bg-[#f2f2f2] text-[#0a0a0a] px-8 py-4 font-bold uppercase tracking-widest text-sm hover:bg-[#ff3300] hover:text-white transition-colors">
-              Ver Projetos
+              Ver Cases
             </a>
           </Link>
           <Link href="/sobre">
@@ -32,9 +32,9 @@ export default function Home() {
       <section className="mb-32 border-t border-[#222] pt-20">
         <div className="flex items-baseline justify-between mb-12">
           <h2 className="text-3xl font-serif text-[#f2f2f2]">Trabalhos Recentes</h2>
-          <Link href="/projetos">
+          <Link href="/cases">
             <a className="text-[#ff3300] text-sm hover:underline flex items-center gap-2">
-              Ver Portfolio Completo <ArrowUpRight size={14} />
+              Ver Cases Técnicos <ArrowUpRight size={14} />
             </a>
           </Link>
         </div>
@@ -45,13 +45,13 @@ export default function Home() {
               title: "Nexo Flux",
               category: "Orquestração de Dados",
               summary: "Redução de 40% no tempo de processamento de ETL para empresa de logística.",
-              link: "/projetos" // Idealmente linkaria para detalhe
+              link: "/cases" // Idealmente linkaria para detalhe
             },
             {
               title: "Data Streamer",
               category: "Analytics em Tempo Real",
               summary: "Ingestão de 5TB/dia com detecção de fraude millisecond-latency.",
-              link: "/projetos"
+              link: "/cases"
             }
           ].map((project) => (
             <div key={project.title} className="group cursor-pointer">

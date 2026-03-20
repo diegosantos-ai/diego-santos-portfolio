@@ -16,12 +16,15 @@ function App() {
       <div className="pt-16"> {/* Spacer for fixed nav */}
         <Switch>
           <Route path="/" component={Home} />
+          <Route path="/cases" component={Projects} />
+          {/* Rotas de transição e legado - mantidas por enquanto, mas sem protagonismo no menu */}
+          <Route path="/projetos" component={Projects} />
           <Route path="/sobre" component={About} />
           <Route path="/habilidades" component={Skills} />
-          <Route path="/projetos" component={Projects} />
+          <Route path="/contato" component={Contact} />
+          
           <Route path="/artigos" component={Articles} />
           <Route path="/artigos/:slug" component={ArticlePost} />
-          <Route path="/contato" component={Contact} />
           <Route component={NotFound} />
         </Switch>
       </div>
