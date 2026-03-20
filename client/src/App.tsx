@@ -1,6 +1,6 @@
 import { Switch, Route } from "wouter";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import Navigation from "./components/Navigation";
+import { Navigation } from "./components/Navigation";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
