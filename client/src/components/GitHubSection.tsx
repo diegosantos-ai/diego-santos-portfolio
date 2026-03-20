@@ -1,11 +1,11 @@
 import { useGitHubStats } from '@/hooks/useGitHubStats';
 import { Card } from '@/components/ui/card';
-import { 
-    Github, 
-    GitFork, 
-    Star, 
-    Users, 
-    BookOpen, 
+import {
+    Github,
+    GitFork,
+    Star,
+    Users,
+    BookOpen,
     ExternalLink,
     GitCommit,
     GitPullRequest,
@@ -21,12 +21,12 @@ function formatRelativeDate(dateString: string): string {
   const now = new Date();
   const diffMs = now.getTime() - date.getTime();
   const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-  
+
   if (diffDays === 0) return "Hoje";
   if (diffDays === 1) return "Ontem";
   if (diffDays < 7) return `${diffDays} dias atrás`;
   if (diffDays < 30) return `${Math.floor(diffDays / 7)} semanas atrás`;
-  
+
   return date.toLocaleDateString("pt-BR", {
     month: "short",
     year: "numeric",
@@ -118,7 +118,7 @@ function ProfileCard({ stats }: { stats: NonNullable<ReturnType<typeof useGitHub
                 <h3 className="text-xl font-bold tracking-tight">
                     {stats.name || stats.login}
                 </h3>
-                <a 
+                <a
                     href={stats.html_url}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -190,28 +190,28 @@ function RepoCard({ repo }: { repo: ReturnType<typeof useGitHubStats>['repos'][0
                         {repo.description || 'Sem descrição'}
                     </p>
                 </div>
-                <ExternalLink 
-                    size={12} 
-                    className="text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" 
+                <ExternalLink
+                    size={12}
+                    className="text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0"
                 />
             </div>
-            
+
             <div className="flex items-center gap-4 mt-3 text-xs text-muted-foreground">
                 {repo.language && (
                     <span className="flex items-center gap-1.5">
-                        <span 
-                            className="w-2.5 h-2.5 rounded-full" 
+                        <span
+                            className="w-2.5 h-2.5 rounded-full"
                             style={{ backgroundColor: getLanguageColor(repo.language) }}
                         />
                         {repo.language}
                     </span>
                 )}
                 <span className="flex items-center gap-1 hover:text-foreground transition-colors">
-                    <Star size={12} /> 
+                    <Star size={12} />
                     {repo.stargazers_count}
                 </span>
                 <span className="flex items-center gap-1 hover:text-foreground transition-colors">
-                    <GitFork size={12} /> 
+                    <GitFork size={12} />
                     {repo.forks_count}
                 </span>
                 <span className="ml-auto font-mono text-[10px]">
@@ -229,7 +229,7 @@ function ActivityTimeline({ repos }: { repos: ReturnType<typeof useGitHubStats>[
         const types = ['PushEvent', 'CreateEvent', 'PullRequestEvent'] as const;
         const type = types[idx % types.length];
         const daysAgo = idx + 1;
-        
+
         return {
             type,
             repo: repo.name,
@@ -268,14 +268,14 @@ function ActivityTimeline({ repos }: { repos: ReturnType<typeof useGitHubStats>[
                             <div className="w-px h-10 bg-border mt-1" />
                         )}
                     </div>
-                    
+
                     {/* Conteúdo */}
                     <div className="flex-1 pb-5">
                         <div className="flex items-center gap-2 flex-wrap">
                             <span className="text-xs text-muted-foreground">
                                 {getActivityLabel(activity.type)}
                             </span>
-                            <a 
+                            <a
                                 href={`https://github.com/diegosantos-ai/${activity.repo}`}
                                 target="_blank"
                                 rel="noopener noreferrer"

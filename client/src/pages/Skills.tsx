@@ -2,45 +2,36 @@ import { Database, Cpu, Search, Cloud, Code, BarChart } from "lucide-react";
 
 const SKILL_CATEGORIES = [
     {
-        title: "Engenharia de Dados",
-        icon: Database,
-        description: "Construção de pipelines resilientes e modelagem de dados escalável.",
-        skills: [
-            { name: "Apache Airflow", context: "Orquestração de workflows complexos e dependências." },
-            { name: "Apache Kafka", context: "Ingestão de eventos em tempo real e arquitetura EDA." },
-            { name: "Spark / PySpark", context: "Processamento distribuído de grandes volumes de dados." },
-            { name: "dbt (Data Build Tool)", context: "Transformação e testes de dados no warehouse." },
-        ]
-    },
-    {
-        title: "Banco de Dados & Armazenamento",
-        icon: Cloud,
-        description: "Escolha e otimização da tecnologia certa para cada caso de uso.",
-        skills: [
-            { name: "PostgreSQL", context: "OLTP principal e warehousing para pequenas escalas." },
-            { name: "Snowflake / BigQuery", context: "Data Warehousing moderno em nuvem." },
-            { name: "Redis", context: "Caching e armazenamento de sessão de baixa latência." },
-            { name: "Vector DBs (Qdrant)", context: "Busca semântica para aplicações de IA." },
-        ]
-    },
-    {
-        title: "Machine Learning & IA",
-        icon: Cpu,
-        description: "Operacionalização de modelos e integração de LLMs.",
-        skills: [
-            { name: "Scikit-Learn", context: "Modelos preditivos clássicos e análise estatística." },
-            { name: "LangChain", context: "Orquestração de LLMs e construção de agentes." },
-            { name: "MLflow", context: "Rastreamento de experimentos e registro de modelos." },
-        ]
-    },
-    {
-        title: "DevOps & Infraestrutura",
+        title: "Engenharia de Software & Backend",
         icon: Code,
-        description: "Automação e infraestrutura como código.",
+        description: "Desenvolvimento de APIs robustas, microsserviços e integração de sistemas complexos.",
         skills: [
-            { name: "Docker / Kubernetes", context: "Containerização e orquestração de serviços." },
-            { name: "Terraform", context: "Provisionamento de infraestrutura em AWS/GCP." },
-            { name: "CI/CD (GitHub Actions)", context: "Automação de testes e deploy." }
+            { name: "Node.js / TypeScript", context: "Desenvolvimento backend contínuo, seguro e com alta tipagem." },
+            { name: "Python", context: "Scripts de automação, manipulação de dados e integrações lógicas profundas." },
+            { name: "REST & GraphQL", context: "Design de APIs conectando múltiplos sistemas legados e em nuvem." },
+            { name: "PostgreSQL / Redis", context: "Modelagem relacional para transações e caching de baixa latência." },
+        ]
+    },
+    {
+        title: "Automação & Plataforma",
+        icon: Cloud,
+        description: "Orquestração de ambientes, automações operacionais e cultura DevOps.",
+        skills: [
+            { name: "Docker / Kubernetes", context: "Containerização, deployment previsível e orquestração de serviços." },
+            { name: "CI/CD (GitHub Actions)", context: "Esteiras de validação estática, teste e deploy automatizado." },
+            { name: "Terraform", context: "Provisionamento de infraestrutura como código (IaC) e idempotência." },
+            { name: "n8n / Airflow", context: "Criação de fluxos complexos de automação de processos de negócio." },
+        ]
+    },
+    {
+        title: "IA Aplicada & Engenharia de Dados",
+        icon: Cpu,
+        description: "A IA como extensão pragmática da engenharia de software e suporte em dados.",
+        skills: [
+            { name: "Integração LLMs", context: "Orquestração de modelos, agentes autônomos e RAG em produção." },
+            { name: "Vector DBs (Qdrant)", context: "Busca semântica acelerada para aplicações inteligentes." },
+            { name: "dbt & Spark", context: "Transformações analíticas mantidas como subproduto de software." },
+            { name: "Kafka", context: "Ingestão e processamento de eventos orientados a dados estruturados." },
         ]
     }
 ];
