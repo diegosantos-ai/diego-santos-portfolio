@@ -13,7 +13,7 @@ Para manter isolamento de entrega, no seu padrão de trabalho, eu sugiro:
 * `feature/portfolio-cleanup`
 * `feature/portfolio-ci`
 
-Isso mantém a disciplina de “uma branch = uma entrega coerente”. 
+Isso mantém a disciplina de “uma branch = uma entrega coerente”.
 
 ---
 
@@ -25,13 +25,13 @@ Esses critérios precisam ser repetidos em quase toda fase, porque o readiness j
 * `pnpm build` saudável
 * navegação SPA intacta
 * rotas antigas tratadas
-* clique em case sem refresh indevido 
+* clique em case sem refresh indevido
 
 ## Fase 0 — Preparação e congelamento de contexto
 
 ### Objetivo
 
-Abrir a refatoração com contexto claro, branch correta, critério de aceite definido e baseline técnico registrado, seguindo seu fluxo padrão de execução: entender → planejar → isolar → implementar → validar → registrar → encerrar. 
+Abrir a refatoração com contexto claro, branch correta, critério de aceite definido e baseline técnico registrado, seguindo seu fluxo padrão de execução: entender → planejar → isolar → implementar → validar → registrar → encerrar.
 
 ### Critério de aceite
 
@@ -79,7 +79,7 @@ Abrir a refatoração com contexto claro, branch correta, critério de aceite de
 
 ### Saída esperada
 
-Projeto pronto para refatorar com método, sem nebulosidade operacional. Isso é coerente com seu fluxo macro: não começar sem objetivo, branch, validação e próximo passo claro.  
+Projeto pronto para refatorar com método, sem nebulosidade operacional. Isso é coerente com seu fluxo macro: não começar sem objetivo, branch, validação e próximo passo claro.
 
 ---
 
@@ -87,7 +87,7 @@ Projeto pronto para refatorar com método, sem nebulosidade operacional. Isso é
 
 ### Objetivo
 
-Corrigir a mensagem principal do portfólio para que ele deixe de comunicar “Engenharia de Dados pura” e passe a comunicar um perfil mais alinhado a **desenvolvimento, automação, backend, integração e engenharia aplicada**, sem apagar sua base em dados. O assessment apontou esse como o maior desalinhamento atual.  
+Corrigir a mensagem principal do portfólio para que ele deixe de comunicar “Engenharia de Dados pura” e passe a comunicar um perfil mais alinhado a **desenvolvimento, automação, backend, integração e engenharia aplicada**, sem apagar sua base em dados. O assessment apontou esse como o maior desalinhamento atual.
 
 ### Critério de aceite
 
@@ -133,7 +133,7 @@ Ao abrir a Home e o README, o visitante deve entender em menos de 20 segundos qu
 
 ### Saída esperada
 
-Nova tese pública consistente com o objetivo maior do projeto, que exige portfólio coerente com vaga-alvo, profundidade técnica e narrativa de mercado.  
+Nova tese pública consistente com o objetivo maior do projeto, que exige portfólio coerente com vaga-alvo, profundidade técnica e narrativa de mercado.
 
 ---
 
@@ -141,7 +141,7 @@ Nova tese pública consistente com o objetivo maior do projeto, que exige portf�
 
 ### Objetivo
 
-Sair da estrutura de “currículo web” fragmentado (`Sobre`, `Habilidades`, `Projetos`, `Contato`) e migrar para uma arquitetura mais forte de **Home + Cases + Publicações**, reduzindo fricção e aumentando densidade de prova técnica. O assessment aponta que a estrutura atual dilui evidências e aumenta cliques desnecessários. 
+Sair da estrutura de “currículo web” fragmentado (`Sobre`, `Habilidades`, `Projetos`, `Contato`) e migrar para uma arquitetura mais forte de **Home + Cases + Publicações**, reduzindo fricção e aumentando densidade de prova técnica. O assessment aponta que a estrutura atual dilui evidências e aumenta cliques desnecessários.
 
 ### Critério de aceite
 
@@ -189,7 +189,7 @@ A navegação principal deve refletir a arquitetura nova:
 
 ### Saída esperada
 
-Arquitetura mais coerente com a recomendação do assessment: Home como hub, Cases como prova profunda e Publicações como extensão da narrativa técnica. 
+Arquitetura mais coerente com a recomendação do assessment: Home como hub, Cases como prova profunda e Publicações como extensão da narrativa técnica.
 
 ---
 
@@ -197,7 +197,7 @@ Arquitetura mais coerente com a recomendação do assessment: Home como hub, Cas
 
 ### Objetivo
 
-Definir o padrão único de case técnico que será reutilizado em todos os projetos fortes. Isso atende diretamente à diretriz da documentação maior: transformar projetos em **cases apresentáveis**, com documentação, arquitetura, trade-offs e profundidade.  
+Definir o padrão único de case técnico que será reutilizado em todos os projetos fortes. Isso atende diretamente à diretriz da documentação maior: transformar projetos em **cases apresentáveis**, com documentação, arquitetura, trade-offs e profundidade.
 
 ### Critério de aceite
 
@@ -248,7 +248,7 @@ Existe um template reutilizável de case com seções fixas e legíveis.
 
 ### Saída esperada
 
-Um padrão de case que permite transformar projetos em ativos de prova pública de consistência. 
+Um padrão de case que permite transformar projetos em ativos de prova pública de consistência.
 
 ---
 
@@ -256,7 +256,7 @@ Um padrão de case que permite transformar projetos em ativos de prova pública 
 
 ### Objetivo
 
-Eliminar o acoplamento de projetos hardcoded no TSX e migrar para um motor de conteúdo semelhante ao dos artigos, usando Markdown + `gray-matter`. O readiness técnico priorizou exatamente isso.  
+Eliminar o acoplamento de projetos hardcoded no TSX e migrar para um motor de conteúdo semelhante ao dos artigos, usando Markdown + `gray-matter`. O readiness técnico priorizou exatamente isso.
 
 ### Critério de aceite
 
@@ -299,7 +299,7 @@ Eliminar o acoplamento de projetos hardcoded no TSX e migrar para um motor de co
 
 ### Saída esperada
 
-Base técnica pronta para escalar profundidade sem sujar componentes com dados mockados. Isso foi apontado como recomendação técnica prioritária.  
+Base técnica pronta para escalar profundidade sem sujar componentes com dados mockados. Isso foi apontado como recomendação técnica prioritária.
 
 ---
 
@@ -352,7 +352,7 @@ Pelo menos 3 cases completos publicados e navegáveis.
 
 ### Saída esperada
 
-O portfólio passa a demonstrar profundidade real, não apenas cards resumidos — um dos critérios de sucesso explícitos da sua documentação. 
+O portfólio passa a demonstrar profundidade real, não apenas cards resumidos — um dos critérios de sucesso explícitos da sua documentação.
 
 ---
 
@@ -406,7 +406,7 @@ A Home precisa conduzir o visitante para prova concreta em no máximo 2 cliques.
 
 ### Saída esperada
 
-Home coerente com a arquitetura proposta no assessment. 
+Home coerente com a arquitetura proposta no assessment.
 
 ---
 
@@ -414,7 +414,7 @@ Home coerente com a arquitetura proposta no assessment.
 
 ### Objetivo
 
-Remover o que ficar redundante depois que Home + Cases + Publicações estiverem estáveis. O readiness sugere purgar páginas e primitivos desnecessários só após estabilidade. 
+Remover o que ficar redundante depois que Home + Cases + Publicações estiverem estáveis. O readiness sugere purgar páginas e primitivos desnecessários só após estabilidade.
 
 ### Critério de aceite
 
@@ -465,7 +465,7 @@ Base mais limpa e coerente.
 
 ### Objetivo
 
-Adicionar o mínimo de segurança operacional para a refatoração e evolução futura: check/build automatizados em GitHub Actions. Isso também foi apontado como prioridade técnica média. 
+Adicionar o mínimo de segurança operacional para a refatoração e evolução futura: check/build automatizados em GitHub Actions. Isso também foi apontado como prioridade técnica média.
 
 ### Critério de aceite
 
@@ -503,7 +503,7 @@ Existe workflow automatizado validando pelo menos:
 
 ### Saída esperada
 
-Melhora objetiva de maturidade de fluxo, alinhada à governança e prova pública de consistência. 
+Melhora objetiva de maturidade de fluxo, alinhada à governança e prova pública de consistência.
 
 ---
 
@@ -544,7 +544,7 @@ Para manter isolamento de entrega, no seu padrão de trabalho, eu sugiro:
 * `feature/portfolio-cleanup`
 * `feature/portfolio-ci`
 
-Isso mantém a disciplina de “uma branch = uma entrega coerente”. 
+Isso mantém a disciplina de “uma branch = uma entrega coerente”.
 
 ---
 
@@ -556,7 +556,6 @@ Esses critérios precisam ser repetidos em quase toda fase, porque o readiness j
 * `pnpm build` saudável
 * navegação SPA intacta
 * rotas antigas tratadas
-* clique em case sem refresh indevido 
+* clique em case sem refresh indevido
 
 ---
-

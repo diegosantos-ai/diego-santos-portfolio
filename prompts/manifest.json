@@ -1,0 +1,29 @@
+{
+  "manifest_version": "1.0.0",
+  "prompts": [
+    {
+      "id": "base-identity",
+      "path": "prompts/base/identity.txt",
+      "layer": "base",
+      "objective": "Define a identidade core e posicionamento."
+    },
+    {
+      "id": "base-security",
+      "path": "prompts/base/security.txt",
+      "layer": "base",
+      "objective": "Garante a verdade e impede invenções."
+    },
+    {
+      "id": "intent-stack",
+      "path": "prompts/intents/stack.txt",
+      "layer": "intent",
+      "objective": "Guia respostas sobre tecnologias."
+    },
+    {
+      "id": "fallback-out-of-kb",
+      "path": "prompts/fallbacks/out_of_kb.txt",
+      "layer": "fallback",
+      "objective": "Resposta padrão para dados ausentes."
+    }
+  ]
+}

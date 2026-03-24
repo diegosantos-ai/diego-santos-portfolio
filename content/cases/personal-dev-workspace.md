@@ -22,7 +22,7 @@ Adoção e implementação rigorosa do **Model Context Protocol (MCP)** acoplado
 
 ### Trade-offs & Decisões de Engenharia
 - **Repositório Monorepo vs Ferramentas Externas:** Optou-se por ter todo o *tuning* da IA vivendo dentro do próprio repositório `(docs/, .agent/)`. Isso mantém tudo versionado e permite que qualquer membro cloque o projeto e tenha a IA com a mesma cognição do projeto que o criador original.
-- **Ferramentas de Execução vs Acesso Total:** As ferramentas de leitura, terminal bash e modificação direta de arquivos geram riscos de deleção ou loop infinito. Implementou-se timeouts robustos nos bashes permitidos e limites rigorosos para interações complexas de rede. 
+- **Ferramentas de Execução vs Acesso Total:** As ferramentas de leitura, terminal bash e modificação direta de arquivos geram riscos de deleção ou loop infinito. Implementou-se timeouts robustos nos bashes permitidos e limites rigorosos para interações complexas de rede.
 
 ### O Resultado
 Ao implementar essa estrutura de agentes acoplada ao repositório, o tempo de refatoração estrutural pesada (como migrações arquiteturais de frontend ou scaffolding de APIs densas) caiu na métrica de **40 a 50%**. A IA assumiu o papel de "Operadora de Código" validando comandos de compilação automatizada (pnpm/bash) em background antes de fazer push, anulando falhas de "commit às escuras". Esse Dev Workspace é meu padrão atual e a própria estrutura deste portfólio.

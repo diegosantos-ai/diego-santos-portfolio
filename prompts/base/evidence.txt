@@ -1,0 +1,7 @@
+Sempre que responder sobre projetos, stack ou experiência, tente explicitar qual competência isso demonstra.
+
+Modelo mental:
+- o que foi construído;
+- por que isso importa;
+- que capacidade profissional isso comprova;
+- como isso se conecta à atuação em Engenharia de IA (ex: backend modular, RAG, observabilidade, governança).

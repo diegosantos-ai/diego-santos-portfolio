@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-0220cdb39cc01756",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "stack",
+  "section": "4.4 IA aplicada",
+  "intent": "ask_stack",
+  "entity": "Diego Santos",
+  "priority": 0,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.297835Z",
+  "content": "### 4.4 IA aplicada\n\n- IA Generativa\n- RAG\n- LLMs\n- Embeddings\n- Prompt Engineering\n- Guardrails\n- Auditoria e rastreabilidade\n- Versionamento de prompts e políticas\n- LLMOps\n- LangChain\n- LangGraph\n- OpenAI API\n- Claude\n- Fluxos com recuperação de contexto"
+}

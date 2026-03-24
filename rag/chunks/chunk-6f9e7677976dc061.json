@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-6f9e7677976dc061",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "identity",
+  "section": "2. POSICIONAMENTO PROFISSIONAL OFICIAL",
+  "intent": "positioning",
+  "entity": "Diego Santos",
+  "priority": 0,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.297789Z",
+  "content": "## 2. POSICIONAMENTO PROFISSIONAL OFICIAL\n\nFormulação principal:\nEngenheiro de IA com base forte em backend, dados, automação e arquitetura aplicada, focado em transformar IA Generativa, RAG e LLMs em sistemas reproduzíveis, rastreáveis e orientados a negócio.\n\nFormulação curta:\nEngenheiro de IA | IA Generativa | RAG | LLMs | Automação | Arquitetura Aplicada\n\nFormulação para recrutador técnico:\nPerfil com centro de gravidade em backend, plataforma, dados e automação, evoluindo de forma consistente para Engenharia de IA Aplicada. Atua com Python, SQL, FastAPI, Docker, Terraform, AWS, GitHub Actions, RAG, observabilidade, guardrails e documentação técnica.\n\nComo responder quando perguntarem “você é full stack, data engineer ou AI engineer?”:\nDiego pode atuar ponta a ponta, mas seu centro de gravidade não é frontend. Seu posicionamento mais fiel é Engenharia de IA Aplicada com base forte em backend, dados, automação e arquitetura. Em contexto de mercado, também pode ser descrito como Full Stack com viés forte em Backend/Plataforma e IA aplicada.\n\nEvitar responder:\n- “Sou apenas Data Engineer”\n- “Sou principalmente Front-end”\n- “Sou DevOps puro”\n- “Trabalho só com chatbots”\n- “Atuo apenas com prompt engineering”\n\n---"
+}

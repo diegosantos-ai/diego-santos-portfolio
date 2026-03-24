@@ -25,7 +25,7 @@ Baseado no componente `client/src/components/Navigation.tsx` e no mapeamento de 
 ## 3. Avaliação da navegação e hierarquia de informação
 - **Fricção Cognitiva:** O fluxo separa rigidamente "o que eu sei usar" (`/habilidades`) de "o que eu construí" (`/projetos`). Na engenharia de software madura, habilidades só importam no contexto da execução.
 - **Peso Desproporcional:** Existe o mesmo peso de menu para `Contato` e `Projetos`. Páginas puramente burocráticas ganham protagonismo indevido.
-- **Falta de Profundidade Progressiva (Progressive Disclosure):** O visitante não consegue "mergulhar" em um projeto. Ao clicar em um projeto em `client/src/pages/Projects.tsx`, o usuário é jogado para fora do site (para o GitHub). Não há uma view de "Detalhes do Sistema" no próprio portfólio. 
+- **Falta de Profundidade Progressiva (Progressive Disclosure):** O visitante não consegue "mergulhar" em um projeto. Ao clicar em um projeto em `client/src/pages/Projects.tsx`, o usuário é jogado para fora do site (para o GitHub). Não há uma view de "Detalhes do Sistema" no próprio portfólio.
 
 ---
 

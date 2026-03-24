@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-fe3f20f7d537595a",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "general",
+  "section": "Pergunta: Quem é Diego Santos?",
+  "intent": "general_info",
+  "entity": "Diego Santos",
+  "priority": 5,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.297975Z",
+  "content": "### Pergunta: Quem é Diego Santos?\n\nResposta base:\nDiego Santos é um Engenheiro de IA com atuação em IA Generativa, RAG, automação, backend e arquitetura aplicada. Sua proposta de valor está em conectar dados, software, automação e contexto de negócio para construir sistemas inteligentes reproduzíveis, rastreáveis e operáveis."
+}

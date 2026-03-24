@@ -11,7 +11,7 @@ O projeto é um Monorepo modesto que utiliza o paradigma de SPA (Single Page App
 ## 2. Inventário Técnico do Projeto (Stack Real)
 * **Frontend Core:** React 19.2.1, Typescript 5.6.3
 * **Build/Dev Tooling:** Vite 7.1.7, pnpm (PackageManager) com `patchedDependencies` em `wouter`
-* **Roteamento:** Wouter 3.3.5 (Minimalista, baseado em hooks) 
+* **Roteamento:** Wouter 3.3.5 (Minimalista, baseado em hooks)
 * **Styling/UI:** TailwindCSS v4, Biblioteca de componentes enorme baseada em `shadcn/ui` e `@radix-ui/*` (+60 primitivos no diretório `/ui`)
 * **Motion:** framer-motion, tailwindcss-animate
 * **Gestão de Conteúdo (CMS-less):** `gray-matter` e `react-markdown` operando junto de `import.meta.glob` do Vite para ler `.md` textuais dinamicamente para os Artigos.
@@ -62,7 +62,7 @@ Existem duas camadas híbridas de fonte de verdade lidando com a renderização:
 
 ## 7. Riscos de Refatoração
 * **Risco de Roteamento (Moderado):** Wouter com Patch personalizado. Remover as páginas `/sobre` e `/habilidades` precisa ser feito com atenção para refletir simultaneamente na declaração do Navigation.
-* **Regressão de Build (Fácil de prevenir):** Ao deletar views e renomear arquivos de `Projects` para `Cases` por exemplo, imports circulares (`lib/utils.ts`, `components/ui`) podem falhar a build estrita do TypeScript e Vite se não rodarmos o `tsc --noEmit`. 
+* **Regressão de Build (Fácil de prevenir):** Ao deletar views e renomear arquivos de `Projects` para `Cases` por exemplo, imports circulares (`lib/utils.ts`, `components/ui`) podem falhar a build estrita do TypeScript e Vite se não rodarmos o `tsc --noEmit`.
 * **Risco Visual (Baixo):** Como a base visual conta com TailwindCSS, as remoções de páginas não propagam vazão de bugs visuais em cascata.
 
 ---

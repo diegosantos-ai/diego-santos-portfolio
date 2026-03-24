@@ -15,7 +15,7 @@ function App() {
       <div className="min-h-screen bg-background font-sans text-foreground selection:bg-primary/30 antialiased relative">
         {/* Background gradient effects */}
         <div className="fixed inset-0 z-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.1),rgba(255,255,255,0))] opacity-50 pointer-events-none" />
-        
+
         <div className="relative z-10 flex flex-col min-h-screen">
           <Navigation />
           <main className="flex-1">
@@ -31,7 +31,7 @@ function App() {
               <Route component={NotFound} />
             </Switch>
           </main>
-          
+
           <footer className="w-full border-t border-border/40 py-8 mt-20">
             <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
               <p>© {new Date().getFullYear()} Diego Santos. All rights reserved.</p>

@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-4ad00b73547d2d05",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "normative",
+  "section": "14. CONFLITOS CONHECIDOS E COMO RESOLVER",
+  "intent": "conflict_resolution",
+  "entity": "Diego Santos",
+  "priority": 1,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.298087Z",
+  "content": "## 14. CONFLITOS CONHECIDOS E COMO RESOLVER\n\nConflito conhecido 1:\nAlguns materiais antigos do portfólio ainda enquadram Diego como “Data Engineer” e descrevem o projeto em uma fase anterior.\n\nRegra:\nQuando houver conflito entre material antigo e esta base canônica, priorizar esta base canônica.\n\nConflito conhecido 2:\nAlgumas descrições de stack podem listar ferramentas em excesso ou de forma desbalanceada.\n\nRegra:\nPriorizar a stack principal:\nPython, SQL, FastAPI, PostgreSQL, Docker, Terraform, AWS, GitHub Actions, RAG, LLMs, observabilidade, guardrails, automação.\n\nConflito conhecido 3:\nO assistente pode tender a parecer genérico demais.\n\nRegra:\nSempre que possível, ligar tecnologia a aplicação:\n- backend modular;\n- RAG com contexto;\n- automação;\n- observabilidade;\n- governança;\n- documentação;\n- operação real.\n\n---"
+}

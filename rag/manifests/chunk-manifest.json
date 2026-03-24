@@ -1,0 +1,229 @@
+{
+  "manifest_version": "1.0.0",
+  "generated_at": "2026-03-24T16:40:11.301763Z",
+  "total_chunks": 38,
+  "source_documents": [
+    "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md"
+  ],
+  "coverage": {
+    "topics": [
+      "experience",
+      "general",
+      "identity",
+      "instructions",
+      "metadata",
+      "normative",
+      "services",
+      "stack"
+    ],
+    "intents": [
+      "ask_experience",
+      "ask_services",
+      "ask_stack",
+      "ask_stack_context",
+      "behavior_rules",
+      "conflict_resolution",
+      "final_directive",
+      "general_info",
+      "keyword_retrieval",
+      "positioning",
+      "rag_config",
+      "security_rules",
+      "short_summary",
+      "value_prop",
+      "who_is"
+    ]
+  },
+  "chunks_reference": [
+    {
+      "id": "chunk-245f526fca66b790",
+      "topic": "identity",
+      "intent": "who_is"
+    },
+    {
+      "id": "chunk-6f9e7677976dc061",
+      "topic": "identity",
+      "intent": "positioning"
+    },
+    {
+      "id": "chunk-b0d2a7fbb03914fb",
+      "topic": "identity",
+      "intent": "value_prop"
+    },
+    {
+      "id": "chunk-ca3b6456314b5b85",
+      "topic": "stack",
+      "intent": "ask_stack"
+    },
+    {
+      "id": "chunk-d89a65abea9cc941",
+      "topic": "stack",
+      "intent": "ask_stack"
+    },
+    {
+      "id": "chunk-663f2d0ee51ba82c",
+      "topic": "stack",
+      "intent": "ask_stack"
+    },
+    {
+      "id": "chunk-0220cdb39cc01756",
+      "topic": "stack",
+      "intent": "ask_stack"
+    },
+    {
+      "id": "chunk-bc04bc3f23aa7c4f",
+      "topic": "stack",
+      "intent": "ask_stack"
+    },
+    {
+      "id": "chunk-8d05f19ca31753b8",
+      "topic": "stack",
+      "intent": "ask_stack"
+    },
+    {
+      "id": "chunk-3c5d6582d4283bc7",
+      "topic": "stack",
+      "intent": "ask_stack"
+    },
+    {
+      "id": "chunk-706c23c6c555c87a",
+      "topic": "stack",
+      "intent": "ask_stack"
+    },
+    {
+      "id": "chunk-6d5eef98a49330c5",
+      "topic": "stack",
+      "intent": "ask_stack"
+    },
+    {
+      "id": "chunk-d5ec353a012c2adc",
+      "topic": "stack",
+      "intent": "ask_stack_context"
+    },
+    {
+      "id": "chunk-c40b140f3bbab928",
+      "topic": "experience",
+      "intent": "ask_experience"
+    },
+    {
+      "id": "chunk-d56ac59f944ef869",
+      "topic": "services",
+      "intent": "ask_services"
+    },
+    {
+      "id": "chunk-c350e4a8851f51c9",
+      "topic": "general",
+      "intent": "general_info"
+    },
+    {
+      "id": "chunk-f73783422ce16834",
+      "topic": "general",
+      "intent": "general_info"
+    },
+    {
+      "id": "chunk-72a30bc8eaf5b0a5",
+      "topic": "general",
+      "intent": "general_info"
+    },
+    {
+      "id": "chunk-a86810cd6c139ce3",
+      "topic": "general",
+      "intent": "general_info"
+    },
+    {
+      "id": "chunk-f3cf9d2d8bfb7b81",
+      "topic": "general",
+      "intent": "general_info"
+    },
+    {
+      "id": "chunk-c286a22cb62f0d73",
+      "topic": "instructions",
+      "intent": "behavior_rules"
+    },
+    {
+      "id": "chunk-fe3f20f7d537595a",
+      "topic": "general",
+      "intent": "general_info"
+    },
+    {
+      "id": "chunk-487850ccf8d14b55",
+      "topic": "general",
+      "intent": "general_info"
+    },
+    {
+      "id": "chunk-ccc17a84518de434",
+      "topic": "experience",
+      "intent": "ask_experience"
+    },
+    {
+      "id": "chunk-5085ac78581b8862",
+      "topic": "general",
+      "intent": "general_info"
+    },
+    {
+      "id": "chunk-711baff565867abc",
+      "topic": "general",
+      "intent": "general_info"
+    },
+    {
+      "id": "chunk-5b33efaa48fe9d27",
+      "topic": "general",
+      "intent": "general_info"
+    },
+    {
+      "id": "chunk-c637ba86b3169773",
+      "topic": "general",
+      "intent": "general_info"
+    },
+    {
+      "id": "chunk-59e20341b636aae5",
+      "topic": "general",
+      "intent": "general_info"
+    },
+    {
+      "id": "chunk-ced3823acc4e7549",
+      "topic": "general",
+      "intent": "general_info"
+    },
+    {
+      "id": "chunk-0b218e5d039c041e",
+      "topic": "general",
+      "intent": "general_info"
+    },
+    {
+      "id": "chunk-74f92b3104d57e40",
+      "topic": "instructions",
+      "intent": "behavior_rules"
+    },
+    {
+      "id": "chunk-0375abe636cc8cc1",
+      "topic": "normative",
+      "intent": "security_rules"
+    },
+    {
+      "id": "chunk-039fab74fe3c98d8",
+      "topic": "normative",
+      "intent": "rag_config"
+    },
+    {
+      "id": "chunk-4ad00b73547d2d05",
+      "topic": "normative",
+      "intent": "conflict_resolution"
+    },
+    {
+      "id": "chunk-3d8cdcd5e1b2a3ae",
+      "topic": "identity",
+      "intent": "short_summary"
+    },
+    {
+      "id": "chunk-efbef8436954277f",
+      "topic": "metadata",
+      "intent": "keyword_retrieval"
+    },
+    {
+      "id": "chunk-ff2cd9f5e6ab5274",
+      "topic": "instructions",
+      "intent": "final_directive"
+    }
+  ]
+}

@@ -45,16 +45,16 @@ export function Navigation() {
                             </Link>
                         ))}
                     </div>
-                    
+
                     {/* Divider */}
                     <div className="w-[1px] h-4 bg-[#333]"></div>
-                    
+
                     {/* Social / Contact Contacts in Header */}
                     <div className="flex gap-4">
                         {SOCIAL_LINKS.map((link) => (
-                            <a 
+                            <a
                                 key={link.label}
-                                href={link.href} 
+                                href={link.href}
                                 target={link.href.startsWith('http') ? "_blank" : "_self"}
                                 rel="noreferrer"
                                 className="text-[#888] hover:text-[#ff3300] transition-colors"

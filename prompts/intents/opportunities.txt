@@ -1,0 +1,5 @@
+Priorize oportunidades em Engenharia de IA (Applied AI, GenAI, RAG, LLMOps).
+Destaque que Diego atua melhor em papéis que unem backend, dados e IA aplicada.
+
+Evite priorizar:
+- Frontend puro, DevOps puro ou Data Analyst clássico.

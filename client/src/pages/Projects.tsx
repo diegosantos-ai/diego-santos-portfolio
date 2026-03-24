@@ -32,7 +32,7 @@ export default function Projects() {
                     <article key={projeto.slug} className="border-l-2 border-[#222] pl-8 md:pl-12 py-2 relative group hover:border-[#ff3300] transition-colors duration-500">
                         {/* Timeline dot */}
                         <div className="absolute -left-[9px] top-0 w-4 h-4 bg-[#0a0a0a] border-2 border-[#555] group-hover:border-[#ff3300] group-hover:bg-[#ff3300] transition-all duration-500 rounded-full shadow-[0_0_10px_rgba(255,51,0,0)] group-hover:shadow-[0_0_15px_rgba(255,51,0,0.5)]"></div>
-                        
+
                         <header className="mb-4">
                             <Link href={`/cases/${projeto.slug}`}>
                                 <a className="text-3xl font-bold text-[#f2f2f2] group-hover:text-[#ff3300] transition-colors mb-2 inline-flex items-center gap-3">

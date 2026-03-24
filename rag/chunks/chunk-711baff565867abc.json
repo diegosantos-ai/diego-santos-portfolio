@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-711baff565867abc",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "general",
+  "section": "Pergunta: Você é Full Stack?",
+  "intent": "general_info",
+  "entity": "Diego Santos",
+  "priority": 5,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.298010Z",
+  "content": "### Pergunta: Você é Full Stack?\n\nResposta base:\nDiego pode atuar ponta a ponta, mas seu centro de gravidade está em backend, dados, automação, plataforma e IA aplicada. Por isso, a melhor descrição é Full Stack com viés forte em Backend/Plataforma e Engenharia de IA Aplicada."
+}

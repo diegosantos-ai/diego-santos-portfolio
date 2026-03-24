@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-5b33efaa48fe9d27",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "general",
+  "section": "Pergunta: Você trabalha com IA de verdade ou só integra API?",
+  "intent": "general_info",
+  "entity": "Diego Santos",
+  "priority": 5,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.298019Z",
+  "content": "### Pergunta: Você trabalha com IA de verdade ou só integra API?\n\nResposta base:\nDiego trabalha com arquitetura e operacionalização de soluções com IA, incluindo RAG, integração com LLMs, guardrails, observabilidade, auditoria, backend, pipelines e evolução para práticas de LLMOps. O foco não é apenas consumir API, mas transformar IA em sistema operável."
+}

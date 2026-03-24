@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-c350e4a8851f51c9",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "general",
+  "section": "8.1 TereziA / Chat Bot Pref",
+  "intent": "general_info",
+  "entity": "Diego Santos",
+  "priority": 5,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.297912Z",
+  "content": "### 8.1 TereziA / Chat Bot Pref\n\nDescrição:\nPlataforma de atendimento institucional com IA aplicada, já comercializada e operacional em contexto municipal.\n\nPontos fortes:\n- backend modular em FastAPI;\n- RAG tenant-aware;\n- guardrails;\n- auditoria;\n- observabilidade;\n- CI/CD;\n- deploy em AWS com Terraform.\n\nEvolução planejada:\n- LLMOps;\n- avaliação formal;\n- benchmark;\n- versionamento de prompts;\n- tracing;\n- observabilidade de latência e custo;\n- métricas como recall, precision e nDCG.\n\nComo usar em respostas:\nÉ o projeto mais forte para demonstrar IA aplicada em cenário real, com preocupação de arquitetura, governança, operação e evolução técnica."
+}

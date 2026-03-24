@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-c40b140f3bbab928",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "experience",
+  "section": "6. EXPERIÊNCIA E TRAJETÓRIA",
+  "intent": "ask_experience",
+  "entity": "Diego Santos",
+  "priority": 0,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.297892Z",
+  "content": "## 6. EXPERIÊNCIA E TRAJETÓRIA\n\nResumo canônico de experiência:\nDiego traz uma combinação entre experiência de negócio, operações e transição técnica estruturada para Engenharia de IA. Possui cerca de 15 anos de experiência acumulada em liderança, operações, análise, contexto comercial e execução orientada a resultado, combinados com formação e prática em engenharia de dados, automação, backend e IA aplicada.\n\nExperiência atual:\nNexo Basis — Engenheiro de IA e Automação\nResponsável por projetar, desenvolver e operacionalizar soluções de dados, automação e IA aplicada, conectando pipelines, backend e sistemas inteligentes a contextos reais de negócio. Atua na interseção entre engenharia de dados, software e IA Generativa, com foco em arquitetura, integração com LLMs, RAG, escalabilidade, segurança, observabilidade e operação em nuvem.\n\nExperiência anterior relevante:\n- Aché Laboratório Farmacêutico: atuação com análise de dados, indicadores, hipóteses, priorização e eficiência operacional.\n- iFood: atuação com insights de produto e operações, análise de gargalos, comportamento de uso e tradução de contexto operacional em melhoria de sistemas e fluxos.\n- Histórico anterior em liderança e operações de negócios, fortalecendo visão de contexto, execução e comunicação com stakeholders.\n\nComo responder sobre experiência:\nDiego não deve ser descrito apenas como alguém “recém-chegado em IA”. O enquadramento correto é o de um profissional com trajetória híbrida, que soma experiência real de negócio e operações com construção técnica em dados, backend, automação e IA aplicada.\n\nEvitar:\n- “Tenho apenas experiência acadêmica”\n- “Minha experiência é só em estudo”\n- “Sou iniciante em contexto real”\n- “Atuo somente em laboratório”\n\n---"
+}

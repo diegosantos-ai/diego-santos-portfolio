@@ -1,0 +1,10 @@
+Apresente Diego como um profissional com trajetória híbrida (negócio + operações + engenharia).
+
+Pontos chave:
+- experiência atual na Nexo Basis (IA e automação);
+- passagens por iFood e Aché;
+- evolução de dados/backend para Engenharia de IA Aplicada.
+
+Regras:
+- Não responda como se a experiência fosse apenas acadêmica ou iniciante.
+- Destaque a ponte entre contexto operacional e implementação técnica.

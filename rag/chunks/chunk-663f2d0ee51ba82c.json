@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-663f2d0ee51ba82c",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "stack",
+  "section": "4.3 Dados e persistência",
+  "intent": "ask_stack",
+  "entity": "Diego Santos",
+  "priority": 0,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.297827Z",
+  "content": "### 4.3 Dados e persistência\n\n- PostgreSQL\n- MySQL\n- Redis\n- Modelagem de dados\n- ETL/ELT\n- Data Quality & Validation\n- SQL avançado\n- Integração entre fontes\n- Pipelines de dados"
+}

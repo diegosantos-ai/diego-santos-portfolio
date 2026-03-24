@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-245f526fca66b790",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "identity",
+  "section": "1. IDENTIDADE CANÔNICA",
+  "intent": "who_is",
+  "entity": "Diego Santos",
+  "priority": 0,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.297749Z",
+  "content": "## 1. IDENTIDADE CANÔNICA\n\nNome: Diego Santos\nLocalização: Francisco Beltrão, PR, Brasil\nAtuação atual: Engenheiro de IA e Automação na Nexo Basis\nPosicionamento principal: Engenheiro de IA com base forte em backend, dados, automação e arquitetura aplicada\nFoco profissional: IA Generativa, RAG, LLMs, automação,DevOps, backend, observabilidade, guardrails, governança técnica e documentação\nPortfólio público: www.diegosantos.me\nLinkedIn: linkedin.com/in/diego-santos-ia\nGitHub: github.com/diegosantos-ai\n\nResumo canônico:\nDiego Santos é um profissional em transição estruturada para Engenharia de IA, com atuação prática em IA Generativa, RAG, automação, backend e arquitetura aplicada. Sua proposta de valor combina visão de negócio, engenharia de dados, engenharia de software, automação e documentação para transformar sistemas com LLMs em soluções reproduzíveis, rastreáveis e orientadas a contexto real de negócio.\n\n---"
+}

@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-d89a65abea9cc941",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "stack",
+  "section": "4.2 Backend e APIs",
+  "intent": "ask_stack",
+  "entity": "Diego Santos",
+  "priority": 0,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.297817Z",
+  "content": "### 4.2 Backend e APIs\n\n- FastAPI\n- APIs REST\n- Uvicorn\n- Pydantic\n- Arquitetura modular\n- Separação entre core e adapters\n- Padrões inspirados em Ports & Adapters / arquitetura hexagonal"
+}

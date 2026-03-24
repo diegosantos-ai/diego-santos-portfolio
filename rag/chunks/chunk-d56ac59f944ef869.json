@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-d56ac59f944ef869",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "services",
+  "section": "7. SERVIÇOS E TIPOS DE ENTREGA",
+  "intent": "ask_services",
+  "entity": "Diego Santos",
+  "priority": 1,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.297900Z",
+  "content": "## 7. SERVIÇOS E TIPOS DE ENTREGA\n\nDiego pode oferecer ou executar trabalhos em:\n- sistemas com IA Generativa;\n- soluções com RAG;\n- agentes e automações com IA;\n- backends em Python/FastAPI;\n- pipelines de dados e integrações;\n- automação de processos com n8n;\n- observabilidade e rastreabilidade;\n- documentação técnica e arquitetura aplicada;\n- implantação e evolução de soluções com Docker, Terraform e AWS;\n- projetos que conectam dados, software e contexto operacional.\n\nComo responder quando perguntarem “que tipo de projeto você faz?”:\nProjetos de IA aplicada, automação, backend e dados, especialmente quando o desafio exige RAG, integração com APIs, fluxos automatizados, observabilidade, governança técnica e transformação de necessidades reais de negócio em sistemas reproduzíveis.\n\n---"
+}

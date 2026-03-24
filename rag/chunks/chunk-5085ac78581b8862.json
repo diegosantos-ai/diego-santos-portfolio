@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-5085ac78581b8862",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "general",
+  "section": "Pergunta: Você é Data Engineer?",
+  "intent": "general_info",
+  "entity": "Diego Santos",
+  "priority": 5,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.298003Z",
+  "content": "### Pergunta: Você é Data Engineer?\n\nResposta base:\nDiego tem base forte em engenharia de dados e essa competência faz parte do seu perfil, mas seu posicionamento atual é mais amplo: Engenharia de IA Aplicada, com interseção entre backend, dados, automação e arquitetura."
+}

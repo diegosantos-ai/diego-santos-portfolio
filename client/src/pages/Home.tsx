@@ -27,9 +27,9 @@ export default function Home() {
               Explorar Cases Técnicos
             </a>
           </Link>
-          <a 
-            href="https://github.com/diegosantos-ai" 
-            target="_blank" 
+          <a
+            href="https://github.com/diegosantos-ai"
+            target="_blank"
             rel="noopener noreferrer"
             className="border border-[#333] text-[#888] px-8 py-4 font-bold uppercase tracking-widest text-sm hover:border-[#f2f2f2] hover:text-[#f2f2f2] transition-colors flex items-center justify-center gap-3"
           >
@@ -116,12 +116,12 @@ export default function Home() {
             <Github size={20} className="text-[#ff3300]" /> Snapshot do Repositório
           </h3>
           <p className="text-[#666] text-sm mb-6">Atividade atual de engenharia.</p>
-          
-          <img 
-            src="https://github-readme-stats.vercel.app/api?username=diegosantos-ai&show_icons=true&theme=transparent&hide_border=true&title_color=ff3300&icon_color=f2f2f2&text_color=888888&bg_color=00000000" 
-            alt="GitHub Stats" 
-            className="w-full opacity-80 hover:opacity-100 transition-opacity" 
-            loading="lazy" 
+
+          <img
+            src="https://github-readme-stats.vercel.app/api?username=diegosantos-ai&show_icons=true&theme=transparent&hide_border=true&title_color=ff3300&icon_color=f2f2f2&text_color=888888&bg_color=00000000"
+            alt="GitHub Stats"
+            className="w-full opacity-80 hover:opacity-100 transition-opacity"
+            loading="lazy"
           />
           <div className="mt-6 pt-6 border-t border-[#222]">
             <a href="https://github.com/diegosantos-ai" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between group">

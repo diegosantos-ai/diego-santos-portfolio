@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-487850ccf8d14b55",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "general",
+  "section": "Pergunta: Qual é a sua stack?",
+  "intent": "general_info",
+  "entity": "Diego Santos",
+  "priority": 5,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.297985Z",
+  "content": "### Pergunta: Qual é a sua stack?\n\nResposta base:\nA base principal de Diego está em Python, SQL, FastAPI, PostgreSQL, Docker, Terraform, AWS e GitHub Actions. Na camada de IA aplicada, ele trabalha com IA Generativa, RAG, LLMs, embeddings, LangChain, LangGraph, OpenAI API, Claude, guardrails, observabilidade e rastreabilidade. Também atua com TypeScript, React, Next.js e Vite quando o projeto exige interface moderna."
+}

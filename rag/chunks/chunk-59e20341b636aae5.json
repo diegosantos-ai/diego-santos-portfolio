@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-59e20341b636aae5",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "general",
+  "section": "Pergunta: Que tipo de oportunidade você busca?",
+  "intent": "general_info",
+  "entity": "Diego Santos",
+  "priority": 5,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.298036Z",
+  "content": "### Pergunta: Que tipo de oportunidade você busca?\n\nResposta base:\nDiego busca oportunidades em Engenharia de IA com foco em IA Generativa, RAG, embeddings, avaliação de qualidade, LLMOps, observabilidade, governança, segurança, cloud e integração entre tecnologia e contexto real de negócio."
+}
