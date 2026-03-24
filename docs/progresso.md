@@ -5,105 +5,38 @@
 
 ---
 
-## Fase Atual: Portfólio Vivo (Fase 5)
+## Fase Atual: Finalizado 🎉
 
 ---
 
 ### ✅ Concluído
 
-- [x] Setup técnico inicial — React 19 + TypeScript + Vite + TailwindCSS (2026-02-18)
-- [x] Estrutura de componentes base — shadcn/ui + Radix (2026-02-18)
-- [x] Design system definido — IBM Plex Mono + Inter, paleta dark/neon (2026-02-18)
-- [x] Roteamento configurado — Wouter + páginas Home, Articles, ArticlePost, 404 (2026-02-18)
-- [x] Dark/Light mode — ThemeContext + next-themes (2026-02-18)
-- [x] Configuração `.agent/` — skills e workflows para agentes de IA (2026-02-18)
-- [x] Criado `docs/CONTEXT.md` — contexto do projeto (2026-02-18)
-- [x] Criado `docs/ARCHITECTURE.md` — arquitetura técnica (2026-02-18)
-- [x] Criado `docs/progresso.md` — fonte única de verdade (2026-02-18)
-- [x] Criado `README.md` — documentação principal no formato playbook (2026-02-18)
-- [x] Criado `.env.example` — template de variáveis de ambiente (2026-02-18)
-- [x] Atualizado `.agent/rules/GEMINI.md` — sincronizado com playbook completo (2026-02-18)
-- [x] Copiado `.agent/agents/` — 20 agentes especialistas do playbook (2026-02-18)
+- [x] (Fase 1) Reposicionamento da mensagem central.
+- [x] (Fase 2) Refatoração da arquitetura de informação: Menu atualizado.
+- [x] (Fase 3) Criação do modelo genérico de case em Markdown.
+- [x] (Fase 4) Motor dinâmico de Markdown para cases ativado e mapeado no router SPA.
+- [x] (Fase 5) Migração dos 3 cases prioritários (Chat Bot Pref, Dev Workspace, Integracoes AWS).
+- [x] (Fase 6) Refatoração da Home como hub técnico definitivo (Cards automáticos interligados aos markdowns, stack aparente e design repensado).
+- [x] (Fase 7) Limpeza de rotas e códigos zumbi (`Skills` e `Contato` deletados do repo e router).
+- [x] (Fase 8) Pipeline automatizada de qualidade criada (`ci.yml`).
 
 ---
 
-### 🔄 Em Andamento
+### 📋 Próximas (Manutenção Futura)
 
-*(vazio — aguardando próxima instrução)*
-
----
-
-### 📋 Próximas (Fase 3 — Conteúdo)
-
-- [x] Preencher seção Hero com dados reais (2026-02-18)
-- [x] Preencher seção Projetos com projetos reais (2026-02-18)
-- [x] Preencher seção Habilidades/Stack com stack atual — 6 categorias: dados, cloud, devops, IA, arquitetura, linguagens (2026-02-18)
-- [x] Preencher seção Sobre com trajetória profissional (2026-02-18)
-- [x] Configurar seção Contato — email, LinkedIn, GitHub, WhatsApp, telefone (2026-02-18)
-- [x] Criar primeiros artigos técnicos em Markdown — 3 artigos publicados (2026-02-18)
+- N/A para o ciclo inicial de refatoração do MVP de Engenharia.
 
 ---
 
-### 📋 Próximas (Fase 4 — Deploy)
-
-- [x] Escolher plataforma — Vercel (2026-02-18)
-- [x] Criar `vercel.json` — build estático, SPA routing, pnpm (2026-02-18)
-- [x] Adicionar script `build:client` no package.json (2026-02-18)
-- [x] Domínio definido — `diegosantos.me` (GitHub Student Pack, 1 ano free) (2026-02-18)
-- [x] Push para GitHub e importar projeto no Vercel (2026-02-18)
-- [x] Adicionar domínio `diegosantos.me` no painel Vercel (2026-02-18)
-- [x] Configurar DNS no registrador (Namecheap) com os registros do Vercel (2026-02-18)
-- [x] Validar deploy em `https://diegosantos.me` (2026-02-18) ✅ LIVE
-
----
-
-### 📋 Próximas (Fase 5 — Portfólio Vivo)
-
-> Objetivo: o portfólio reflete o que Diego está **efetivamente fazendo agora** — projetos reais, stack real, atividade real.
-
-**GitHub Integration (atividade e projetos reais)**
-- [x] Integração com GitHub API — listar repos reais com linguagem, stars, descrição (2026-02-18)
-- [x] Seção "Atividade Recente" — commits, PRs, contribuições em tempo real (2026-02-18)
-- [x] Stats cards com repositórios, seguidores e atividade (2026-02-18)
-- [ ] Filtrar repos por tópico/tag (ex: `data-engineering`, `automation`, `infra`, `hexagonal`)
-- [ ] Exibir projetos em destaque via GitHub Topics ou lista curada no código
-
-**Stack Dinâmico (o que Diego usa hoje)**
-- [ ] Seção "Stack Atual" — tecnologias organizadas por categoria:
-  - Dados: Python, PostgreSQL, FastAPI, dbt, Airflow, n8n
-  - Cloud e Infra: AWS (EC2, S3, Lambda, RDS), Docker, Terraform (se aplicável)
-  - DevOps: GitHub Actions, CI/CD pipelines
-  - Gestão: Jira, Confluence
-  - Arquitetura: Hexagonal, DDD, Event-driven
-- [ ] Indicador visual de "usando agora" vs "já usei" por tecnologia
-- [ ] Destaque para projetos de automação hexagonal e infra
-
-**Conteúdo vivo**
-- [ ] Template para artigos técnicos — facilitar publicação de aprendizados reais
-- [ ] Seção "O que estou construindo" — projetos em andamento (alimentado manualmente ou via GitHub)
-
----
-
-## Backlog (não priorizado)
-
-- GitHub Actions para CI/CD do portfólio (lint + build automático)
-- Testes unitários com Vitest
-- Testes E2E com Playwright
-- Lighthouse audit automatizado
-- Google Analytics ou Plausible para analytics
-- RSS feed para artigos
-- Sitemap.xml para SEO
-- Internacionalização (PT-BR + EN)
-- Webhook para atualizar portfólio automaticamente ao fazer push no GitHub
-
----
-
-## Histórico
+## Histórico Recente
 
 | Data | Mudança | Validação |
 |------|---------|-----------|
-| 2026-02-18 | Setup técnico inicial | `pnpm dev` funcional |
-| 2026-02-18 | Padronização conforme playbook — docs criados, GEMINI.md e agents sincronizados | Estrutura de pastas validada |
-| 2026-02-18 | Deploy Vercel + domínio diegosantos.me configurado | https://diegosantos.me acessível |
-| 2026-02-18 | Artigos técnicos criados (3) | `/artigos` funcional com TerezIA, RAG e Hexagonal |
-| 2026-02-18 | Integração GitHub API + seção Atividade Recente | Stats e repos dinâmicos na Home |
+| 2026-03-20 | Fase 8: Definição de workflow do Github Actions (Build e TS Check) | local tests |
+| 2026-03-20 | Fase 7: Limpeza de rotas e componentes órfãos (`Contact`, `Skills`) | build validado |
+| 2026-03-20 | Fase 6: Reescrita da Home para padrão Hub de Engenharia e visualização dinâmica de Stacks | build validado |
+| 2026-03-20 | Fase 5: Criação dos 3 markdowns p/ Cases de projeto com profundidade técnica | `pnpm check && pnpm build` verde |
+| 2026-03-20 | Fase 4 do Plano: Criação de Engine Case e refatoração da Lista | `pnpm check && pnpm build` verde |
+| 2026-03-20 | Fase 3 do Plano: Template .md e estrutura `content/cases` criado | - |
+| 2026-03-20 | Fase 2 do Plano: Enxugamento e Redirecionamento da Navegação para (Cases, Publicações). | |
+| 2026-03-20 | Fase 1 do Plano: reposicionamento da brand/mensagem para Software/IA eng | |

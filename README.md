@@ -1,45 +1,38 @@
 # Diego Santos — Portfólio Profissional
 
-> Portfólio online de Diego Santos, Data Engineer. Presença profissional para recolocação no mercado de dados.
+> Presença profissional e hub técnico de Diego Santos. Focado em desenvolvimento de software, automação corporativa, plataformas backend, e engenharia aplicada com IA.
 
 ---
 
-## Problema e Objetivo
+## Tese Central
 
-**Problema**: Necessidade de presença profissional online consolidada para recolocação como Data Engineer Sênior.
+**Perfil**: Engenheiro de Software com forte background analítico (Dados). Especialista em desenhar e construir sistemas escaláveis, pipelines de automação robustos e integrações de back-end. Acredito na Inteligência Artificial como uma extensão das capacidades de engenharia para criar soluções concretas.
 
-**Público-alvo**: Recrutadores, CTOs e líderes técnicos de empresas de tecnologia e startups.
+**Público-alvo**: Recrutadores, CTOs, Tech Leads e líderes de engenharia buscando um perfil sênior híbrido capaz de navegar entre engenharia de plataforma, backend e automação inteligente.
 
-**Critério de sucesso**: Site publicado com conteúdo real, atualizado e acessível, representando fielmente a trajetória e os projetos de Diego.
+**Objetivo do Portfólio**: Centralizar publicações técnicas, cases e projetos com densidade de engenharia, abandonando o modelo de currículo superficial para adotar o de hub de conteúdo.
 
 ---
 
 ## Escopo
 
-### O que faz (nesta fase)
-- Apresenta trajetória profissional, stack e diferenciais
-- Lista projetos relevantes de engenharia de dados
-- Publica artigos técnicos em Markdown
-- Oferece formas de contato
+### O que faz
+- Apresenta cases aprofundados sobre arquitetura de software, automação e integração
+- Evidencia a trajetória multidisciplinar de desenvolvimento
+- Publica artigos e decisões técnicas
+- Estabelece uma plataforma-base para deploy rápido de inovações
 
 ### O que NÃO faz (nesta fase)
-- Sem painel administrativo de conteúdo
-- Sem API REST ou banco de dados
-- Sem sistema de autenticação
-- Sem comentários ou interação de usuários
+- Sem APIs expostas com carga viva
+- Sem painel de administração
 
 ---
 
 ## Estado do Projeto
 
-**Fase atual**: Padronização e Organização (Fase 2)
+**Fase atual**: Arquitetura de Informação e Reposicionamento (Fase 1 / 2)
 
 Fonte única de verdade: [docs/progresso.md](docs/progresso.md)
-
-**Próximos 3 passos**:
-1. Preencher seção Hero com dados reais
-2. Preencher seção Projetos com projetos reais
-3. Configurar e executar deploy de produção
 
 ---
 
@@ -53,34 +46,12 @@ Fonte única de verdade: [docs/progresso.md](docs/progresso.md)
 | UI Components | shadcn/ui + Radix UI |
 | Animações | Framer Motion |
 | Roteamento | Wouter |
+| Motor de Conteúdo | Markdown (gray-matter) |
 | Backend (serving) | Express.js |
-| Package manager | pnpm |
 
-**Padrão arquitetural**: SPA monolítica com servidor de serving estático
+**Padrão arquitetural**: SPA monolítica renderizando conteúdo estático a partir de arquivos Markdown (Articles e Cases).
 
 Referência completa: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
-
----
-
-## Estrutura de Pastas
-
-```
-diego-santos-portfolio/
-├── client/          # Frontend React (Vite)
-│   └── src/
-│       ├── components/   # Componentes reutilizáveis
-│       ├── pages/        # Home, Articles, ArticlePost, NotFound
-│       ├── hooks/        # Custom hooks
-│       ├── contexts/     # ThemeContext
-│       └── lib/          # Utilitários
-├── server/          # Express (SPA serving)
-├── shared/          # Tipos compartilhados
-├── docs/            # Documentação do projeto
-│   ├── CONTEXT.md
-│   ├── ARCHITECTURE.md
-│   └── progresso.md     ← fonte única de verdade
-└── recolocacao_diego/   # CVs e materiais
-```
 
 ---
 
@@ -95,13 +66,7 @@ cd diego-santos-portfolio
 pnpm install
 ```
 
-**2. Configurar variáveis de ambiente**
-```bash
-cp .env.example .env
-# Editar .env com seus valores
-```
-
-**3. Iniciar em desenvolvimento**
+**2. Iniciar em desenvolvimento**
 ```bash
 pnpm dev
 # Abre em http://localhost:3000
@@ -112,83 +77,18 @@ pnpm dev
 ## Como Validar
 
 ```bash
-# Checar tipos TypeScript
+# Workflow principal local
 pnpm check
-
-# Formatar código
-pnpm format
-
-# Build de produção
 pnpm build
-
-# Preview do build
-pnpm preview
 ```
 
 ---
 
-## Portas e Configurações
+## Governança e Qualidade
 
-| Serviço | Porta | Observação |
-|---------|-------|------------|
-| Dev server (Vite) | 3000 | HMR ativado |
-| Produção (Express) | `PORT` env | Default 3000 |
+- Segurança: Sem secrets hardcoded (obrigatório uso de variáveis ambiente)
+- Pull requests estruturados seguindo padronização imposta.
 
 ---
 
-## Qualidade e Padrões
-
-- Conventional Commits obrigatórios (`feat`, `fix`, `docs`, `chore`, etc.)
-- Branches: `main` (produção) → `develop` (integração) → `feature/*` (tarefas)
-- Sem hardcode de secrets — usar `.env`
-- `.env` no `.gitignore`
-
----
-
-## Como Validar o Deploy
-
-```bash
-# Build completo
-pnpm build
-
-# Iniciar servidor de produção
-pnpm start
-
-# Verificar em http://localhost:3000
-```
-
----
-
-## Segurança
-
-- Nunca commitar `.env` com valores reais
-- Usar `.env.example` como template
-- Google Maps API Key via variável de ambiente
-- Verificar `.gitignore` antes de qualquer push
-
----
-
-## Playbook de Referência
-
-Este projeto segue o [diego-playbook](../diego-playbook/) com:
-
-| Arquivo | Uso |
-|---------|-----|
-| `MY_WAY.md` | System prompt para agentes de IA |
-| `docs/progresso.md` | Fonte única de verdade |
-| `docs/CONTEXT.md` | Contexto do projeto |
-| `docs/ARCHITECTURE.md` | Arquitetura técnica |
-| `.env.example` | Template de variáveis |
-
----
-
-## Histórico
-
-| Data | Mudança |
-|------|---------|
-| 2026-02-18 | Setup técnico inicial |
-| 2026-02-18 | Padronização conforme playbook |
-
----
-
-*Documentação em Português-BR conforme padrão do playbook.*
+*Documentação em Português-BR*
