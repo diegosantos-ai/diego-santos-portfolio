@@ -93,3 +93,20 @@ rag-clean: ## Remove chunks e manifestos gerados
 
 rag-pipeline: rag-clean rag-build rag-validate rag-test rag-package ## Executa o pipeline RAG completo (Build -> Validate -> Test -> Package)
 	@echo "✅ Pipeline RAG concluído com sucesso!"
+
+# --- Aplicação (Frontend & Backend) ---
+.PHONY: install dev build build-client start
+
+install: ## Instala dependências do projeto (Node.js/Python)
+	@echo "Instalando dependências..."
+	@pnpm install
+	@if [ ! -d ".venv" ]; then python3 -m venv .venv && .venv/bin/pip install pydantic; fi
+
+dev: ## Inicia o ambiente de desenvolvimento local
+	@pnpm dev
+
+build: ## Gera o bundle de produção (Client + Server)
+	@pnpm build
+
+start: ## Inicia a aplicação em modo produção
+	@pnpm start
