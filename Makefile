@@ -5,7 +5,7 @@
 # Permite que este Makefile seja copiado via 'adopt_governance' para qualquer
 # outro repositório cliente e continue ativando as automações centrais.
 # ==============================================================================
-DEV_WORKSPACE ?= $(HOME)/dev-workspace
+DEV_WORKSPACE ?= $(HOME)/labs/dev-workspace
 
 .PHONY: help setup lint test update dbg
 
@@ -40,7 +40,7 @@ env-check: ## Rodar verificação rápida de sanidade do sistema para o dia a di
 	@bash $(DEV_WORKSPACE)/sanidade-ambiente/scripts/daily-check.sh
 
 morning: ## Roda a rotina matinal (abre arquivos de playbook e executa o check)
-	@bash $(DEV_WORKSPACE)/rotina-devops/scripts/open_devops_routine.sh
+	@bash $(DEV_WORKSPACE)/rotina-devops/scripts/open-devops-routine.sh
 
 audit: ## Dispara script completo de auditoria do sistema operacional e CLI libs
 	@bash $(DEV_WORKSPACE)/sanidade-ambiente/scripts/env-audit.sh
