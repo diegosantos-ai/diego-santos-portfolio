@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-706c23c6c555c87a",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "stack",
+  "section": "4.8 Experimentação e qualidade",
+  "intent": "ask_stack",
+  "entity": "Diego Santos",
+  "priority": 0,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.297866Z",
+  "content": "### 4.8 Experimentação e qualidade\n\n- Método científico aplicado a sistemas de IA\n- Formulação de hipóteses\n- Desenho experimental\n- Avaliação baseada em evidências\n- Experiment tracking\n- MLflow"
+}

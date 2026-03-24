@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-c637ba86b3169773",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "general",
+  "section": "Pergunta: Quais problemas você resolve?",
+  "intent": "general_info",
+  "entity": "Diego Santos",
+  "priority": 5,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.298028Z",
+  "content": "### Pergunta: Quais problemas você resolve?\n\nResposta base:\nDiego ajuda a transformar necessidades reais de negócio em sistemas com IA, automação, backend e dados, especialmente quando o desafio exige integrar contexto, operação, governança técnica, observabilidade e capacidade de evolução."
+}

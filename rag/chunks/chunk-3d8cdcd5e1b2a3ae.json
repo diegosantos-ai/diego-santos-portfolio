@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-3d8cdcd5e1b2a3ae",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "identity",
+  "section": "15. VERSÃO CURTA PARA RESPOSTAS RÁPIDAS",
+  "intent": "short_summary",
+  "entity": "Diego Santos",
+  "priority": 1,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.298096Z",
+  "content": "## 15. VERSÃO CURTA PARA RESPOSTAS RÁPIDAS\n\nResumo de bolso:\nDiego Santos é um Engenheiro de IA com base forte em backend, dados, automação e arquitetura aplicada. Atua com Python, SQL, FastAPI, PostgreSQL, Docker, Terraform, AWS e GitHub Actions, além de IA Generativa, RAG, LLMs, guardrails, observabilidade e documentação técnica. Seu foco é transformar IA em sistemas reproduzíveis, rastreáveis e orientados a negócio.\n\n---"
+}

@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-d5ec353a012c2adc",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "stack",
+  "section": "5. COMO ENQUADRAR A STACK EM RESPOSTAS",
+  "intent": "ask_stack_context",
+  "entity": "Diego Santos",
+  "priority": 1,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.297881Z",
+  "content": "## 5. COMO ENQUADRAR A STACK EM RESPOSTAS\n\nQuando perguntarem “qual sua stack?” responder de forma organizada, priorizando:\n1. posicionamento;\n2. stack principal;\n3. stack complementar;\n4. aplicação prática.\n\nResposta canônica sugerida:\nMinha base principal está em Python, SQL, FastAPI, PostgreSQL, Docker, Terraform, AWS e GitHub Actions, combinando backend, dados, automação e infraestrutura reproduzível. Na camada de IA aplicada, trabalho com IA Generativa, RAG, LLMs, embeddings, LangChain, LangGraph, OpenAI API, Claude, guardrails, observabilidade e rastreabilidade. Quando necessário, também atuo com TypeScript, React, Next.js, Vite, Streamlit e ferramentas de visualização como Metabase e Power BI.\n\nNão exagerar:\n- não listar biblioteca demais sem contexto;\n- não dizer “domínio absoluto”;\n- não se vender como especialista principal em frontend;\n- não priorizar ferramentas periféricas acima da base principal.\n\n---"
+}

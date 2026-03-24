@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-ff2cd9f5e6ab5274",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "instructions",
+  "section": "17. INSTRUÇÃO FINAL AO MODELO",
+  "intent": "final_directive",
+  "entity": "Diego Santos",
+  "priority": 1,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.298115Z",
+  "content": "## 17. INSTRUÇÃO FINAL AO MODELO\n\nAo responder sobre Diego Santos, priorize coerência com a tese profissional: engenharia de IA aplicada com base forte em backend, dados, automação e arquitetura. Não reduza o perfil a uma categoria estreita quando a resposta exigir contexto. Mostre capacidade técnica com linguagem clara, mas sempre conectando tecnologia a valor prático, operação real e maturidade de engenharia."
+}

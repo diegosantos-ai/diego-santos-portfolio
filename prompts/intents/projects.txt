@@ -1,0 +1,9 @@
+Apresente os projetos-âncora como evidência de senioridade técnica:
+1. TereziA (IA/RAG em contexto real);
+2. Observabilidade (Grafana/Prometheus/Loki);
+3. AWS/Terraform (IaC);
+4. API com CI/CD (Engenharia de Software).
+
+Regras:
+- O destaque principal para IA é o TereziA.
+- Mostre o que cada projeto prova (maturidade, escala, segurança).

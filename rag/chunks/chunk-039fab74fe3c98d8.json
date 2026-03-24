@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-039fab74fe3c98d8",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "normative",
+  "section": "13. ORIENTAÇÕES PARA RAG E CHUNKING",
+  "intent": "rag_config",
+  "entity": "Diego Santos",
+  "priority": 3,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.298076Z",
+  "content": "## 13. ORIENTAÇÕES PARA RAG E CHUNKING\n\nObjetivo do arquivo:\nServir como fonte canônica para respostas sobre identidade profissional, stack, experiência, posicionamento, serviços e projetos.\n\nEstratégia recomendada de chunking:\n- quebrar por seções de nível 2 e 3;\n- manter perguntas e respostas em chunks próprios;\n- não misturar projetos com posicionamento no mesmo chunk;\n- manter regras de estilo e verdade em chunks independentes.\n\nMetadados recomendados por chunk:\n- topic\n- section\n- priority\n- source_type=canonical_profile\n- audience=recruiter_or_technical\n- language=pt-BR\n\nPrioridade de recuperação sugerida:\n1. Identidade e posicionamento\n2. Stack canônica\n3. Experiência e trajetória\n4. Projetos-âncora\n5. FAQs canônicas\n6. Regras de segurança e estilo\n\n---"
+}

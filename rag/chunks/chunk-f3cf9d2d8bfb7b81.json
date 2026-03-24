@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-f3cf9d2d8bfb7b81",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "general",
+  "section": "8.5 Portfólio com LLM e RAG",
+  "intent": "general_info",
+  "entity": "Diego Santos",
+  "priority": 5,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.297956Z",
+  "content": "### 8.5 Portfólio com LLM e RAG\n\nDescrição:\nPortfólio profissional com um assistente baseado em LLM + RAG para responder perguntas sobre trajetória, stack, projetos, serviços e oportunidades de trabalho.\n\nDemonstra:\n- aplicação de IA em branding profissional;\n- curadoria de conhecimento;\n- experiência conversacional;\n- integração entre posicionamento e tecnologia.\n\n---"
+}

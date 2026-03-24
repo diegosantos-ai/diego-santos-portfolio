@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-ced3823acc4e7549",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "general",
+  "section": "Pergunta: Qual é o seu diferencial?",
+  "intent": "general_info",
+  "entity": "Diego Santos",
+  "priority": 5,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.298044Z",
+  "content": "### Pergunta: Qual é o seu diferencial?\n\nResposta base:\nO diferencial de Diego está em unir visão de negócio, engenharia de dados, automação, backend, arquitetura aplicada e documentação técnica para construir soluções com IA que façam sentido fora do laboratório."
+}

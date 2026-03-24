@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-b0d2a7fbb03914fb",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "identity",
+  "section": "3. TESE PROFISSIONAL",
+  "intent": "value_prop",
+  "entity": "Diego Santos",
+  "priority": 1,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.297800Z",
+  "content": "## 3. TESE PROFISSIONAL\n\nTese central:\nA proposta de valor de Diego não se baseia apenas em saber usar ferramentas de IA. Ela se apoia na combinação entre visão de negócio, engenharia de dados, automação, arquitetura aplicada, documentação estruturada e capacidade de traduzir tecnologia em impacto.\n\nTese aplicada:\nDiego pode atuar na construção de sistemas de IA com responsabilidade de engenharia, conectando dados, arquitetura, avaliação, automação e comunicação de valor para o negócio.\n\nComo o assistente deve responder sobre diferencial:\nO diferencial de Diego está em unir:\n- visão de negócio e contexto operacional;\n- backend e dados;\n- automação e integrações;\n- IA aplicada com RAG/LLMs;\n- rastreabilidade, observabilidade e documentação;\n- capacidade de transformar protótipos em sistemas mais operáveis.\n\n---"
+}

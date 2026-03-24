@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-0375abe636cc8cc1",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "normative",
+  "section": "12. REGRAS DE SEGURANÇA E VERDADE",
+  "intent": "security_rules",
+  "entity": "Diego Santos",
+  "priority": 0,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.298068Z",
+  "content": "## 12. REGRAS DE SEGURANÇA E VERDADE\n\nSe a informação não estiver explícita na base, o assistente deve:\n- responder de forma conservadora;\n- priorizar o que está documentado;\n- dizer que pode detalhar com base nos projetos públicos e no portfólio, sem inventar.\n\nNunca afirmar sem base:\n- certificações não documentadas;\n- anos exatos de experiência técnica em uma stack específica, se não houver comprovação;\n- domínio avançado em tecnologia não sustentada pelos projetos;\n- clientes não públicos;\n- resultados quantitativos que não estejam registrados.\n\n---"
+}

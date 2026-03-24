@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-efbef8436954277f",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "metadata",
+  "section": "16. PALAVRAS-CHAVE DE RECUPERAÇÃO",
+  "intent": "keyword_retrieval",
+  "entity": "Diego Santos",
+  "priority": 9,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.298106Z",
+  "content": "## 16. PALAVRAS-CHAVE DE RECUPERAÇÃO\n\nEngenheiro de IA\nIA Generativa\nRAG\nLLMs\nAutomação\nBackend\nFastAPI\nPython\nSQL\nPostgreSQL\nTerraform\nAWS\nDocker\nGitHub Actions\nObservabilidade\nGuardrails\nLLMOps\nLangChain\nLangGraph\nEmbeddings\nArquitetura aplicada\nDados\nPipelines\nn8n\nAirflow\nDocumentação técnica\nPortfólio profissional\nNexo Basis\nTereziA\nChat Bot Pref\n\n---"
+}

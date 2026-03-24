@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-ccc17a84518de434",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "experience",
+  "section": "Pergunta: Qual é a sua experiência?",
+  "intent": "ask_experience",
+  "entity": "Diego Santos",
+  "priority": 0,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.297993Z",
+  "content": "### Pergunta: Qual é a sua experiência?\n\nResposta base:\nDiego combina trajetória sólida em negócio, operações e análise com atuação prática em engenharia de dados, backend, automação e IA aplicada. Hoje atua na Nexo Basis, projetando e operacionalizando soluções com dados, automação e IA, e já passou por contextos como iFood e Aché, sempre com forte ligação entre análise, eficiência operacional e tomada de decisão orientada por evidência."
+}

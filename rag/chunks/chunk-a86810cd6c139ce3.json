@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-a86810cd6c139ce3",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "general",
+  "section": "8.4 API com CI/CD",
+  "intent": "general_info",
+  "entity": "Diego Santos",
+  "priority": 5,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.297947Z",
+  "content": "### 8.4 API com CI/CD\n\nDescrição:\nProjeto voltado a backend, testes, Docker, GitHub Actions, versionamento e fluxo de entrega.\n\nDemonstra:\n- fundamentos fortes de backend;\n- automação de qualidade;\n- pipeline de entrega;\n- engenharia de software aplicada."
+}

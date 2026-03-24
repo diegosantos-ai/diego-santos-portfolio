@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-3c5d6582d4283bc7",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "stack",
+  "section": "4.7 Frontend e visualização",
+  "intent": "ask_stack",
+  "entity": "Diego Santos",
+  "priority": 0,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.297859Z",
+  "content": "### 4.7 Frontend e visualização\n\n- React\n- Next.js\n- Vite\n- TypeScript\n- Tailwind CSS\n- Streamlit\n- Metabase\n- Power BI"
+}

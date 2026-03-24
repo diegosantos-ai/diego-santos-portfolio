@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk-8d05f19ca31753b8",
+  "doc_id": "KB_PORTFOLIO_DIEGO_SANTOS_INGEST.md",
+  "version": "1.0.0",
+  "topic": "stack",
+  "section": "4.6 Infraestrutura, cloud e entrega",
+  "intent": "ask_stack",
+  "entity": "Diego Santos",
+  "priority": 0,
+  "canonicality": true,
+  "retrieval_weight": 1.0,
+  "source_type": "canonical",
+  "audience": "general",
+  "language": "pt-BR",
+  "status": "active",
+  "last_reviewed_at": "2026-03-24T16:40:11.297849Z",
+  "content": "### 4.6 Infraestrutura, cloud e entrega\n\n- Docker\n- Docker Compose\n- Terraform\n- AWS\n- GitHub Actions\n- CI/CD\n- Infraestrutura reprodutível\n- Logging estruturado\n- Métricas, logs e dashboards"
+}

@@ -64,3 +64,32 @@ day-close: ## Faz o fechamento e resumo do dia atual
 
 week-close: ## Gera relatório consolidado da semana
 	@bash $(DEV_WORKSPACE)/rotina-devops/scripts/worklog-weekly.sh
+
+# --- Pipeline RAG (Camada de Conhecimento) ---
+.PHONY: rag-build rag-validate rag-test rag-package clean-rag rag-pipeline
+
+# Usar interpretador do venv se existir, caso contrário usar python3
+PYTHON_BIN = $(shell [ -f .venv/bin/python3 ] && echo ".venv/bin/python3" || echo "python3")
+
+rag-build: ## Gera chunks a partir da base canônica
+	@echo "Construindo chunks RAG..."
+	@$(PYTHON_BIN) scripts/rag/build_chunks.py
+
+rag-validate: ## Valida chunks contra o schema Pydantic
+	@echo "Validando chunks RAG..."
+	@$(PYTHON_BIN) scripts/rag/validate_chunks.py
+
+rag-test: ## Executa testes de sanidade na base RAG
+	@echo "Testando integridade da base RAG..."
+	@$(PYTHON_BIN) scripts/rag/test_rag.py
+
+rag-package: ## Consolida chunks em um único arquivo para o app
+	@echo "Empacotando base RAG..."
+	@$(PYTHON_BIN) scripts/rag/package_chunks.py
+
+rag-clean: ## Remove chunks e manifestos gerados
+	@echo "Limpando artefatos RAG..."
+	@rm -rf rag/chunks/*.json rag/manifests/*.json
+
+rag-pipeline: rag-clean rag-build rag-validate rag-test rag-package ## Executa o pipeline RAG completo (Build -> Validate -> Test -> Package)
+	@echo "✅ Pipeline RAG concluído com sucesso!"
